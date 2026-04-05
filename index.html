@@ -323,7 +323,38 @@
             '1-result': '<h2>آن لائن رزلٹ پورٹل</h2><input type="text" placeholder="رول نمبر لکھیں" style="width:100%; padding:15px; margin:20px 0; border:1px solid #ddd;"><button class="btn-call-master">سرچ کریں</button>',
             '2-doctors': '<h2>ہمارے ماہرین</h2><ul><li>ڈاکٹر آصف علی (ہارٹ اسپیشلسٹ)</li><li>ڈاکٹر علی احمد (چائلڈ اسپیشلسٹ)</li></ul>',
             '3-catalog': '<h2>پراڈکٹ کیٹلاگ</h2><p>تمام نئی اشیاء یہاں دستیاب ہیں۔</p>'
-        };
+ };
 
         function openExplorer(id) {
-            const explorer = document.getElementById('master-
+            const explorer = document.getElementById('master-explorer-ui');
+            const viewport = document.getElementById('demo-inner-viewport');
+            document.getElementById('current-demo-title').innerText = spo_database[id].title;
+            
+            // مینو اور ہوم پیج کو ایک ساتھ لوڈ کریں
+            viewport.innerHTML = spo_database[id].menu + spo_database[id].home;
+            
+            explorer.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeExplorer() {
+            document.getElementById('master-explorer-ui').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function loadSub(siteId, page) {
+            const subViewport = document.getElementById('sub-viewport');
+            const key = siteId + '-' + page;
+
+            if (page === 'home') {
+                subViewport.innerHTML = spo_database[siteId].home.match(/<div[^>]*>([\s\S]*)<\/div>/)[1];
+            } else {
+                subViewport.innerHTML = `
+                    <div style="background:white; padding:40px; border-radius:30px; border:1px solid #eee; animation:fadeIn 0.5s;">
+                        ${sub_database[key] || '<h2>صفحہ زیرِ تعمیر ہے...</h2>'}
+                    </div>`;
+            }
+        }
+    </script>
+</body>
+</html>
