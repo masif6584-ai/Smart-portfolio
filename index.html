@@ -3,430 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART PRINTING & ONLINE SERVICES | MEGA ARCHITECTURE 2026</title>
+    <title>SPO SMART DIGITAL MARKETING | OFFICIAL MEGA PORTFOLIO 2026</title>
     
-    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Pakistan's Leading Digital Hub for Web Development, SEO, and Premium Printing.">
-    <meta name="keywords" content="SPO Kanganpur, Asif Ali Kanganpur, Smart Printing Online, Printing Services Kasur, Web Design Pakistan, Digital Marketing Agency Punjab, SEO Expert Kanganpur, NADRA Online Services, FBR NTN Registration">
+    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Pakistan's leading Digital Marketing, Web Development, and SEO Agency. Expert in Facebook Ads, Next.js, and Google Ranking.">
+    <meta name="keywords" content="SPO Kanganpur, Smart Printing Online, Asif Ali Kanganpur, Web Developer Kanganpur, SEO Expert Kasur, Digital Marketing Agency Pakistan, FBR NTN Services, NADRA Online">
     <meta name="author" content="Muhammad Asif Ali">
-    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050A30">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-        /* ================================================================================================
-        GLOBAL STYLESHEET (MASTER CSS)
-        ================================================================================================
-        */
+        /* ================================================================
+        MASTER STYLESHEET
+        ================================================================ */
         :root {
-            --primary-navy: #050A30;
-            --royal-blue: #000C66;
-            --gold-accent: #D4AF37;
-            --pure-white: #ffffff;
-            --light-bg: #f1f5f9;
-            --text-dark: #1e293b;
-            --success-green: #22c55e;
-            --gradient-master: linear-gradient(135deg, #050A30 0%, #000C66 100%);
-            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-hard: 0 20px 50px rgba(0,0,0,0.2);
+            --primary: #050A30;
+            --gold: #D4AF37;
+            --deep: #000C66;
+            --white: #ffffff;
+            --bg-body: #f8fafc;
+            --success: #25D366;
+            --gradient: linear-gradient(135deg, #050A30 0%, #000C66 100%);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Essential Reset Logic */
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background: var(--light-bg); 
-            color: var(--text-dark); 
-            line-height: 1.6;
-            overflow-x: hidden;
+        /* Essential Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-body); color: var(--primary); overflow-x: hidden; scroll-behavior: smooth; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; }
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Mega Scrollbar */
+        ::-webkit-scrollbar { width: 14px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border: 4px solid var(--primary); border-radius: 20px; }
+
+        /* Header Architecture */
+        header {
+            background: var(--white); min-height: 120px; display: flex; justify-content: space-between;
+            align-items: center; padding: 15px 5%; position: sticky; top: 0; z-index: 10000;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-bottom: 8px solid var(--gold);
         }
-        .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; text-align: justify; }
+        .header-left { flex: 1; display: flex; justify-content: flex-start; }
+        .header-center { flex: 3; text-align: center; }
+        .header-right { flex: 1; display: flex; justify-content: flex-end; }
 
-        /* Mega Custom Scrollbar */
-        ::-webkit-scrollbar { width: 16px; }
-        ::-webkit-scrollbar-track { background: var(--primary-navy); }
-        ::-webkit-scrollbar-thumb { 
-            background: var(--gold-accent); 
-            border: 5px solid var(--primary-navy); 
-            border-radius: 50px;
-        }
-
-        /* ================================================================================================
-        HEADER & NAVIGATION ARCHITECTURE
-        ================================================================================================
-        */
-        .master-header {
-            background: var(--pure-white);
-            height: 140px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 6%;
-            position: sticky;
-            top: 0;
-            z-index: 100000;
-            box-shadow: var(--shadow-soft);
-            border-bottom: 8px solid var(--gold-accent);
-        }
-
-        .header-brand { flex: 2; text-align: center; }
-        .header-brand h1 { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; color: var(--primary-navy); }
-        .header-brand span { color: var(--gold-accent); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; display: block; font-weight: 400; }
-
-        .header-contact-btn {
-            background: var(--primary-navy);
-            color: var(--pure-white);
-            padding: 18px 40px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 800;
-            border: 3px solid var(--gold-accent);
-            transition: var(--transition-smooth);
+        .btn-call-master { 
+            background: var(--primary); color: white; padding: 15px 30px; border-radius: 60px; 
+            font-weight: 900; border: 3px solid var(--gold); font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); cursor: pointer; transition: var(--transition);
             display: inline-block;
         }
-        .header-contact-btn:hover { background: var(--gold-accent); color: #000; transform: translateY(-5px); }
+        .btn-call-master:hover { background: var(--gold); color: black; transform: translateY(-5px); }
 
-        .logo-frame {
-            width: 125px;
-            height: 125px;
-            border-radius: 50%;
-            border: 6px solid var(--gold-accent);
-            overflow: hidden;
-            background: #fff;
-            box-shadow: var(--shadow-soft);
+        .spo-brand-h1 { 
+            font-size: clamp(1rem, 2.2vw, 1.8rem); font-weight: 900; color: var(--primary);
+            text-transform: uppercase; line-height: 1.2; letter-spacing: 1px;
         }
-        .logo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .spo-brand-h1 span { color: var(--gold); display: block; font-size: 0.8rem; margin-top: 5px; font-weight: 400; }
 
-        /* ================================================================================================
-        HERO SUPREME SECTION
-        ================================================================================================
-        */
-        .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(5, 10, 48, 0.8), rgba(5, 10, 48, 0.9)), 
-            url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        .logo-circle-frame { width: 100px; height: 100px; border-radius: 50%; border: 5px solid var(--gold); background: white; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Hero Section */
+        .hero-supreme {
+            height: 95vh; background: linear-gradient(rgba(5, 10, 48, 0.85), rgba(5, 10, 48, 0.85)), 
+            url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
         }
+        .hero-supreme h2 { font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 900; margin-bottom: 25px; }
+        .hero-supreme p { font-size: clamp(1.2rem, 2.5vw, 2.2rem); color: var(--gold); margin-bottom: 50px; font-weight: 600; }
 
-        .hero-content h2 { font-size: 6rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
-        .hero-content p { font-size: 2.5rem; color: var(--gold-accent); font-weight: 600; margin-bottom: 40px; }
-
-        /* ================================================================================================
-        SERVICE GRID (100+ LINES OF CSS)
-        ================================================================================================
-        */
-        .service-container { padding: 150px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .service-box {
-            background: var(--pure-white);
-            padding: 80px 50px;
-            border-radius: 60px;
-            border: 1px solid #e2e8f0;
-            transition: var(--transition-smooth);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        /* Grid Systems */
+        .mega-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 100px 6%; background: white; }
+        .service-card-pro { 
+            background: #fbfbfb; padding: 60px 35px; border-radius: 45px; border: 1px solid #eee;
+            transition: var(--transition); text-align: center;
         }
-        .service-box::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: var(--gold-accent);
-        }
-        .service-box:hover { transform: translateY(-30px); border-color: var(--gold-accent); box-shadow: var(--shadow-hard); }
-        .service-box i { font-size: 5rem; color: var(--gold-accent); margin-bottom: 35px; }
-        .service-box h3 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-navy); }
+        .service-card-pro:hover { transform: translateY(-20px); border-color: var(--gold); box-shadow: 0 40px 90px rgba(5,10,48,0.15); }
+        .service-card-pro i { font-size: 4rem; color: var(--gold); margin-bottom: 30px; display: block; }
+        .service-card-pro h3 { font-size: 2rem; margin-bottom: 15px; color: var(--primary); }
 
-        /* ================================================================================================
-        PORTFOLIO UNIVERSE (THE CORE SYSTEM)
-        ================================================================================================
-        */
-        .portfolio-universe { background: #010415; padding: 150px 6%; color: white; position: relative; }
-        .portfolio-universe h2 { font-size: 5rem; text-align: center; margin-bottom: 100px; color: var(--gold-accent); }
-
-        .mega-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 60px; }
-        .portfolio-item {
-            background: rgba(255,255,255,0.03);
-            border: 2px solid rgba(212,175,55,0.15);
-            border-radius: 70px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Portfolio */
+        .portfolio-universe { background: #01041a; padding: 120px 5%; color: white; }
+        .portfolio-master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .portfolio-item-wrap { 
+            background: rgba(255,255,255,0.02); border: 2px solid rgba(212,175,55,0.2);
+            border-radius: 50px; overflow: hidden; cursor: pointer; transition: 0.7s;
         }
-        .portfolio-item:hover { border-color: var(--gold-accent); transform: scale(1.03); background: rgba(255,255,255,0.08); }
-        
-        .mockup-display {
-            height: 500px;
-            background-size: cover;
-            background-position: top;
-            transition: 15s ease-in-out;
-        }
-        .portfolio-item:hover .mockup-display { background-position: bottom; }
+        .portfolio-item-wrap:hover { border-color: var(--gold); transform: translateY(-15px); }
+        .portfolio-mockup { height: 450px; background-size: cover; background-position: top; transition: 10s ease-in-out; }
+        .portfolio-item-wrap:hover .portfolio-mockup { background-position: bottom; }
 
-        /* ================================================================================================
-        MARKETING SECTION (URDU CONTENT)
-        ================================================================================================
-        */
-        .promo-section { padding: 150px 10%; background: #fff; text-align: center; }
-        .promo-box {
-            background: var(--light-bg);
-            padding: 100px;
-            border-radius: 80px;
-            border-right: 15px solid var(--gold-accent);
-            box-shadow: var(--shadow-soft);
-        }
-        .promo-box h2 { font-size: 4rem; margin-bottom: 40px; }
-        .promo-box p { font-size: 1.8rem; line-height: 2.5; }
-
-        /* ================================================================================================
-        DEMO EXPLORER MODAL (CSS VOLUME)
-        ================================================================================================
-        */
-        #master-explorer { 
+        /* Explorer UI */
+        #master-explorer-ui { 
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: #fff; z-index: 2000000; overflow-y: auto; 
+            background: white; z-index: 999999; overflow-y: auto; 
         }
-        .explorer-nav { background: var(--primary-navy); color: white; padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; border-bottom: 6px solid var(--gold-accent); }
-        .demo-announcement { background: #ffcc00; color: #000; padding: 15px; font-weight: 900; text-align: center; font-size: 1.3rem; }
-
-        /* ================================================================================================
-        FOOTER ARCHITECTURE (150+ LINES)
-        ================================================================================================
-        */
-        footer { background: #000; color: #fff; padding: 150px 8% 50px; border-top: 20px solid var(--gold-accent); }
-        .footer-flex { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 80px; }
-        .footer-logo { width: 180px; height: 180px; border-radius: 50%; border: 8px solid var(--gold-accent); background: #fff; margin-bottom: 40px; }
-        .footer-link { color: #888; text-decoration: none; display: block; font-size: 1.4rem; margin-bottom: 25px; transition: 0.3s; }
-        .footer-link:hover { color: var(--gold-accent); padding-right: 15px; }
-
-        /* WhatsApp Engine */
-        .wa-global-link {
-            position: fixed; bottom: 50px; left: 50px; background: #25D366;
-            width: 100px; height: 100px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 60px; color: white; z-index: 1000000;
-            border: 6px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            animation: pulse-ring 2s infinite;
+        .explorer-header { 
+            background: var(--primary); color: white; padding: 20px 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            position: sticky; top: 0; z-index: 99999; border-bottom: 6px solid var(--gold); 
         }
-        @keyframes pulse-ring { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .demo-version-marquee { background: #ffcc00; color: #000; padding: 10px; font-weight: 900; text-align: center; }
 
-        /* Responsive Breakpoints (Lines 500-600) */
-        @media (max-width: 1200px) { .hero-content h2 { font-size: 4rem; } }
-        @media (max-width: 768px) { .master-header { height: auto; flex-direction: column; padding: 30px; } .mega-grid { grid-template-columns: 1fr; } }
+        /* Footer */
+        footer { background: #000; color: white; padding: 100px 6% 40px; border-top: 10px solid var(--gold); }
+        .footer-flex-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; }
+        .footer-logo-circle { width: 150px; height: 150px; border-radius: 50%; border: 6px solid var(--gold); background: white; overflow: hidden; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .footer-links-item { color: #888; font-size: 1.2rem; margin-bottom: 20px; display: block; transition: 0.3s; }
+        .footer-links-item:hover { color: var(--gold); padding-right: 15px; }
+
+        /* Floating WhatsApp */
+        .whatsapp-global { position: fixed; bottom: 30px; left: 30px; background: var(--success); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; color: white; z-index: 50000; border: 4px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.4); animation: pulse 2s infinite; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .header-left, .header-right { margin-top: 15px; }
+            .hero-supreme { height: 70vh; }
+            .portfolio-master-grid { grid-template-columns: 1fr; }
+            .inner-demo-nav { flex-wrap: wrap; gap: 10px; padding: 15px; }
+        }
+
+        .inner-demo-nav { background: #f1f5f9; padding: 20px; display: flex; justify-content: center; gap: 20px; border-radius: 50px; margin: 30px auto; max-width: 800px; border: 1px solid #ddd; }
+        .inner-demo-nav-btn { font-weight: 800; cursor: pointer; padding: 12px 25px; border-radius: 30px; color: var(--primary); transition: 0.3s; }
+        .inner-demo-nav-btn:hover { background: var(--gold); color: white; }
     </style>
 </head>
-<body onload="AOS.init({duration: 1500})">
+<body onload="AOS.init({duration: 1200})">
 
-    <header class="master-header">
+    <header>
         <div class="header-left">
-            <a href="https://wa.me/923034480404" class="header-contact-btn urdu-font">رابطہ کریں: 03034480404</a>
+            <a href="https://wa.me/923034480404" target="_blank" class="btn-call-master urdu">رابطہ: 0303-4480404</a>
         </div>
         <div class="header-center">
-            <div class="header-brand">
-                <h1>SPO SMART PRINTING</h1>
-                <span class="urdu-font">کنگن پور کی نمبر 1 ڈیجیٹل ایجنسی</span>
-            </div>
+            <h1 class="spo-brand-h1 urdu">
+                SPO SMART DIGITAL MARKETING & WEBSITE DEVELOPMENT
+                <span>Leading Digital Solutions | Web, SEO, Ads & Printing</span>
+            </h1>
         </div>
         <div class="header-right">
-            <div class="logo-frame">
-                <img src="1774980575568.png" alt="SPO Logo">
-            </div>
+            <img src="1774980575568.png" alt="SPO Logo" class="logo-circle-frame">
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-content urdu-font" data-aos="zoom-out">
-            <h2>پاکستان کا بہترین <br><span style="color:var(--gold-accent);">ڈیجیٹل پورٹ فولیو</span></h2>
-            <p>SPO Smart Printing & Online Services Kanganpur</p>
-            <a href="#portfolio-hub" class="header-contact-btn" style="padding: 25px 80px; font-size: 1.8rem; background: var(--gold-accent); color: #000;">ہمارا کام دیکھیں</a>
+    <section class="hero-supreme">
+        <div data-aos="zoom-in">
+            <h2 class="urdu">کنگن پور کی نمبر 1 <br><span style="color:var(--gold);">ڈیجیٹل ایجنسی</span></h2>
+            <p class="urdu">SPO اسمارٹ ڈیجیٹل: آپ کے برانڈ کو بلندیوں تک پہنچانے والا پارٹنر</p>
+            <div class="urdu">
+                <a href="#portfolio" class="btn-call-master" style="background:var(--gold); color:black; padding:20px 60px; font-size:1.5rem;">ہمارا مکمل پورٹ فولیو</a>
+            </div>
         </div>
     </section>
 
-    <section class="service-container urdu-font">
-        <div class="service-box" data-aos="fade-up">
-            <i class="fas fa-school"></i>
-            <h3>اسکول پورٹ فولیو</h3>
-            <p>آپ کے اسکول کی کامیابی کا ڈیجیٹل ثبوت! ہم آپ کے لیے ایسا پورٹ فولیو تیار کریں گے جو والدین کا بھروسہ جیت لے۔</p>
+    <section class="mega-services-grid">
+        <div class="service-card-pro urdu" data-aos="fade-up">
+            <i class="fab fa-facebook-f"></i>
+            <h3>سوشل میڈیا مارکیٹنگ</h3>
+            <p>فیس بک اور انسٹاگرام پر پروفیشنل ایڈز کے ذریعے اپنی سیلز بڑھائیں۔</p>
+            <ul style="margin-top:15px; color:var(--gold); font-weight:bold;">
+                <li>✓ فیس بک ایڈز مینجمنٹ</li>
+                <li>✓ انسٹاگرام برانڈنگ</li>
+            </ul>
         </div>
-        <div class="service-box" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-clinic-medical"></i>
-            <h3>ہسپتال پورٹ فولیو</h3>
-            <p>مریضوں کا اعتماد حاصل کرنے کے لیے بہترین میڈیکل پورٹ فولیو ضروری ہے۔ اپنی مہارت دنیا کو دکھائیں۔</p>
+        <div class="service-card-pro urdu" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-code"></i>
+            <h3>ویب سائٹ ڈویلپمنٹ</h3>
+            <p>Next.js اور Firebase پر مبنی تیز رفتار اور جدید ویب سائٹس۔</p>
+            <ul style="margin-top:15px; color:var(--gold); font-weight:bold;">
+                <li>✓ رسپانسو ڈیزائن</li>
+                <li>✓ محفوظ ہوسٹنگ</li>
+            </ul>
         </div>
-        <div class="service-box" data-aos="fade-up" data-aos-delay="400">
-            <i class="fas fa-briefcase"></i>
-            <h3>بزنس پورٹ فولیو</h3>
-            <p>صرف دکان سجانا کافی نہیں، اب دنیا کو اپنا کام دکھانے کا وقت ہے۔ اپنے برانڈ کو ڈیجیٹل پہچان دیں۔</p>
-        </div>
-        <div class="service-box" data-aos="fade-up" data-aos-delay="600">
-            <i class="fas fa-user-ninja"></i>
-            <h3>فری لانسر پورٹ فولیو</h3>
-            <p>فائور اور اپ ورک پر آرڈرز لینے کے لیے اپنا کریٹو پورٹ فولیو بنوائیں اور اپنے ہنر کا جادو دکھائیں۔</p>
+        <div class="service-card-pro urdu" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-rocket"></i>
+            <h3>لوکل SEO سروسز</h3>
+            <p>گوگل سرچ اور میپس پر اپنے بزنس کو نمبر 1 رینکنگ پر لائیں۔</p>
+            <ul style="margin-top:15px; color:var(--gold); font-weight:bold;">
+                <li>✓ میپ رینکنگ</li>
+                <li>✓ بزنس پروفائل سیٹ اپ</li>
+            </ul>
         </div>
     </section>
 
-    <section id="portfolio-hub" class="portfolio-universe urdu-font">
-        <h2 data-aos="fade-down">ڈیجیٹل ورک پورٹلز</h2>
-        <div class="mega-grid">
-            <div class="portfolio-item" onclick="launchExplorer(1)" data-aos="flip-right">
-                <div class="mockup-display" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa1b424d?auto=format&fit=crop&w=1000&q=80');"></div>
-                <div style="padding: 50px; text-align: center;">
-                    <h3>آکسفورڈ پبلک اسکول پورٹل</h3>
-                    <p style="color: var(--gold-accent);">تعلیمی اداروں کے لیے مکمل مینجمنٹ ڈیمو</p>
-                    <span class="header-contact-btn" style="margin-top: 30px;">ویب سائٹ ڈیمو کھولیں</span>
+    <section id="portfolio" class="portfolio-universe">
+        <div style="text-align:center; margin-bottom:80px;">
+            <h2 class="urdu" style="font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold);">ڈیجیٹل ویب پورٹ فولیو</h2>
+            <p style="font-size: 1.2rem;">کسی بھی پروجیکٹ پر کلک کر کے اس کا مکمل ورکنگ ڈیمو دیکھیں۔</p>
+        </div>
+
+        <div class="portfolio-master-grid urdu">
+            <div class="portfolio-item-wrap" data-aos="flip-right" onclick="openExplorer(1)">
+                <div class="portfolio-mockup" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa1b424d?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div style="padding:40px; text-align:center;">
+                    <h3>ایجوکیشنل انسٹی ٹیوٹ پورٹل</h3>
+                    <span class="btn-call-master" style="margin-top:20px; background:var(--gold); color:black;">ڈیمو دیکھیں</span>
                 </div>
             </div>
-            <div class="portfolio-item" onclick="launchExplorer(2)" data-aos="flip-right" data-aos-delay="300">
-                <div class="mockup-display" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80');"></div>
-                <div style="padding: 50px; text-align: center;">
-                    <h3>السیّد میڈیکل کلینک</h3>
-                    <p style="color: var(--gold-accent);">ڈاکٹرز اور پیشنٹ ریکارڈ مینجمنٹ ڈیمو</p>
-                    <span class="header-contact-btn" style="margin-top: 30px;">ویب سائٹ ڈیمو کھولیں</span>
+            <div class="portfolio-item-wrap" data-aos="flip-right" data-aos-delay="200" onclick="openExplorer(2)">
+                <div class="portfolio-mockup" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div style="padding:40px; text-align:center;">
+                    <h3>ہیلتھ کیئر کلینک ویب سائٹ</h3>
+                    <span class="btn-call-master" style="margin-top:20px; background:var(--gold); color:black;">ڈیمو دیکھیں</span>
                 </div>
             </div>
-            <div class="portfolio-item" onclick="launchExplorer(3)" data-aos="flip-right" data-aos-delay="600">
-                <div class="mockup-display" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80');"></div>
-                <div style="padding: 50px; text-align: center;">
-                    <h3>سمارٹ ای کامرس اسٹور</h3>
-                    <p style="color: var(--gold-accent);">آن لائن شاپ اور آرڈرنگ سسٹم ڈیمو</p>
-                    <span class="header-contact-btn" style="margin-top: 30px;">ویب سائٹ ڈیمو کھولیں</span>
+            <div class="portfolio-item-wrap" data-aos="flip-right" data-aos-delay="400" onclick="openExplorer(3)">
+                <div class="portfolio-mockup" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div style="padding:40px; text-align:center;">
+                    <h3>ای کامرس اینڈ شاپ سسٹم</h3>
+                    <span class="btn-call-master" style="margin-top:20px; background:var(--gold); color:black;">ڈیمو دیکھیں</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="promo-section urdu-font">
-        <div class="promo-box" data-aos="zoom-in">
-            <h2>SPO اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
-            <p>پورٹ فولیو بنوانے کے لیے ہم سے رابطہ کریں! اللہ قسم کے پورٹ فولیو اور ویب سائٹ کے لیے ہم کنگن پور میں سب سے بہترین خدمات فراہم کر رہے ہیں۔ ہمارا مقصد آپ کے بزنس کو ڈیجیٹل دنیا میں ایک نئی پہچان دینا ہے۔</p>
-            <br>
-            <a href="https://wa.me/923034480404" class="header-contact-btn" style="font-size: 2rem; background: var(--success-green); border: none;">واٹس ایپ پر رابطہ کریں</a>
+    <div id="master-explorer-ui">
+        <div class="demo-version-marquee"><marquee scrollamount="10">⚠️ DEMO VERSION PREVIEW BY SPO SMART DIGITAL MARKETING KANGANPUR ⚠️</marquee></div>
+        <div class="explorer-header urdu">
+            <h2 id="current-demo-title">Website Explorer</h2>
+            <button class="btn-call-master" style="background:red; border:none;" onclick="closeExplorer()">بند کریں X</button>
         </div>
-    </section>
-
-    <div id="master-explorer">
-        <div class="demo-announcement"><marquee scrollamount="12">⚠️ ATTENTION: THIS IS A DEMO PREVIEW CREATED BY SPO SMART DIGITAL MARKETING KANGANPUR - NOT FOR LIVE USE ⚠️</marquee></div>
-        <div class="explorer-nav urdu-font">
-            <h2 id="exp-title">Project Preview</h2>
-            <button onclick="exitExplorer()" style="padding: 15px 40px; border-radius: 50px; background: var(--gold-accent); border: none; font-weight: 900; cursor: pointer;">بند کریں (CLOSE X)</button>
-        </div>
-        <div id="exp-render-area">
-            </div>
+        <div id="demo-inner-viewport" class="urdu"></div>
     </div>
 
     <footer>
-        <div class="footer-flex urdu-font">
+        <div class="footer-flex-box urdu">
             <div>
-                <div class="footer-logo">
-                    <img src="1774980575568.png" alt="SPO" style="width:100%; border-radius:50%;">
+                <div class="footer-logo-circle">
+                    <img src="1774980575568.png" alt="SPO">
                 </div>
-                <h3>SPO SMART PRINTING</h3>
-                <p>آپ کا قابل اعتماد ڈیجیٹل پارٹنر۔ پرانا پکا بازار، کنگن پور۔</p>
+                <h2 style="color:var(--gold); font-size: 2.2rem; margin-bottom: 15px;">SPO اسمارٹ ڈیجیٹل</h2>
+                <p style="color:#777;">آپ کے خوابوں کو ڈیجیٹل حقیقت میں بدلنے والا کنگن پور کا مرکز۔</p>
             </div>
             <div>
-                <h4 style="color:var(--gold-accent); font-size:2rem; margin-bottom:40px;">فوری لنکس</h4>
-                <a href="#" class="footer-link">ہوم پیج</a>
-                <a href="#portfolio-hub" class="footer-link">پورٹ فولیو</a>
-                <a href="#" class="footer-link">سروسز لسٹ</a>
-                <a href="#" class="footer-link">رابطہ فارم</a>
+                <h3 style="margin-bottom:30px; font-size:1.8rem; border-right:5px solid var(--gold); padding-right:20px;">رابطہ</h3>
+                <a href="https://wa.me/923034480404" class="footer-links-item"><i class="fab fa-whatsapp"></i> 0303-4480404</a>
+                <a href="mailto:asif.aimarketing@gmail.com" class="footer-links-item"><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</a>
+                <a href="http://www.smartprintingonline.site" class="footer-links-item"><i class="fas fa-globe"></i> smartprintingonline.site</a>
+                <p class="footer-links-item"><i class="fas fa-map-marker-alt"></i> پرانا پکا بازار، کنگن پور</p>
             </div>
             <div>
-                <h4 style="color:var(--gold-accent); font-size:2rem; margin-bottom:40px;">رابطہ کریں</h4>
-                <p class="footer-link"><i class="fab fa-whatsapp"></i> 0303-4480404</p>
-                <p class="footer-link"><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</p>
-                <p class="footer-link"><i class="fas fa-map-marker-alt"></i> پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                <h3 style="margin-bottom:30px; font-size:1.8rem; border-right:5px solid var(--gold); padding-right:20px;">سروسز</h3>
+                <p class="footer-links-item">⭐ فیس بک ایڈز</p>
+                <p class="footer-links-item">⭐ ویب ڈویلپمنٹ</p>
+                <p class="footer-links-item">⭐ نادرا و ایف بی آر</p>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 100px; color: #444; border-top: 1px solid #222; padding-top: 50px;">
-            © 2026 SPO Smart Digital | Coded with Passion by Muhammad Asif Ali
+        <div style="text-align:center; margin-top:80px; padding-top:30px; border-top:1px solid #222; color:#555;">
+            © 2026 SPO Smart Digital Marketing | Developed by <b>Muhammad Asif Ali</b>
         </div>
     </footer>
 
-    <a href="https://wa.me/923034480404" class="wa-global-link"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/923034480404" class="whatsapp-global" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // MASSIVE DATA ENGINE - To Increase Code Weight & Functionality
-        const SPO_DATABASE = {
+        const spo_database = {
             1: {
-                name: "Oxford Public School Portal",
-                html: `
-                    <div style="padding:100px 10%; text-align:center;" class="urdu-font">
-                        <h1 style="font-size:5rem;">آکسفورڈ پبلک اکیڈمی</h1>
-                        <p style="font-size:2rem; color:#666;">تعلیم سب کے لیے، بہترین ماحول میں</p>
-                        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:80px;">
-                            <div style="background:#f1f5f9; padding:60px; border-radius:40px;"><h3>ماہر اساتذہ</h3><p>ہمارا عملہ انتہائی تجربہ کار ہے۔</p></div>
-                            <div style="background:#f1f5f9; padding:60px; border-radius:40px;"><h3>جدید لیب</h3><p>انفارمیشن ٹیکنالوجی کی مکمل تربیت۔</p></div>
-                            <div style="background:#f1f5f9; padding:60px; border-radius:40px;"><h3>آن لائن رزلٹ</h3><p>گھر بیٹھے اپنا رزلٹ چیک کریں۔</p></div>
-                        </div>
-                        <div style="margin-top:100px; padding:100px; background:var(--primary-navy); color:white; border-radius:60px;">
-                            <h2>ایڈمیشنز کے لیے رابطہ کریں</h2>
-                            <p>نئے داخلے جاری ہیں!</p>
+                title: "Oxford Public School Portal",
+                menu: `
+                    <div class="inner-demo-nav">
+                        <div class="inner-demo-nav-btn" onclick="loadSub(1, 'home')">ہوم</div>
+                        <div class="inner-demo-nav-btn" onclick="loadSub(1, 'about')">تعارف</div>
+                        <div class="inner-demo-nav-btn" onclick="loadSub(1, 'result')">رزلٹ</div>
+                    </div>`,
+                home: `
+                    <div id="sub-viewport" style="padding:40px 10%; animation:fadeIn 0.5s;">
+                        <div style="height:400px; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1523050335392-93851179ae22?auto=format&fit=crop&w=1500&q=80'); background-size:cover; border-radius:30px; display:flex; align-items:center; justify-content:center; color:white; text-align:center;">
+                            <h1>آکسفورڈ پبلک ہائی اسکول</h1>
                         </div>
                     </div>`
             },
             2: {
-                name: "Al-Syed Diagnostics & Clinic",
-                html: `
-                    <div style="padding:100px 10%; text-align:center;" class="urdu-font">
-                        <h1 style="font-size:5rem; color:#22c55e;">السیّد میڈیکل کمپلیکس</h1>
-                        <p style="font-size:2rem;">آپ کی صحت، ہمارا عزم</p>
-                        <div style="margin-top:80px; padding:80px; background:#fdf2f2; border-radius:50px; border:2px solid #fee2e2;">
-                            <h2>ڈاکٹر سے وقت لیں</h2>
-                            <input type="text" placeholder="مریض کا نام" style="width:100%; padding:25px; margin-top:30px; border-radius:20px; border:1px solid #ddd;">
-                            <button class="header-contact-btn" style="width:100%; margin-top:30px;">اپائنٹمنٹ بک کریں</button>
-                        </div>
-                        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:40px; margin-top:80px;">
-                            <div style="background:#f1f5f9; padding:50px; border-radius:40px;"><h3>لیبارٹری ٹیسٹ</h3></div>
-                            <div style="background:#f1f5f9; padding:50px; border-radius:40px;"><h3>ایکسرے سروس</h3></div>
+                title: "Al-Syed Medical Clinic",
+                menu: `
+                    <div class="inner-demo-nav">
+                        <div class="inner-demo-nav-btn" onclick="loadSub(2, 'home')">ہوم</div>
+                        <div class="inner-demo-nav-btn" onclick="loadSub(2, 'doctors')">ڈاکٹرز</div>
+                    </div>`,
+                home: `
+                    <div id="sub-viewport" style="padding:40px 10%; animation:fadeIn 0.5s;">
+                        <div style="height:400px; background:linear-gradient(rgba(0,50,0,0.7), rgba(0,50,0,0.7)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1500&q=80'); background-size:cover; border-radius:30px; display:flex; align-items:center; justify-content:center; color:white; text-align:center;">
+                            <h1>السیّد میڈیکل کمپلیکس</h1>
                         </div>
                     </div>`
             },
             3: {
-                name: "SPO Smart E-Commerce Shop",
-                html: `
-                    <div style="padding:100px 10%; text-align:center;" class="urdu-font">
-                        <h1 style="font-size:5rem;">سمارٹ آن لائن شاپ</h1>
-                        <p style="font-size:2rem;">بہترین اشیاء، بہترین قیمت پر</p>
-                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; margin-top:80px;">
-                            <div style="background:white; border:1px solid #eee; padding:30px; border-radius:30px; box-shadow:0 10px 20px rgba(0,0,0,0.05);">
-                                <div style="height:250px; background:#f1f1f1; border-radius:20px; margin-bottom:20px;"></div>
-                                <h3>پریمیم پراڈکٹ</h3>
-                                <p style="color:var(--gold-accent); font-weight:bold; font-size:1.8rem;">Rs. 2,500</p>
-                                <button class="header-contact-btn" style="width:100%; margin-top:20px;">آرڈر کریں</button>
+                title: "SPO Smart Shop Demo",
+                menu: `
+                    <div class="inner-demo-nav">
+                        <div class="inner-demo-nav-btn" onclick="loadSub(3, 'home')">شاپ ہوم</div>
+                        <div class="inner-demo-nav-btn" onclick="loadSub(3, 'catalog')">کیٹلاگ</div>
+                    </div>`,
+                home: `
+                    <div id="sub-viewport" style="padding:40px 10%; animation:fadeIn 0.5s;">
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+                            <div style="background:white; padding:20px; border-radius:20px; border:1px solid #eee; text-align:center;">
+                                <div style="height:150px; background:#f4f4f4; border-radius:10px; margin-bottom:10px;">Product</div>
+                                <h3>Premium Watch</h3>
+                                <p style="color:var(--gold); font-weight:bold;">Rs. 5,500</p>
                             </div>
                         </div>
                     </div>`
             }
         };
 
-        // ADDITIONAL DUMMY DATA FOR LINE VOLUME
-        const SYSTEM_LOGS = Array.from({length: 500}, (_, i) => `SPO_SYSTEM_LOG_ENTRY_${i}: Initializing Module... Success.`);
+        const sub_database = {
+            '1-about': '<h2>اسکول کی تاریخ</h2><p>آکسفورڈ پبلک اسکول گزشتہ 20 سالوں سے کنگن پور میں علم کی شمع روشن کر رہا ہے۔</p>',
+            '1-result': '<h2>آن لائن رزلٹ پورٹل</h2><input type="text" placeholder="رول نمبر لکھیں" style="width:100%; padding:15px; margin:20px 0; border:1px solid #ddd;"><button class="btn-call-master">سرچ کریں</button>',
+            '2-doctors': '<h2>ہمارے ماہرین</h2><ul><li>ڈاکٹر آصف علی (ہارٹ اسپیشلسٹ)</li><li>ڈاکٹر علی احمد (چائلڈ اسپیشلسٹ)</li></ul>',
+            '3-catalog': '<h2>پراڈکٹ کیٹلاگ</h2><p>تمام نئی اشیاء یہاں دستیاب ہیں۔</p>'
+        };
 
-        function launchExplorer(id) {
-            const project = SPO_DATABASE[id];
-            document.getElementById('exp-title').innerText = project.name;
-            document.getElementById('exp-render-area').innerHTML = project.html;
-            document.getElementById('master-explorer').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            console.log("SPO Explorer Engine Started...");
-        }
-
-        function exitExplorer() {
-            document.getElementById('master-explorer').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            console.log("SPO Explorer Engine Halted.");
-        }
-
-        // AUTO-INIT LOGIC
-        window.addEventListener('keydown', (e) => { if(e.key === "Escape") exitExplorer(); });
-    </script>
-</body>
-</html>
+        function openExplorer(id) {
+            const explorer = document.getElementById('master-
