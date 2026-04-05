@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPO - Portfolio Master Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #050A30;
+            --blue: #000C66;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #050A30 0%, #000C66 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: #f0f2f5; color: #333; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; }
+
+        /* --- Header & Branding --- */
+        header {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .shop-info { display: flex; align-items: center; gap: 15px; }
+        .logo-img { width: 70px; height: 70px; object-fit: contain; }
+        .shop-text h1 { font-size: 1.2rem; color: var(--dark); margin: 0; }
+        .shop-text p { font-size: 0.8rem; color: var(--gold); font-weight: bold; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+
+        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .lang-switch { margin-top: 30px; }
+        .btn-lang {
+            padding: 12px 30px;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .btn-lang.active { background: var(--gold); color: var(--dark); }
+
+        /* --- Portfolio Grid --- */
+        .section-title { text-align: center; margin: 50px 0; font-size: 2rem; color: var(--dark); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+        }
+
+        .p-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: 0.4s;
+            position: relative;
+            border-bottom: 5px solid transparent;
+        }
+
+        .p-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .p-img { width: 100%; height: 220px; background: #ddd; position: relative; }
+        .p-badge {
+            position: absolute; top: 15px; left: 15px;
+            padding: 5px 15px; border-radius: 20px;
+            font-size: 0.7rem; font-weight: bold; color: white;
+        }
+
+        .badge-simple { background: #6c757d; }
+        .badge-premium { background: var(--gold); }
+        .badge-super { background: #ff4757; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .p-body { padding: 25px; text-align: center; }
+        .btn-view {
+            display: block; width: 100%; padding: 12px;
+            background: var(--dark); color: white;
+            text-decoration: none; border-radius: 10px; margin-top: 15px;
+        }
+
+        /* --- Design Detail Sections (Hidden by default) --- */
+        .design-detail {
+            display: none; padding: 60px 20px; background: white;
+            border-radius: 30px; margin: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.05);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+
+        .dev-info { margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        .wa-float {
+            position: fixed; bottom: 30px; left: 30px;
+            background: #25D366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .hero h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="shop-info">
+            <img src="1000110589.png" alt="SPO Logo" class="logo-img">
+            <div class="shop-text">
+                <h1>Smart Printing & Online Services</h1>
+                <p>Purana Paka Bazar, Kanganpur</p>
+            </div>
+        </div>
+        <div class="contact-header">
+            <a href="tel:03034480404" style="text-decoration:none; color:var(--dark); font-weight:bold;">
+                <i class="fas fa-phone"></i> 03034480404
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2 id="hero-title" class="urdu">Portfolio Design کروانے کے لیے رابطہ کریں</h2>
+        <p>Expert Solutions for Freelancers, Schools, Hospitals & Businesses</p>
+        
+        <div class="lang-switch">
+            <button class="btn-lang active" onclick="setLanguage('ur')">اردو ورژن</button>
+            <button class="btn-lang" onclick="setLanguage('en')">English Version</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <h3 class="section-title" id="grid-title">ہمارے بہترین ڈیزائنز منتخب کریں</h3>
+        
+        <div class="grid">
+            <div class="p-card" data-aos="fade-up">
+                <div class="p-img">
+                    <span class="p-badge badge-simple">Simple</span>
+                    <img src="https://via.placeholder.com/400x250?text=Simple+Design+1" width="100%" height="100%">
+                </div>
+                <div class="p-body">
+                    <h4 class="title-text">Basic Portfolio (Design 1)</h4>
+                    <p class="desc-text urdu">فری لانسرز کے لیے سادہ اور بہترین</p>
+                    <a href="javascript:void(0)" onclick="openWA(1)" class="btn-view">Select & WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="p-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-img">
+                    <span class="p-badge badge-premium">Premium ✨</span>
+                    <img src="https://via.placeholder.com/400x250?text=Premium+Design+3" width="100%" height="100%">
+                </div>
+                <div class="p-body">
+                    <h4 class="title-text">Business Pro (Design 3)</h4>
+                    <p class="desc-text urdu">شاپ اور بزنس مالکان کے لیے خاص</p>
+                    <a href="javascript:void(0)" onclick="openWA(3)" class="btn-view">Select & WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="p-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="p-img">
+                    <span class="p-badge badge-super">Super Premium 🚀</span>
+                    <img src="https://via.placeholder.com/400x250?text=Super+Premium+5" width="100%" height="100%">
+                </div>
+                <div class="p-body">
+                    <h4 class="title-text">Ultra Dynamic (Design 5)</h4>
+                    <p class="desc-text urdu">اینیمیشنز اور جدید فیچرز کے ساتھ</p>
+                    <a href="javascript:void(0)" onclick="openWA(5)" class="btn-view">Select & WhatsApp</a>
+                </div>
+            </div>
+            
+            </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="1000110589.png" alt="SPO Logo" style="width:100px; filter: brightness(0) invert(1);">
+            <h2 class="urdu">آپ کی ہر ضرورت کا ایک ہی جگہ حل</h2>
+            <p>Smart Printing & Online Services - Kanganpur</p>
+            
+            <div class="dev-info">
+                <p><strong>Developed By:</strong> Muhammad Asif</p>
+                <p><i class="fas fa-map-marker-alt"></i> Purana Paka Bazar, Kanganpur</p>
+                <p><i class="fab fa-whatsapp"></i> 03034480404</p>
+                <p><a href="http://www.smartprintingonline.site" style="color:var(--gold); text-decoration:none;">www.smartprintingonline.site</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923034480404" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+
+        function setLanguage(lang) {
+            const hTitle = document.getElementById('hero-title');
+            const gTitle = document.getElementById('grid-title');
+            const titles = document.querySelectorAll('.title-text');
+            const descs = document.querySelectorAll('.desc-text');
+            const btns = document.querySelectorAll('.btn-view');
+            const body = document.body;
+
+            if(lang === 'ur') {
+                body.style.direction = "rtl";
+                hTitle.innerText = "Portfolio Design کروانے کے لیے رابطہ کریں";
+                gTitle.innerText = "ہمارے بہترین ڈیزائنز منتخب کریں";
+                btns.forEach(b => b.innerText = "منتخب کریں اور واٹس ایپ کریں");
+                // Add more Urdu mapping here
+            } else {
+                body.style.direction = "ltr";
+                hTitle.innerText = "Contact for Professional Portfolio Design";
+                gTitle.innerText = "Choose Our Best Designs";
+                btns.forEach(b => b.innerText = "Select & Contact WhatsApp");
+            }
+
+            // Update active button style
+            document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function openWA(num) {
+            const msg = encodeURIComponent(`Assalam o Alaikum SPO! Mujhe Portfolio Design No ${num} chahiye. Mazeed tafseelat share kr dein.`);
+            window.open(`https://wa.me/923034480404?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
