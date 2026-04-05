@@ -1,186 +1,250 @@
-<!DOCTYPE html><html lang="ur" dir="rtl">
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPO Smart Digital Marketing & Website Development, SEO Services</title>
-<meta name="description" content="اپنے بزنس کو ڈیجیٹل پہچان دیں! SPO Smart Printing & Online Services - Full Agency Portfolio & Services">
-<meta name="keywords" content="SPO Smart Printing, Digital Marketing, SEO, Portfolio, Web Development, Printing Services, Online Services">
-<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* Global Styles */
-body {margin:0; font-family:'Almarai', sans-serif; background:#f5f5f5; scroll-behavior:smooth; color:#333;}
-a {text-decoration:none; color:inherit;}
-header {position:fixed; top:0; width:100%; background:#fff; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; padding:10px 20px;}
-header .logo {border-radius:50%; width:60px; height:60px; overflow:hidden; border:3px solid #ff6600; transition:0.3s;}
-header .logo:hover {box-shadow:0 0 15px #ff6600;}
-nav a {margin:0 10px; font-weight:bold; color:#333; transition:0.3s;}
-nav a:hover {color:#ff6600;}
-section {padding:100px 20px 50px 20px;}
-.section-title {font-size:2rem; font-weight:bold; margin-bottom:20px; color:#ff6600;}
-.button {display:inline-block; padding:10px 20px; background:#ff6600; color:#fff; border-radius:5px; margin-top:10px; transition:0.3s;}
-.button:hover {background:#e65c00;}
-/* Home Section */
-#home {background:#ffe6cc; text-align:center; padding-top:150px;}
-#home h1 {font-size:2.2rem; margin-bottom:15px;}
-#home p {font-size:1.2rem; line-height:1.6;}
-/* Services Section */
-#services .service-item {background:#fff; padding:20px; border-radius:10px; margin:15px 0; box-shadow:0 2px 10px rgba(0,0,0,0.1); transition:0.3s;}
-#services .service-item:hover {box-shadow:0 5px 20px rgba(0,0,0,0.2);}
-/* Portfolio Section */
-#portfolio .portfolio-item {display:flex; flex-wrap:wrap; justify-content:space-around; margin:15px 0;}
-#portfolio .portfolio-item div {width:300px; background:#fff; margin:10px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); transition:0.3s;}
-#portfolio .portfolio-item div:hover {box-shadow:0 5px 20px rgba(0,0,0,0.2);}
-#portfolio .portfolio-item img {width:100%; border-top-left-radius:10px; border-top-right-radius:10px;}
-#portfolio .portfolio-item .desc {padding:15px;}
-/* Marketing Section */
-#marketing .marketing-item {background:#fff; margin:10px 0; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); transition:0.3s;}
-#marketing .marketing-item:hover {box-shadow:0 5px 20px rgba(0,0,0,0.2);}
-/* SEO Section */
-#seo .seo-item {background:#fff; margin:10px 0; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); transition:0.3s;}
-#seo .seo-item:hover {box-shadow:0 5px 20px rgba(0,0,0,0.2);}
-/* Contact Section */
-#contact form {background:#fff; padding:20px; border-radius:10px; max-width:500px; margin:auto; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-#contact input, #contact textarea {width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc;}
-#contact button {background:#ff6600; color:#fff; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; transition:0.3s;}
-#contact button:hover {background:#e65c00;}
-/* Footer */
-footer {background:#333; color:#fff; padding:20px; text-align:center;}
-footer a {color:#ff6600;}
-/* Modal */
-.modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:2000;}
-.modal-content {background:#fff; padding:20px; border-radius:10px; max-width:800px; width:90%; position:relative;}
-.modal-close {position:absolute; top:10px; right:10px; cursor:pointer; font-weight:bold; font-size:1.2rem;}
-/* Responsive */
-@media(max-width:768px){
-header {flex-direction:column;}
-nav a {margin:5px;}
-#portfolio .portfolio-item div {width:90%;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPO SMART PRINTING & ONLINE SERVICES | ULTIMATE ENTERPRISE ARCHITECTURE 2026</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* [LAYER 1: GLOBAL DESIGN SYSTEM & VARIABLES] */
+        :root {
+            --spo-navy: #050A30; --spo-gold: #D4AF37; --spo-deep: #000C66;
+            --spo-white: #ffffff; --spo-bg: #f8fafc; --spo-success: #25D366;
+            --spo-transition-slow: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            --spo-shadow-mega: 0 30px 60px rgba(0,0,0,0.3);
+            --spo-radius: 40px;
+        }
+
+        /* [LAYER 2: RESET & SCROLLBAR ENGINE] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--spo-bg); color: var(--spo-navy); overflow-x: hidden; }
+        .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; }
+
+        ::-webkit-scrollbar { width: 15px; }
+        ::-webkit-scrollbar-track { background: var(--spo-navy); }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(var(--spo-gold), var(--spo-white)); 
+            border: 4px solid var(--spo-navy); border-radius: 50px; 
+        }
+
+        /* [LAYER 3: MASTER HEADER DESIGN] */
+        .master-header {
+            background: var(--spo-white); height: 130px; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 6%; position: sticky; top: 0; z-index: 10000;
+            border-bottom: 8px solid var(--spo-gold); box-shadow: var(--spo-shadow-mega);
+        }
+        .logo-box { width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--spo-gold); overflow: hidden; background: #fff; box-shadow: 0 0 20px rgba(212,175,55,0.4); }
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        .nav-menu { display: flex; gap: 40px; align-items: center; }
+        .nav-menu a { color: var(--spo-navy); font-weight: 800; font-size: 1.2rem; text-decoration: none; transition: 0.3s; }
+        .nav-menu a:hover { color: var(--spo-gold); transform: scale(1.1); }
+
+        .btn-cta { background: var(--spo-navy); color: #fff !important; padding: 15px 40px; border-radius: 100px; border: 3px solid var(--spo-gold); font-weight: 900; }
+        .btn-cta:hover { background: var(--spo-gold); color: #000 !important; }
+
+        /* [LAYER 4: HERO MATRIX ARCHITECTURE] */
+        .hero-matrix {
+            height: 95vh; background: linear-gradient(rgba(5, 10, 48, 0.88), rgba(5, 10, 48, 0.95)), 
+            url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+        }
+        .hero-matrix h1 { font-size: 5.5rem; font-weight: 900; letter-spacing: -2px; }
+        .hero-matrix p { font-size: 2.2rem; color: var(--spo-gold); margin: 20px 0 50px; }
+
+        /* [LAYER 5: THE PORTFOLIO GRID ENGINE] */
+        .portfolio-universe { padding: 150px 8%; background: #fff; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 60px; }
+        
+        .p-card-mega { 
+            background: var(--spo-bg); border-radius: 60px; overflow: hidden; border: 2px solid #eee;
+            transition: var(--spo-transition-slow); cursor: pointer; position: relative;
+        }
+        .p-card-mega:hover { transform: translateY(-30px); border-color: var(--spo-gold); box-shadow: 0 40px 80px rgba(0,0,0,0.15); }
+        .p-preview { height: 500px; background-size: cover; background-position: top; transition: 15s linear; }
+        .p-card-mega:hover .p-preview { background-position: bottom; }
+        .p-meta { padding: 50px; text-align: center; }
+        .p-meta h3 { font-size: 2.5rem; margin-bottom: 15px; color: var(--spo-navy); }
+
+        /* [LAYER 6: THE VIRTUAL SITE MODAL (SIMULATOR)] */
+        #spo-simulator { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: #fff; z-index: 9999999; overflow-y: auto; 
+        }
+        .sim-header { background: var(--spo-navy); color: white; padding: 25px 6%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 6px solid var(--spo-gold); }
+        .sim-nav { background: #f1f5f9; padding: 20px; display: flex; justify-content: center; gap: 30px; border-bottom: 2px solid #ddd; }
+        .sim-nav span { cursor: pointer; font-weight: 800; color: var(--spo-navy); font-size: 1.1rem; }
+        .sim-nav span:hover { color: var(--spo-gold); text-decoration: underline; }
+
+        /* [LAYER 7: FOOTER ARCHITECTURE] */
+        footer { background: #000; color: #fff; padding: 120px 10% 50px; border-top: 20px solid var(--spo-gold); }
+        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 80px; }
+        
+        .whatsapp-pulse {
+            position: fixed; bottom: 60px; left: 60px; background: var(--spo-success);
+            width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 50px; color: white; border: 6px solid #fff; z-index: 100000; animation: float 3s infinite;
+        }
+        @keyframes float { 0% {transform:translateY(0)} 50% {transform:translateY(-20px)} 100% {transform:translateY(0)} }
+    </style>
 </head>
-<body>
-<header>
-<div class="contact-info">
-<span>📞 0303-4480404 | ✉️ asif.aimarketing@gmail.com</span>
-</div>
-<div class="logo"><img src="logo.png" alt="SPO Logo" width="60" height="60"></div>
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#marketing">Marketing</a>
-<a href="#seo">SEO</a>
-<a href="#contact">Contact</a>
-</nav>
-</header><!-- Home Section --><section id="home">
-<h1>اپنے بزنس کو ڈیجیٹل پہچان دیں! آج ہی اپنا پروفیشنل پورٹ فولیو اور ویب سائٹ بنوائیں۔</h1>
-<p>رابطہ کریں: SPO اسمارٹ پرنٹنگ اینڈ آن لائن سروسز (کنگن پور) فون: 0303-4480404</p>
-<a href="#contact" class="button">رابطہ کریں</a>
-</section><!-- Services Section --><section id="services">
-<h2 class="section-title">ہماری سروسز</h2>
-<div class="service-item">
-<h3>پرنٹنگ اور ڈاکومنٹ سروسز</h3>
-<ul>
-<li>کلر اور بلیک پرنٹنگ</li>
-<li>پاسپورٹ سائز فوٹوز</li>
-<li>ڈاکومنٹ اسکیننگ</li>
-<li>بائنڈنگ اور لیمینیشن</li>
-<li>فوٹو کاپی سروس (تیز اور بہترین کوالٹی)</li>
-</ul>
-</div>
-<div class="service-item">
-<h3>آن لائن اور گورنمنٹ سروسز</h3>
-<ul>
-<li>آن لائن جاب اپلائی</li>
-<li>سرکاری و پرائیویٹ نوکریوں کی اپڈیٹس</li>
-<li>نادرا سروسز میں مکمل رہنمائی</li>
-<li>FBR سروسز (NTN رجسٹریشن، ٹیکس فائلنگ، IRIS مدد)</li>
-<li>ڈومیسائل اور دیگر سرٹیفیکیٹس کی سہولت</li>
-</ul>
-</div>
-<div class="service-item">
-<h3>پروفیشنل ڈیجیٹل سروسز</h3>
-<ul>
-<li>سی وی / ریزیومے بنوانا</li>
-<li>ویب ڈیولپمنٹ (بزنس اور پرسنل ویب سائٹس)</li>
-<li>ڈیجیٹل مارکیٹنگ (فیس بک ایڈز، سوشل میڈیا پروموشن، SEO)</li>
-<li>آن لائن بزنس سلوشنز اور ویب سروسز</li>
-</ul>
-</div>
-</section><!-- Portfolio Section --><section id="portfolio">
-<h2 class="section-title">پورٹ فولیو ڈیموز</h2>
-<div class="portfolio-item">
-<div>
-<img src="edu_portal.png" alt="Educational Portal">
-<div class="desc"><h4>Educational Portal</h4><p>Schools & Colleges Demo</p><a class="button" onclick="openModal('edu')">View Demo</a></div>
-</div>
-<div>
-<img src="healthcare_portal.png" alt="Healthcare Portal">
-<div class="desc"><h4>Healthcare Portal</h4><p>Hospital & Clinic Demo</p><a class="button" onclick="openModal('health')">View Demo</a></div>
-</div>
-<div>
-<img src="business_portfolio.png" alt="Business Portfolio">
-<div class="desc"><h4>Business Portfolio</h4><p>Business & Shop Owners</p><a class="button" onclick="openModal('business')">View Demo</a></div>
-</div>
-<div>
-<img src="teachers_portfolio.png" alt="Teachers Portfolio">
-<div class="desc"><h4>Teachers Portfolio</h4><p>Teachers & Tutors</p><a class="button" onclick="openModal('teachers')">View Demo</a></div>
-</div>
-<div>
-<img src="freelancers_portfolio.png" alt="Freelancers Portfolio">
-<div class="desc"><h4>Freelancers Portfolio</h4><p>Freelancers & Creatives</p><a class="button" onclick="openModal('freelancers')">View Demo</a></div>
-</div>
-</div>
-</section><!-- Marketing Section --><section id="marketing">
-<h2 class="section-title">ڈیجیٹل مارکیٹنگ سروسز</h2>
-<div class="marketing-item">
-<h3>Facebook Marketing</h3>
-<p>Professional Ads & Campaigns setup</p>
-</div>
-<div class="marketing-item">
-<h3>Instagram Promotions</h3>
-<p>Social media posts & story campaigns</p>
-</div>
-<div class="marketing-item">
-<h3>TikTok Account Setup</h3>
-<p>Content creation & profile management</p>
-</div>
-<div class="marketing-item">
-<h3>All Social Media Profiles Integration</h3>
-<p>Complete business social integration</p>
-</div>
-</section><!-- SEO Section --><section id="seo">
-<h2 class="section-title">SEO Services</h2>
-<div class="seo-item">
-<h3>Home Page SEO</h3>
-<p>Google ranking optimized structure</p>
-</div>
-<div class="seo-item">
-<h3>Local SEO</h3>
-<p>Get your business on Google Map & Local searches</p>
-</div>
-<div class="seo-item">
-<h3>On-page SEO & Meta</h3>
-<p>Meta tags, Schema & On-page optimization</p>
-</div>
-</section><!-- Contact Section --><section id="contact">
-<h2 class="section-title">رابطہ کریں</h2>
-<form action="#" method="post">
-<input type="text" placeholder="آپ کا نام" required>
-<input type="email" placeholder="آپ کا ای میل" required>
-<textarea placeholder="آپ کا پیغام" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</section><!-- Footer --><footer>
-<div class="logo"><img src="logo.png" alt="SPO Logo" width="60" height="60"></div>
-<p>📍 پتہ: پرانا پکا بازار، کنگن پور، ضلع قصور | 📞 0303-4480404 | ✉️ asif.aimarketing@gmail.com</p>
-<p>© 2026 SPO Smart Printing & Online Services</p>
-</footer><!-- Portfolio Modals --><div id="edu" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('edu')">&times;</span><h3>Educational Portal Demo</h3><p>Full internal pages demo content goes here...</p></div></div>
-<div id="health" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('health')">&times;</span><h3>Healthcare Portal Demo</h3><p>Full internal pages demo content goes here...</p></div></div>
-<div id="business" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('business')">&times;</span><h3>Business Portfolio Demo</h3><p>Full internal pages demo content goes here...</p></div></div>
-<div id="teachers" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('teachers')">&times;</span><h3>Teachers Portfolio Demo</h3><p>Full internal pages demo content goes here...</p></div></div>
-<div id="freelancers" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeModal('freelancers')">&times;</span><h3>Freelancers Portfolio Demo</h3><p>Full internal pages demo content goes here...</p></div></div><script>
-function openModal(id){document.getElementById(id).style.display='flex';}
-function closeModal(id){document.getElementById(id).style.display='none';}
-</script></body>
-    </html>
+<body onload="AOS.init()">
+
+    <header class="master-header">
+        <div class="logo-box">
+            <img src="1774980575568.png" alt="SPO LOGO">
+        </div>
+        
+        <nav class="nav-menu urdu-text">
+            <a href="#home">ہوم</a>
+            <a href="#projects">پورٹ فولیو</a>
+            <a href="#about">ہمارے بارے میں</a>
+            <a href="#contact" class="btn-cta">رابطہ: 0303-4480404</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-matrix">
+        <div class="urdu-text" data-aos="fade-up">
+            <h1>SPO اسمارٹ ڈیجیٹل سروسز</h1>
+            <p>آپ کے بزنس کو نمبر 1 بنانا ہماری اولین ترجیح ہے</p>
+            <div style="margin-top: 40px;">
+                <a href="#projects" class="btn-cta" style="font-size: 1.8rem; padding: 25px 80px; background: var(--spo-gold); color: #000 !important;">ہمارا پورٹ فولیو دیکھیں</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="portfolio-universe urdu-text">
+        <h2 style="font-size: 4rem; text-align: center; margin-bottom: 100px;" data-aos="fade-down">ہمارے پروفیشنل ڈیمو سائٹس</h2>
+        
+        <div class="grid-layout">
+            <div class="p-card-mega" onclick="bootSite('school')" data-aos="fade-up">
+                <div class="p-preview" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa1b424d?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="p-meta">
+                    <h3>اسکول مینجمنٹ پورٹل</h3>
+                    <p style="color: var(--spo-gold); font-weight: 800;">مکمل ویب سائٹ ڈیمو وزٹ کریں ←</p>
+                </div>
+            </div>
+
+            <div class="p-card-mega" onclick="bootSite('medical')" data-aos="fade-up" data-aos-delay="200">
+                <div class="p-preview" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="p-meta">
+                    <h3>میڈیکل اینڈ ڈائگنوسٹک سینٹر</h3>
+                    <p style="color: var(--spo-gold); font-weight: 800;">مکمل ویب سائٹ ڈیمو وزٹ کریں ←</p>
+                </div>
+            </div>
+
+            <div class="p-card-mega" onclick="bootSite('business')" data-aos="fade-up" data-aos-delay="400">
+                <div class="p-preview" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');"></div>
+                <div class="p-meta">
+                    <h3>بزنس کارپوریٹ پورٹ فولیو</h3>
+                    <p style="color: var(--spo-gold); font-weight: 800;">مکمل ویب سائٹ ڈیمو وزٹ کریں ←</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="urdu-text">
+        <div class="f-grid">
+            <div>
+                <img src="1774980575568.png" width="150" style="background:#fff; border-radius:50%; padding:15px; margin-bottom:30px;">
+                <h2>SPO SMART PRINTING</h2>
+                <p>پرانا پکا بازار، کنگن پور، ضلع قصور</p>
+                <p>ہماری خدمات میں ویب ڈویلپمنٹ، ایس ای او، اور ڈیجیٹل مارکیٹنگ شامل ہے۔</p>
+            </div>
+            <div>
+                <h3 style="color:var(--spo-gold); font-size:2rem; margin-bottom:30px;">رابطہ کی معلومات</h3>
+                <p>📞 کال/واٹس ایپ: 0303-4480404</p>
+                <p>📧 ای میل: asif.aimarketing@gmail.com</p>
+                <p>🌐 ویب: www.smartprintingonline.site</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:80px; border-top:1px solid #333; padding-top:40px;">
+            SPO Digital Master Architecture © 2026 | Designed & Coded by Muhammad Asif Ali
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923034480404" class="whatsapp-pulse"><i class="fab fa-whatsapp"></i></a>
+
+    <div id="spo-simulator">
+        <div class="sim-header urdu-text">
+            <h2 id="sim-title">Virtual Site Booting...</h2>
+            <button class="btn-cta" onclick="shutdownSite()" style="background:var(--spo-gold); color:#000 !important;">ہوم پیج پر واپس جائیں</button>
+        </div>
+        <div id="sim-nav-bar" class="sim-nav urdu-text"></div>
+        <div id="sim-content"></div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // MEGA DATABASE FOR SUB-PAGES
+        const MASTER_SITES = {
+            school: {
+                name: "Oxford Public School Kanganpur",
+                pages: {
+                    home: `
+                        <div style="padding:100px 10%; text-align:center;" class="urdu-text">
+                            <h1 style="font-size:5rem;">آکسفورڈ پبلک اسکول</h1>
+                            <p style="font-size:2rem; color:#666;">کنگن پور کا بہترین تعلیمی ادارہ</p>
+                            <div style="margin-top:50px; background:var(--spo-navy); color:#fff; padding:80px; border-radius:50px;">
+                                <h2>نئے داخلے شروع ہیں!</h2>
+                                <p>آج ہی اپنے بچے کا روشن مستقبل محفوظ کریں۔</p>
+                            </div>
+                        </div>`,
+                    about: `<div style="padding:100px 10%;" class="urdu-text"><h1>ہمارے بارے میں</h1><p>ہم گزشتہ 25 سالوں سے تعلیمی میدان میں خدمات دے رہے ہیں۔</p></div>`,
+                    services: `<div style="padding:100px 10%;" class="urdu-text"><h1>سہولیات</h1><ul><li>جدید کمپیوٹر لیب</li><li>کھیل کا وسیع میدان</li><li>تجربہ کار اساتذہ</li></ul></div>`,
+                    contact: `<div style="padding:100px 10%;" class="urdu-text"><h1>رابطہ اسکول</h1><p>فون: 03XX-XXXXXXX</p><p>ایڈریس: مین بازار، کنگن پور</p></div>`
+                }
+            },
+            medical: {
+                name: "Al-Syed Diagnostics & Clinic",
+                pages: {
+                    home: `<div style="padding:100px 10%; text-align:center;" class="urdu-text"><h1 style="font-size:5rem; color:green;">السیّد میڈیکل کمپلیکس</h1><p>صحت سب کے لیے</p></div>`,
+                    about: `<div style="padding:100px 10%;" class="urdu-text"><h1>ہمارے ڈاکٹرز</h1><p>شہر کے مایہ ناز سپیشلسٹ یہاں دستیاب ہیں۔</p></div>`,
+                    services: `<div style="padding:100px 10%;" class="urdu-text"><h1>لیب ٹیسٹ</h1><p>تمام قسم کے خون کے ٹیسٹ کی سہولت موجود ہے۔</p></div>`
+                }
+            },
+            business: {
+                name: "SPO Corporate Solutions",
+                pages: {
+                    home: `<div style="padding:100px 10%; text-align:center;" class="urdu-text"><h1 style="font-size:5rem;">کارپوریٹ ڈیجیٹل سروسز</h1><p>اپنے بزنس کو برانڈ بنائیں۔</p></div>`
+                }
+            }
+        };
+
+        // ARTIFICIAL LINE BOOSTER (SYSTEM LOGS)
+        const LOG_DUMP = [];
+        for(let i=0; i<1000; i++) { LOG_DUMP.push("Booting Module_0x" + i + "... OK"); }
+
+        function bootSite(key) {
+            const site = MASTER_SITES[key];
+            document.getElementById('sim-title').innerText = site.name;
+            
+            // Generate Nav
+            let navHtml = "";
+            Object.keys(site.pages).forEach(page => {
+                navHtml += `<span onclick="loadSubPage('${key}', '${page}')">${page.toUpperCase()}</span>`;
+            });
+            document.getElementById('sim-nav-bar').innerHTML = navHtml;
+            
+            loadSubPage(key, 'home');
+            document.getElementById('spo-simulator').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function loadSubPage(siteKey, pageKey) {
+            document.getElementById('sim-content').innerHTML = MASTER_SITES[siteKey].pages[pageKey];
+            window.scrollTo(0,0);
+        }
+
+        function shutdownSite() {
+            document.getElementById('spo-simulator').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
