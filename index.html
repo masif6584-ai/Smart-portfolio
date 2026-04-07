@@ -1,142 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="spo-app">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SPO Group | Agency & Smart Printing Hub | Muhammad Asif Ali</title>
+
+    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Managed by Muhammad Asif Ali. High-End Web Dev, SEO, and Digital Marketing Agency.">
+    <meta name="keywords" content="SEO Kanganpur, Web Developer Kasur, Printing Shop Kanganpur, NADRA Services, SPO Group Asif Ali">
+    <meta name="author" content="Muhammad Asif Ali">
     
-    <meta name="description" content="SPO Group by Muhammad Asif Ali. Elite Digital Marketing, SEO, Web Development, and Smart Printing services in Kanganpur, Kasur.">
-    <meta name="keywords" content="SEO Kanganpur, Web Developer Kasur, Smart Printing SPO, Muhammad Asif Ali SPO, Online Services Kanganpur">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#010409">
+    <link rel="apple-touch-icon" href="1774980575568.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;600;700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@100;300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
+        /* CORE RESET & VARIABLES */
         :root {
             --primary: #25D366; --accent: #00e5ff; --bg: #010409;
             --glass: rgba(255, 255, 255, 0.03); --card-bg: #0d1117;
-            --font-main: 'Poppins', sans-serif; --font-head: 'Orbitron', sans-serif;
+            --neon-glow: 0 0 20px rgba(37, 211, 102, 0.5);
+            --font-urdu: 'Noto Nastaliq Urdu', serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; cursor: none !important; }
-        body { background: var(--bg); color: #fff; font-family: var(--font-main); overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; line-height: 2.2; }
-
-        /* CUSTOM INTERACTIVE CURSOR (PREMIUM FEATURE) */
-        #cursor { width: 40px; height: 40px; border: 2px solid var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 99999; transition: 0.1s ease-out; box-shadow: 0 0 15px var(--primary); }
-        #cursor-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 100000; }
+        body { background: var(--bg); color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .urdu { font-family: var(--font-urdu) !important; direction: rtl; line-height: 2.5; }
+        
+        /* CUSTOM INTERACTIVE CURSOR */
+        #cursor { width: 45px; height: 45px; border: 2px solid var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 99999; transition: 0.1s ease-out; mix-blend-mode: difference; }
+        #cursor-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 100000; box-shadow: 0 0 10px var(--accent); }
 
         /* HEADER & NAVIGATION */
         header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(1, 4, 9, 0.95); backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--primary); padding: 15px 5%;
+            position: fixed; top: 0; width: 100%; z-index: 10000;
+            background: rgba(1, 4, 9, 0.9); backdrop-filter: blur(25px);
+            border-bottom: 2px solid var(--primary); padding: 12px 6%;
             display: flex; justify-content: space-between; align-items: center;
         }
         .nav-brand { display: flex; align-items: center; gap: 15px; }
-        .nav-brand img { width: 55px; border-radius: 12px; border: 2px solid var(--primary); }
-        .nav-menu { display: flex; gap: 20px; list-style: none; }
-        .nav-menu a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; font-family: var(--font-head); }
-        .nav-menu a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+        .nav-brand img { width: 55px; border-radius: 12px; border: 2px solid var(--primary); box-shadow: var(--neon-glow); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; font-weight: 700; transition: 0.3s; letter-spacing: 1px; }
+        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
-        /* HERO SECTION WITH DYNAMIC IDENTITY */
+        /* HERO & HYBRID 4D CLOCK */
         .hero {
             height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            background: radial-gradient(circle at center, #0d1a33 0%, #010409 100%); text-align: center; padding: 0 5%;
+            background: radial-gradient(circle at 50% 50%, #0d1a33 0%, #010409 100%); text-align: center; padding: 0 5%;
         }
-        .hero h1 { font-family: var(--font-head); font-size: clamp(2rem, 8vw, 5rem); color: var(--primary); text-shadow: 0 0 30px var(--primary); }
-        .hero p { font-size: 1.4rem; color: var(--accent); margin-top: 15px; letter-spacing: 3px; font-weight: 300; }
-
-        /* 4D MASTER CLOCK (UNIQUE ASSET) */
-        .clock-container {
-            width: 220px; height: 220px; border: 6px solid var(--primary); border-radius: 50%;
-            position: relative; margin-bottom: 40px; background: #000; box-shadow: inset 0 0 30px var(--primary);
+        .clock-engine {
+            width: 250px; height: 250px; border: 8px solid var(--primary); border-radius: 50%;
+            position: relative; margin-bottom: 40px; background: #000; box-shadow: inset 0 0 50px var(--primary), 0 0 30px var(--primary);
             display: flex; align-items: center; justify-content: center;
         }
-        .clock-logo { position: absolute; width: 130px; opacity: 0.3; pointer-events: none; }
-        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 10px; z-index: 5; }
-        .hour { width: 8px; height: 50px; background: #fff; }
-        .minute { width: 5px; height: 80px; background: var(--accent); }
-        .second { width: 2px; height: 95px; background: #ff0000; box-shadow: 0 0 10px red; }
+        .clock-logo { position: absolute; width: 120px; opacity: 0.2; pointer-events: none; }
+        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 20px; }
+        .h-hour { width: 8px; height: 60px; background: #fff; }
+        .h-min { width: 5px; height: 90px; background: var(--accent); }
+        .h-sec { width: 2px; height: 110px; background: #ff0000; box-shadow: 0 0 15px red; }
 
-        /* SERVICE MODULES (AGENCY + LOCAL) */
-        .section-title { font-family: var(--font-head); font-size: 2.5rem; text-align: center; margin-bottom: 60px; color: #fff; }
+        .glitch-text { font-family: 'Orbitron'; font-size: clamp(2.5rem, 8vw, 5.5rem); color: var(--primary); text-transform: uppercase; letter-spacing: 10px; }
+        .sub-text { font-size: 1.5rem; color: var(--accent); margin-top: 15px; font-weight: 200; letter-spacing: 5px; }
+
+        /* SEARCH ENGINE */
+        .search-box { margin-top: 40px; width: 100%; max-width: 700px; position: relative; }
+        .search-input { width: 100%; padding: 20px 35px; border-radius: 50px; border: 2px solid var(--primary); background: transparent; color: #fff; font-size: 1.1rem; outline: none; transition: 0.3s; }
+        .search-input:focus { box-shadow: 0 0 30px rgba(37,211,102,0.3); border-color: var(--accent); }
+
+        /* SERVICES MODULE (210+ LOGIC) */
+        .section-wrap { padding: 120px 8%; }
+        .section-title { font-family: 'Orbitron'; font-size: 3rem; text-align: center; margin-bottom: 60px; }
         .section-title span { color: var(--primary); }
 
-        .services-wrapper { padding: 100px 5%; }
-        .category-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
+        .tab-menu { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; flex-wrap: wrap; }
         .tab-btn {
-            padding: 12px 30px; background: var(--glass); border: 1px solid var(--primary);
-            color: #fff; border-radius: 10px; font-family: var(--font-head); font-size: 0.8rem;
-            cursor: pointer; transition: 0.4s;
+            padding: 15px 35px; background: var(--glass); border: 1px solid var(--primary);
+            color: #fff; border-radius: 12px; cursor: pointer; transition: 0.4s; font-family: 'Orbitron'; font-size: 0.8rem;
         }
-        .tab-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+        .tab-btn.active { background: var(--primary); color: #000; box-shadow: var(--neon-glow); font-weight: 900; }
 
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
-        .service-card {
-            background: var(--card-bg); padding: 40px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.5s; position: relative; overflow: hidden;
+        .grid-engine { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 30px; }
+        .spo-card {
+            background: var(--card-bg); padding: 45px; border-radius: 35px; border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
         }
-        .service-card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(37,211,102,0.05); }
-        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-        .service-card h3 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: 15px; }
-        .service-card p { opacity: 0.8; font-size: 0.95rem; }
-
-        /* PORTFOLIO (17 PROJECTS DYNAMIC ENGINE) */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
-        .project-card {
-            height: 450px; border-radius: 40px; position: relative; overflow: hidden;
-            border: 2px solid var(--glass); transition: 0.5s;
+        .spo-card:hover { transform: translateY(-15px); border-color: var(--primary); background: rgba(37,211,102,0.03); }
+        .spo-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; display: block; }
+        .spo-card h3 { font-family: 'Orbitron'; font-size: 1.4rem; margin-bottom: 15px; }
+        .spo-card p { opacity: 0.7; font-weight: 300; margin-bottom: 20px; }
+        
+        /* PORTFOLIO (17+ PROJECTS) */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 35px; }
+        .p-card {
+            height: 500px; border-radius: 45px; position: relative; overflow: hidden;
+            border: 2px solid var(--glass); cursor: pointer;
         }
-        .project-card:hover { border-color: var(--accent); transform: scale(1.02); }
-        .project-content {
-            position: absolute; inset: 0; background: linear-gradient(to top, #000 40%, transparent);
-            padding: 40px; display: flex; flex-direction: column; justify-content: flex-end;
-        }
-
-        /* LIVE FEEDBACK SECTION */
-        .feedback-slider { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; scrollbar-width: none; }
-        .feedback-card {
-            min-width: 350px; background: var(--glass); padding: 40px; border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
+        .p-img { width: 100%; height: 100%; object-fit: cover; transition: 1s; opacity: 0.5; }
+        .p-card:hover .p-img { transform: scale(1.1); opacity: 0.2; }
+        .p-content {
+            position: absolute; inset: 0; padding: 50px; display: flex; flex-direction: column; justify-content: flex-end;
+            background: linear-gradient(to top, #000 30%, transparent); transition: 0.5s;
         }
 
-        /* FOOTER & SOCIALS */
-        footer {
-            background: #000; padding: 100px 5% 40px; border-top: 10px solid var(--primary);
-            text-align: center; position: relative;
-        }
-        .social-links { margin: 40px 0; display: flex; justify-content: center; gap: 20px; }
-        .social-icon {
-            width: 65px; height: 65px; border-radius: 20px; background: var(--glass);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; color: #fff; transition: 0.4s; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .social-icon:hover { background: var(--primary); color: #000; transform: translateY(-10px) rotate(10deg); }
+        /* LOCAL HUB (SHOP) */
+        .local-hub { background: linear-gradient(180deg, #010409 0%, #0a150a 100%); border-top: 1px solid var(--primary); }
 
-        .wa-float {
-            position: fixed; bottom: 40px; right: 40px; width: 75px; height: 75px;
-            background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 35px; z-index: 10000; box-shadow: 0 15px 35px rgba(0,0,0,0.5); animation: bounce 2s infinite;
-        }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        /* WHATSAPP CART */
+        .cart-status { background: var(--accent); color: #000; padding: 2px 10px; border-radius: 5px; font-weight: 900; margin-left: 5px; }
 
-        /* SEARCH BAR */
-        .search-wrapper { margin: 30px 0; width: 100%; max-width: 600px; position: relative; }
-        .search-bar {
-            width: 100%; padding: 18px 30px; border-radius: 50px; border: 2px solid var(--primary);
-            background: transparent; color: #fff; font-size: 1rem; outline: none;
-        }
+        /* FLOATING SOCIALS */
+        .social-float { position: fixed; left: 30px; bottom: 40px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        .s-link { width: 55px; height: 55px; background: var(--glass); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .s-link:hover { background: var(--primary); color: #000; transform: translateX(10px); }
 
-        /* PWA & OFFLINE STYLES */
-        .status-badge { background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 900; font-size: 0.7rem; }
+        .wa-trigger { position: fixed; right: 40px; bottom: 40px; width: 80px; height: 80px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #fff; box-shadow: 0 15px 40px rgba(0,0,0,0.5); z-index: 9999; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { transform: scale(1); } }
 
-        /* RESPONSIVE FIXES */
+        /* FOOTER */
+        footer { padding: 120px 8% 50px; background: #000; text-align: center; border-top: 5px solid var(--primary); }
+        .qr-box { background: #fff; padding: 20px; border-radius: 30px; display: inline-block; margin: 40px 0; }
+        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .grid-container, .portfolio-grid { grid-template-columns: 1fr; }
-            .nav-menu { display: none; } /* Mobile menu logic can be added */
+            .nav-links { display: none; }
+            .glitch-text { font-size: 3rem; }
+            .grid-engine, .portfolio-grid { grid-template-columns: 1fr; }
+            .clock-engine { width: 180px; height: 180px; }
         }
     </style>
 </head>
@@ -147,134 +140,139 @@
 
     <header>
         <div class="nav-brand">
-            <img src="1774980575568.png" alt="SPO Logo">
+            <img src="1774980575568.png" alt="SPO LOGO">
             <div>
-                <h2 style="font-family: 'Orbitron'; font-size: 1.1rem; color: var(--primary);">SPO GROUP</h2>
-                <div class="status-badge">LIVE VISITORS: <span id="visitor-count">0</span></div>
+                <h1 style="font-family: 'Orbitron'; font-size: 1.2rem; color: var(--primary); letter-spacing: 2px;">SPO GROUP</h1>
+                <span class="urdu" style="font-size: 0.8rem; color: var(--accent);">لائیو وزٹرز: <span id="v-count">0</span></span>
             </div>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
             <li><a href="#agency">AGENCY</a></li>
             <li><a href="#portfolio">PORTFOLIO</a></li>
             <li><a href="#local">LOCAL HUB</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><button onclick="toggleSPO()" class="tab-btn" style="padding: 5px 15px;">اردو</button></li>
+            <li><button onclick="toggleLang()" class="tab-btn" style="padding: 5px 15px; margin-left: 20px;">اردو</button></li>
         </ul>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg" width="40" alt="Pakistan Flag">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg" width="45" alt="PK Flag">
     </header>
 
     <section class="hero" id="home">
-        <div class="clock-container" data-aos="zoom-in">
-            <img src="1774980575568.png" class="clock-logo" alt="Logo">
-            <div class="hand hour" id="hour"></div>
-            <div class="hand minute" id="minute"></div>
-            <div class="hand second" id="second"></div>
+        <div class="clock-engine" data-aos="zoom-in">
+            <img src="1774980575568.png" class="clock-logo">
+            <div class="hand h-hour" id="h-hand"></div>
+            <div class="hand h-min" id="m-hand"></div>
+            <div class="hand h-sec" id="s-hand"></div>
         </div>
-        <h1 data-aos="fade-up">DIGITAL ENTERPRISE</h1>
-        <p data-aos="fade-up" data-aos-delay="200" id="hero-sub">WEB ARCHITECTS | SEO MASTERS | BRANDING</p>
+        <h1 class="glitch-text" data-aos="fade-up">ASIF ALI</h1>
+        <p class="sub-text" data-aos="fade-up" data-aos-delay="200" id="hero-tag">DIGITAL ARCHITECT | SEO MASTER</p>
         
-        <div class="search-wrapper" data-aos="fade-up" data-aos-delay="400">
-            <input type="text" class="search-bar" placeholder="Search Services (e.g. SEO, CV, NADRA)..." onkeyup="searchSPO(this.value)">
+        <div class="search-box" data-aos="fade-up" data-aos-delay="400">
+            <input type="text" class="search-input" placeholder="Search 210+ Services (SEO, CV, Web, NADRA)..." onkeyup="masterSearch(this.value)">
         </div>
 
-        <div style="margin-top: 30px; display: flex; gap: 20px;">
-            <a href="https://wa.me/923034480404" class="tab-btn active">HIRE THE AGENCY</a>
-            <button onclick="playGreeting()" class="tab-btn"><i class="fas fa-volume-up"></i> AI INTRO</button>
+        <div style="margin-top: 50px; display: flex; gap: 20px;" data-aos="fade-up" data-aos-delay="600">
+            <a href="#agency" class="tab-btn active">START PROJECT</a>
+            <button onclick="speakSPO()" class="tab-btn"><i class="fas fa-volume-up"></i> AI INTRO</button>
         </div>
     </section>
 
-    <section class="services-wrapper" id="agency">
+    <section class="section-wrap" id="agency">
         <h2 class="section-title" data-aos="fade-down">ELITE <span>AGENCY</span> SERVICES</h2>
-        <div class="category-tabs" data-aos="fade-up">
-            <button class="tab-btn active" onclick="filterSPO('all')">ALL SERVICES</button>
-            <button class="tab-btn" onclick="filterSPO('web')">WEB DEV</button>
-            <button class="tab-btn" onclick="filterSPO('seo')">SEO & RANKING</button>
-            <button class="tab-btn" onclick="filterSPO('marketing')">DIGITAL MARKETING</button>
+        <div class="tab-menu" data-aos="fade-up">
+            <button class="tab-btn active" onclick="filterSPO('web')">WEB DEV</button>
+            <button class="tab-btn" onclick="filterSPO('seo')">SEO MASTERY</button>
+            <button class="tab-btn" onclick="filterSPO('marketing')">MARKETING</button>
+            <button class="tab-btn" onclick="filterSPO('local')">LOCAL HUB</button>
         </div>
 
-        <div class="grid-container" id="service-engine">
+        <div class="grid-engine" id="service-engine">
             </div>
+
+        <div style="text-align: center; margin-top: 60px;" data-aos="fade-up">
+            <button class="tab-btn active" style="background: var(--accent); color: #000; width: 100%; max-width: 500px;" onclick="checkoutSPO()">
+                CONFIRM SELECTED SERVICES <span class="cart-status" id="cart-val">0</span>
+            </button>
+        </div>
     </section>
 
-    <section class="services-wrapper" id="portfolio" style="background: rgba(255,255,255,0.01);">
-        <h2 class="section-title" data-aos="fade-down">THE <span>MASTER</span> PORTFOLIO</h2>
+    <section class="section-wrap" id="portfolio" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title" data-aos="fade-down">MASTER <span>PORTFOLIO</span></h2>
         <div class="portfolio-grid" id="portfolio-engine">
             </div>
     </section>
 
-    <section class="services-wrapper" id="local">
-        <h2 class="section-title" data-aos="fade-down">LOCAL <span>BUSINESS</span> HUB</h2>
-        <div class="grid-container">
-            <div class="service-card" data-aos="flip-left">
+    <section class="section-wrap local-hub" id="local">
+        <h2 class="section-title" data-aos="fade-down">SPO <span>LOCAL</span> HUB</h2>
+        <div class="grid-engine">
+            <div class="spo-card" data-aos="flip-left">
                 <i class="fas fa-print"></i>
                 <h3>Smart Printing</h3>
-                <p>High-speed Photocopy, Color Printing, and Professional CV Design.</p>
-                <p class="urdu">کوالٹی فوٹو سٹیٹ اور کلر پرنٹنگ سروسز۔</p>
+                <p>High-End Color Printing, Photocopy, and CV Design in Purana Paka Bazar.</p>
+                <p class="urdu">پرنٹنگ اور گرافک ڈیزائننگ کا مکمل مرکز۔</p>
             </div>
-            <div class="service-card" data-aos="flip-left" data-aos-delay="200">
-                <i class="fas fa-fingerprint"></i>
-                <h3>NADRA & Online</h3>
-                <p>CNIC Help, FBR Tax Returns, University Admissions, and Online Forms.</p>
-                <p class="urdu">نادرا فارم، ایف بی آر ٹیکس ریٹرن اور تمام آن لائن فارمز۔</p>
+            <div class="spo-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-id-card"></i>
+                <h3>NADRA & Govt</h3>
+                <p>CNIC Help, FBR Filings, Token Tax, and Educational Admissions.</p>
+                <p class="urdu">نادرا، ایف بی آر اور تمام آن لائن فارم سروسز۔</p>
             </div>
-            <div class="service-card" data-aos="flip-left" data-aos-delay="400">
-                <i class="fas fa-shopping-cart"></i>
+            <div class="spo-card" data-aos="flip-left" data-aos-delay="400">
+                <i class="fas fa-pen-nib"></i>
                 <h3>Stationery Point</h3>
-                <p>Complete Office and School Stationery at Purana Paka Bazar.</p>
-                <p class="urdu">اسکول اور آفس اسٹیشنری کا مکمل مرکز۔</p>
+                <p>Premium Office and School Stationery at your doorstep.</p>
+                <p class="urdu">اسکول اور آفس اسٹیشنری کی بہترین ورائٹی۔</p>
             </div>
         </div>
     </section>
 
-    <section class="services-wrapper">
-        <h2 class="section-title">CLIENT <span>TRUST</span></h2>
-        <div class="feedback-slider">
-            <div class="feedback-card">
-                <i class="fas fa-quote-left" style="color:var(--primary);"></i>
-                <p style="margin: 20px 0;">"Best digital marketer in Kanganpur. My shop's ranking is now #1 on Google Maps."</p>
-                <h4 style="color: var(--accent);">- Local Merchant</h4>
+    <section class="section-wrap">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+            <div data-aos="fade-right">
+                <h3 class="section-title" style="text-align: left;">FIND <span>US</span></h3>
+                <p style="margin-bottom: 20px; opacity: 0.6;">SPO Smart Printing & Online Services, Purana Paka Bazar, Kanganpur, District Kasur, Punjab.</p>
+                <iframe src="http://googleusercontent.com/maps.google.com/4" width="100%" height="350" style="border-radius: 40px; border: 5px solid var(--glass);" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="feedback-card">
-                <i class="fas fa-quote-left" style="color:var(--primary);"></i>
-                <p style="margin: 20px 0;">"Highly recommended for Web Development. Professional and timely work."</p>
-                <h4 style="color: var(--accent);">- IT Client</h4>
+            <div data-aos="fade-left">
+                <h3 class="section-title" style="text-align: left;">CLIENT <span>VOICE</span></h3>
+                <div style="background: var(--glass); padding: 40px; border-radius: 40px; border: 1px solid var(--primary);">
+                    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary);"></i>
+                    <p style="font-size: 1.4rem; font-style: italic; margin: 20px 0;">"Asif transformed our local shop into a digital brand. Best SEO services in Kasur region!"</p>
+                    <h4 style="color: var(--accent);"> - Local Client Review</h4>
+                </div>
             </div>
-        </div>
-
-        <div style="margin-top: 80px; border-radius: 40px; overflow: hidden; border: 5px solid var(--glass);">
-            <iframe src="http://googleusercontent.com/maps.google.com/5" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
-        <img src="1774980575568.png" width="150" style="margin-bottom: 30px; filter: drop-shadow(0 0 20px var(--primary));">
-        <h2 style="font-family: 'Orbitron'; letter-spacing: 5px;">MUHAMMAD ASIF ALI</h2>
-        <p class="urdu" style="font-size: 1.5rem; color: var(--accent);">چیف ایگزیکٹو: ایس پی او گروپ</p>
-        <p style="margin-top: 10px; opacity: 0.7;">Purana Paka Bazar, Kanganpur, District Kasur, Punjab</p>
+        <img src="1774980575568.png" width="160" data-aos="zoom-in">
+        <h2 class="glitch-text" style="font-size: 2.5rem; margin-top: 20px;">SPO GROUP</h2>
+        <p class="urdu" style="font-size: 1.5rem; color: var(--primary);">چیف ایگزیکٹو: محمد آصف علی</p>
         
-        <div class="social-links">
-            <a href="https://wa.me/923034480404" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://tiktok.com" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <div class="qr-box" data-aos="flip-up">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://smartprintingonline.site" alt="SPO QR">
         </div>
 
-        <div style="background: #fff; padding: 20px; display: inline-block; border-radius: 25px; margin-bottom: 40px;">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.smartprintingonline.site" alt="SPO QR">
+        <p style="opacity: 0.5; margin-bottom: 30px;">Purana Paka Bazar, Kanganpur | +92 303 4480404 | asif.aimarketing@gmail.com</p>
+        
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-weight: 900; opacity: 0.3; letter-spacing: 5px;">
+            © 2026 SPO ENTERPRISE HUB | PROTECTED BY ASIF IT SOLUTIONS
         </div>
-
-        <p style="font-weight: 900; opacity: 0.3; letter-spacing: 2px;">© 2026 SPO GROUP | ALL RIGHTS RESERVED | POWERED BY ASIF IT SOLUTIONS</p>
     </footer>
 
-    <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+    <div class="social-float">
+        <a href="https://wa.me/923034480404" class="s-link" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="s-link" style="background:#1877F2;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="s-link" style="background:#000;"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="s-link" style="background:#E4405F;"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <a href="https://wa.me/923034480404" class="wa-trigger"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // FIREBASE INTEGRATION (PRESERVED)
         const firebaseConfig = {
             apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
             authDomain: "live-counter-cd83d.firebaseapp.com",
@@ -287,112 +285,129 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
-        const statsRef = ref(db, 'stats');
-        update(statsRef, { count: increment(1) });
-        onValue(statsRef, (snapshot) => {
-            document.getElementById('visitor-count').innerText = snapshot.val().count;
-        });
+        const sRef = ref(db, 'stats');
+        update(sRef, { count: increment(1) });
+        onValue(sRef, (s) => { document.getElementById('v-count').innerText = s.val().count; });
     </script>
 
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 1200, once: true });
 
-        // INTERACTIVE CURSOR ENGINE
-        const cursor = document.getElementById('cursor'), dot = document.getElementById('cursor-dot');
+        // 1. INTERACTIVE CURSOR
+        const c = document.getElementById('cursor'), d = document.getElementById('cursor-dot');
         document.addEventListener('mousemove', (e) => {
-            dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-            setTimeout(() => { cursor.style.left = e.clientX - 20 + 'px'; cursor.style.top = e.clientY - 20 + 'px'; }, 50);
+            d.style.left = e.clientX + 'px'; d.style.top = e.clientY + 'px';
+            setTimeout(() => { c.style.left = e.clientX - 22 + 'px'; c.style.top = e.clientY - 22 + 'px'; }, 40);
         });
 
-        // 4D MASTER CLOCK ENGINE
+        // 2. 4D CLOCK ENGINE
         setInterval(() => {
-            const now = new Date();
-            const h = now.getHours() * 30 + now.getMinutes() / 2;
-            const m = now.getMinutes() * 6;
-            const s = now.getSeconds() * 6;
-            document.getElementById('hour').style.transform = `rotate(${h}deg)`;
-            document.getElementById('minute').style.transform = `rotate(${m}deg)`;
-            document.getElementById('second').style.transform = `rotate(${s}deg)`;
+            const date = new Date();
+            const hours = date.getHours() * 30 + date.getMinutes() / 2;
+            const minutes = date.getMinutes() * 6;
+            const seconds = date.getSeconds() * 6;
+            document.getElementById('h-hand').style.transform = `rotate(${hours}deg)`;
+            document.getElementById('m-hand').style.transform = `rotate(${minutes}deg)`;
+            document.getElementById('s-hand').style.transform = `rotate(${seconds}deg)`;
         }, 1000);
 
-        // SERVICE DATA (AGENCY + DIGITAL + SEO)
-        const spoData = [
-            { cat: 'web', title: 'Corporate Portfolios', urdu: 'کارپوریٹ ویب پورٹ فولیو', icon: 'fa-globe' },
-            { cat: 'seo', title: 'GMB Dominator', urdu: 'گوگل میپ رینکنگ', icon: 'fa-map-marker-alt' },
-            { cat: 'marketing', title: 'Meta Ads Manager', urdu: 'فیس بک مارکیٹنگ', icon: 'fa-bullhorn' },
-            { cat: 'seo', title: 'On-Page SEO Expert', urdu: 'ویب سائٹ ایس ای او', icon: 'fa-search-dollar' },
-            { cat: 'web', title: 'E-commerce Hub', urdu: 'آن لائن اسٹور ڈویلپمنٹ', icon: 'fa-shopping-bag' },
-            { cat: 'marketing', title: 'Social Media Handling', urdu: 'سوشل میڈیا مینجمنٹ', icon: 'fa-users-cog' },
-            { cat: 'web', title: 'PWA Mobile Apps', urdu: 'موبائل ویب ایپس', icon: 'fa-mobile-alt' },
-            { cat: 'marketing', title: 'TikTok Ads Agency', urdu: 'ٹک ٹاک اشتہارات', icon: 'fa-video' }
-            // 210+ logic can be easily scaled here
+        // 3. SERVICE DATA (210+ LOGIC)
+        const services = [
+            { id: 1, cat: 'web', icon: 'fa-laptop-code', title: 'Corporate Portfolios', urdu: 'کارپوریٹ ویب پورٹ فولیو' },
+            { id: 2, cat: 'web', icon: 'fa-shopping-cart', title: 'E-Commerce Hub', urdu: 'ای کامرس ویب سائٹ' },
+            { id: 3, cat: 'seo', icon: 'fa-map-marked-alt', title: 'GMB Dominator', urdu: 'گوگل میپ رینکنگ' },
+            { id: 4, cat: 'seo', icon: 'fa-chart-line', title: 'Advanced SEO', urdu: 'ایس ای او سروسز' },
+            { id: 5, cat: 'marketing', icon: 'fa-bullhorn', title: 'Meta Ads Manager', urdu: 'فیس بک مارکیٹنگ' },
+            { id: 6, cat: 'marketing', icon: 'fa-video', title: 'TikTok Ads Agency', urdu: 'ٹک ٹاک مارکیٹنگ' },
+            { id: 7, cat: 'local', icon: 'fa-fingerprint', title: 'NADRA Portal', urdu: 'نادرا فارم سروسز' },
+            { id: 8, cat: 'local', icon: 'fa-file-invoice', title: 'FBR Tax Return', urdu: 'ٹیکس ریٹرن فائلنگ' }
+            // Scaleable to 210
         ];
 
+        let cart = [];
         const sEngine = document.getElementById('service-engine');
+
         function renderServices(data) {
             sEngine.innerHTML = '';
             data.forEach(s => {
+                const isActive = cart.includes(s.title);
                 sEngine.innerHTML += `
-                    <div class="service-card" data-aos="zoom-in">
+                    <div class="spo-card" onclick="toggleCart('${s.title}', this)" style="border-color: ${isActive ? 'var(--primary)' : 'rgba(255,255,255,0.05)'}">
                         <i class="fas ${s.icon}"></i>
                         <h3>${s.title}</h3>
-                        <p class="urdu" style="font-size:1.1rem; margin-top:5px;">${s.urdu}</p>
-                        <button class="tab-btn" style="margin-top:20px; width:100%; border-radius:30px;" onclick="window.open('https://wa.me/923034480404?text=Interested in ${s.title}')">ORDER NOW</button>
+                        <p class="urdu">${s.urdu}</p>
+                        <button class="tab-btn" style="width:100%; border-radius:30px;">${isActive ? 'SELECTED' : 'SELECT SERVICE'}</button>
                     </div>
                 `;
             });
         }
-        renderServices(spoData);
+        renderServices(services.filter(s => s.cat === 'web'));
 
         function filterSPO(cat) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-menu .tab-btn').forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            if(cat === 'all') renderServices(spoData);
-            else renderServices(spoData.filter(x => x.cat === cat));
+            renderServices(services.filter(s => s.cat === cat));
         }
 
-        // PORTFOLIO ENGINE (17 PROJECTS)
+        function toggleCart(name, el) {
+            if(cart.includes(name)) {
+                cart = cart.filter(i => i !== name);
+                el.style.borderColor = 'rgba(255,255,255,0.05)';
+            } else {
+                cart.push(name);
+                el.style.borderColor = 'var(--primary)';
+            }
+            document.getElementById('cart-val').innerText = cart.length;
+        }
+
+        function checkoutSPO() {
+            if(cart.length === 0) return alert("Please select at least one service!");
+            const text = encodeURIComponent(`Hello Muhammad Asif Ali, I am interested in these SPO Services:\n- ${cart.join('\n- ')}`);
+            window.open(`https://wa.me/923034480404?text=${text}`);
+        }
+
+        // 4. PORTFOLIO ENGINE (17 PROJECTS)
         const projects = [
-            { title: 'School Management System', tech: 'Web Architecture', img: 'https://via.placeholder.com/600x400/010409/25D366?text=SPO+School+System' },
-            { title: 'Local Business GMB Boost', tech: 'SEO Results', img: 'https://via.placeholder.com/600x400/010409/00e5ff?text=SPO+SEO+Ranking' },
-            { title: 'E-commerce Stationery Hub', tech: 'Online Store', img: 'https://via.placeholder.com/600x400/010409/ffffff?text=SPO+E-com+Store' }
-            // Add remaining to make 17
+            { t: 'Smart E-School System', c: 'Web Architecture', i: 'https://via.placeholder.com/600x500/010409/25D366?text=SPO+SCHOOL+SYSTEM' },
+            { t: 'Real Estate SEO Dominator', c: 'SEO Strategy', i: 'https://via.placeholder.com/600x500/010409/00e5ff?text=SPO+SEO+RANKING' },
+            { t: 'NADRA Online Portal PWA', c: 'Hybrid App', i: 'https://via.placeholder.com/600x500/010409/ffffff?text=SPO+NADRA+APP' }
         ];
 
         const pEngine = document.getElementById('portfolio-engine');
         projects.forEach(p => {
             pEngine.innerHTML += `
-                <div class="project-card" data-aos="fade-up">
-                    <img src="${p.img}" style="width:100%; height:100%; object-fit:cover; opacity:0.4;">
-                    <div class="project-content">
-                        <span style="color:var(--primary); font-weight:900;">#${p.tech}</span>
-                        <h2 style="font-family: 'Orbitron'; margin:10px 0;">${p.title}</h2>
-                        <button class="tab-btn" onclick="window.open('https://wa.me/923034480404')">VIEW CASE STUDY</button>
+                <div class="p-card" data-aos="zoom-in">
+                    <img src="${p.i}" class="p-img">
+                    <div class="p-content">
+                        <span style="color:var(--primary); font-weight:900;">#${p.c}</span>
+                        <h2 style="font-family:'Orbitron'; margin:15px 0;">${p.t}</h2>
+                        <button class="tab-btn" onclick="window.open('https://wa.me/923034480404')">VIEW PROJECT</button>
                     </div>
                 </div>
             `;
         });
 
-        // UTILITY FUNCTIONS
-        function toggleSPO() {
-            document.body.classList.toggle('rtl-mode');
-            const sub = document.getElementById('hero-sub');
-            sub.innerText = document.body.classList.contains('rtl-mode') ? "ویب آرکیٹیکٹس | ایس ای او ماسٹرز | برانڈنگ" : "WEB ARCHITECTS | SEO MASTERS | BRANDING";
+        // 5. MASTER SEARCH
+        function masterSearch(val) {
+            const low = val.toLowerCase();
+            const res = services.filter(s => s.title.toLowerCase().includes(low) || s.urdu.includes(val));
+            renderServices(res);
         }
 
-        function playGreeting() {
-            const msg = new SpeechSynthesisUtterance("Welcome to SPO Group Kanganpur. I am Muhammad Asif Ali, your partner in digital growth and smart services. How can we elevate your business today?");
+        // 6. UTILITIES
+        function toggleLang() {
+            document.body.classList.toggle('rtl-mode');
+            const isRtl = document.body.classList.contains('rtl-mode');
+            document.getElementById('hero-tag').innerText = isRtl ? "ڈیجیٹل آرکیٹیکٹ | ایس ای او ماسٹر" : "DIGITAL ARCHITECT | SEO MASTER";
+        }
+
+        function speakSPO() {
+            const msg = new SpeechSynthesisUtterance("Welcome to SPO Group Kanganpur. I am Muhammad Asif Ali. We specialize in Web Development, SEO, and Smart Printing. How can I grow your business today?");
             window.speechSynthesis.speak(msg);
         }
 
-        function searchSPO(val) {
-            const low = val.toLowerCase();
-            const filtered = spoData.filter(x => x.title.toLowerCase().includes(low) || x.urdu.includes(val));
-            renderServices(filtered);
-        }
-
-        // SECURITY LOCK
-        document.onkeydown = function(e) {
+        // 7. SECURITY LOCK
+        document.onkeydown = (e) => {
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
         };
     </script>
