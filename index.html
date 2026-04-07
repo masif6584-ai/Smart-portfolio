@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="main-html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO Digital Verse | Best Web SEO & Printing in Kanganpur Kasur</title>
-    
-    <meta name="description" content="SPO Smart Printing & Online Services Kanganpur. Best for Web Development, SEO, Digital Marketing, NADRA, FBR Tax Filing, and Professional Printing in District Kasur.">
-    <meta name="keywords" content="SPO Kanganpur, Smart Printing Online, Web Development Kasur, SEO Services Pakistan, NADRA Services, FBR IRIS Kasur, Muhammad Asif Ali, Purana Paka Bazar">
+    <title>SPO Digital Verse | Ultimate Web, SEO & Printing Hub</title>
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "SPO Smart Printing & Online Services",
-      "description": "Digital Marketing, SEO, Web Development and Printing solutions in Kanganpur, Kasur.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Purana Paka Bazar",
@@ -22,424 +18,388 @@
         "postalCode": "55050",
         "addressCountry": "Pakistan"
       },
-      "telephone": "+923034480404",
+      "geo": { "@type": "GeoCoordinates", "latitude": "30.7663", "longitude": "74.1258" },
       "url": "https://www.smartprintingonline.site",
-      "image": "https://raw.githubusercontent.com/asif-aimarketing/logo/main/1774980575568.png"
+      "telephone": "+923034480404"
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Nastaliq+Urdu&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="manifest" href="manifest.json">
 
     <style>
         :root {
-            --primary: #25D366; /* WhatsApp Green from 2nd Code */
+            --primary: #25D366; /* WA Green */
             --accent: #00e5ff; /* Neon Blue */
-            --bg-dark: #010409;
+            --bg: #010409;
             --glass: rgba(255, 255, 255, 0.05);
-            --text-glow: 0 0 10px rgba(37, 211, 102, 0.5);
+            --text: #ffffff;
+            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .light-mode {
+            --bg: #f0f2f5;
+            --text: #010409;
+            --glass: rgba(0, 0, 0, 0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; transition: var(--transition); overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+        /* CUSTOM CURSOR */
+        #c-point { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; }
+        #c-ring { width: 35px; height: 35px; border: 2px solid var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: 0.1s; }
+
+        /* HEADER - UNIQUE SPO STYLE */
+        .spo-header {
+            padding: 40px 20px; text-align: center; background: var(--glass);
+            backdrop-filter: blur(20px); border-bottom: 3px solid var(--primary);
+            position: relative; overflow: hidden;
         }
 
-        /* CUSTOM CURSOR SYSTEM */
-        #c-point { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; }
-        #c-ring { width: 40px; height: 40px; border: 2px solid var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: transform 0.1s ease-out; }
-
-        /* STAR PARTICLES BACKGROUND */
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
-        .nebula { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(37, 211, 102, 0.05) 0%, transparent 80%); z-index: -2; }
-
-        /* HEADER & NEON CLOCK */
-        .main-header {
-            padding: 20px; text-align: center; background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(15px); border-bottom: 2px solid var(--primary);
-            position: sticky; top: 0; z-index: 1000;
+        .header-logo {
+            width: 120px; height: 120px; margin: 0 auto 20px;
+            padding: 10px; background: #fff; border-radius: 25% 10% 25% 10%;
+            box-shadow: 0 0 30px var(--primary); border: 3px solid var(--accent);
         }
 
-        .logo-frame {
-            width: 80px; height: 80px; border-radius: 20px;
-            border: 2px solid var(--primary); padding: 5px; background: #fff;
-            box-shadow: 0 0 25px var(--primary); display: inline-block;
-            animation: pulse 2s infinite;
+        .main-title {
+            font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 5vw, 3.5rem);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
         }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-        .clock-container {
-            width: 150px; height: 150px; border: 4px solid var(--primary);
-            border-radius: 50%; margin: 20px auto; position: relative;
-            background: #000; box-shadow: 0 0 30px var(--primary);
+        /* ANALOG CLOCK WITH LOGO INSIDE */
+        .clock-box {
+            width: 160px; height: 160px; border: 5px solid var(--primary);
+            border-radius: 50%; margin: 30px auto; position: relative;
+            background: #000; box-shadow: 0 0 40px var(--primary);
+            display: flex; align-items: center; justify-content: center;
         }
-        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; border-radius: 10px; }
-        .hour { width: 4px; height: 35px; background: var(--accent); }
-        .min { width: 3px; height: 50px; background: #fff; }
-        .sec { width: 1px; height: 60px; background: #ff0000; }
+        .clock-logo-inner { width: 60px; height: 60px; opacity: 0.7; position: absolute; z-index: 1; }
+        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; z-index: 2; border-radius: 5px; }
+        .hour { width: 5px; height: 40px; background: var(--accent); }
+        .min { width: 4px; height: 55px; background: #fff; }
+        .sec { width: 2px; height: 65px; background: #ff0000; }
 
-        /* PAKISTAN FLAG WAVE */
-        .pak-flag {
-            position: absolute; right: 20px; top: 100px; width: 80px;
-            animation: flagWave 3s ease-in-out infinite;
+        /* NAVIGATION & CONTROLS */
+        .controls-bar {
+            position: fixed; right: 20px; top: 150px; display: flex;
+            flex-direction: column; gap: 10px; z-index: 5000;
         }
-        @keyframes flagWave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(10deg) skewY(5deg); } }
-
-        /* AI VOICE BUTTON */
-        .voice-btn {
-            background: var(--glass); border: 1px solid var(--primary);
-            color: white; padding: 10px 20px; border-radius: 50px;
-            margin-top: 15px; transition: 0.3s;
+        .ctrl-btn {
+            width: 50px; height: 50px; border-radius: 12px; background: var(--glass);
+            border: 1px solid var(--primary); color: var(--text); backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
         }
-        .voice-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
 
-        /* SERVICES GRID (2ND CODE + MASTER) */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 50px; }
-        .s-card {
-            background: var(--glass); padding: 30px; border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1); transition: 0.4s;
-            text-align: center; position: relative; overflow: hidden;
-        }
-        .s-card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(37,211,102,0.2); }
-        .s-card i { font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
+        /* PROJECTS & FEATURES ENGINE */
+        .section-container { padding: 80px 5%; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
-        /* 210 FEATURES ENGINE */
-        .features-container { padding: 50px; background: rgba(255,255,255,0.02); }
-        .feature-item {
-            display: inline-block; padding: 8px 15px; margin: 5px;
+        .item-card {
             background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px; font-size: 0.9rem; transition: 0.3s;
+            padding: 25px; border-radius: 20px; position: relative;
+            transition: var(--transition); border-bottom: 4px solid var(--accent);
         }
-        .feature-item:hover { background: var(--accent); color: #000; cursor: pointer; }
-        .feature-item.active { background: var(--primary); color: #000; }
+        .item-card:hover { transform: translateY(-10px); border-color: var(--primary); }
 
-        /* POPUP MODAL */
-        #feature-modal {
-            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.95); border: 2px solid var(--primary);
-            padding: 40px; border-radius: 25px; z-index: 2000; width: 90%; max-width: 500px;
-            box-shadow: 0 0 100px rgba(37,211,102,0.5);
+        .feature-tag {
+            display: inline-block; padding: 5px 12px; margin: 4px;
+            background: rgba(37, 211, 102, 0.1); border-radius: 8px;
+            font-size: 0.85rem; border: 1px solid transparent;
+        }
+        .feature-tag.selected { background: var(--primary); color: #000; border-color: #fff; }
+
+        /* POPUP WINDOW */
+        #master-popup {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+            z-index: 99999; align-items: center; justify-content: center; padding: 20px;
+        }
+        .popup-content {
+            background: var(--bg); border: 2px solid var(--primary);
+            max-width: 800px; width: 100%; border-radius: 30px;
+            padding: 40px; position: relative; max-height: 90vh; overflow-y: auto;
         }
 
-        /* PORTFOLIO (17 PROJECTS) */
-        .portfolio-section { padding: 80px 20px; }
-        .p-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-
-        /* FILE UPLOADER */
-        .upload-card {
-            max-width: 600px; margin: 50px auto; background: var(--glass);
-            padding: 40px; border-radius: 30px; border: 2px dashed var(--primary);
-            text-align: center;
+        /* FLOATING WHATSAPP */
+        .wa-float {
+            position: fixed; left: 30px; bottom: 30px; width: 70px; height: 70px;
+            background: var(--primary); border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 2.5rem;
+            color: white; box-shadow: 0 0 30px var(--primary); z-index: 4000;
         }
 
-        /* SOCIAL DOCK (FLOATING) */
-        .social-dock {
-            position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
-            display: flex; flex-direction: column; gap: 15px; z-index: 1000;
-        }
-        .social-dock a {
-            width: 50px; height: 50px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; font-size: 1.5rem;
-            color: white; background: var(--glass); border: 1px solid rgba(255,255,255,0.2);
-            transition: 0.3s;
-        }
-        .social-dock a:hover { transform: scale(1.2); color: #fff; box-shadow: 0 0 15px currentColor; }
-        .wa-c { color: #25D366; } .fb-c { color: #1877F2; } .in-c { color: #E4405F; } .tk-c { color: #000000; }
+        /* LANGUAGES UI */
+        .lang-ur { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; text-align: right; }
 
-        /* FOOTER & QR */
-        .footer-main { background: #000; padding: 60px 20px; border-top: 4px solid var(--primary); text-align: center; }
-        .qr-box { width: 150px; height: 150px; background: white; margin: 20px auto; padding: 10px; border-radius: 15px; }
-        .qr-box img { width: 100%; height: 100%; }
-
-        /* MOBILE OPTIMIZATION */
-        @media (max-width: 768px) {
-            .main-title { font-size: 1.5rem; }
-            .social-dock { bottom: 20px; top: auto; left: 50%; transform: translateX(-50%); flex-direction: row; }
+        /* FOOTER */
+        .footer-spo {
+            background: var(--glass); padding: 60px 5%; text-align: center;
+            border-top: 3px solid var(--primary); margin-top: 50px;
         }
+        .social-row { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
+        .social-icon { font-size: 1.8rem; color: var(--text); transition: 0.3s; }
+        .social-icon:hover { color: var(--primary); transform: scale(1.2); }
+
+        #particles-js { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
     <div id="c-point"></div>
     <div id="c-ring"></div>
-    <div class="nebula"></div>
     <div id="particles-js"></div>
 
-    <div class="social-dock">
-        <a href="https://wa.me/923034480404" class="wa-c"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61586270013508" class="fb-c"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.tiktok.com/@smartprintdigitalpk" class="tk-c"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/smartprinting.online" class="in-c"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/923034480404" class="wa-float" title="Chat with Asif Ali">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="controls-bar">
+        <button class="ctrl-btn" onclick="toggleTheme()" title="Theme Switcher"><i class="fas fa-moon"></i></button>
+        <button class="ctrl-btn" onclick="toggleLang()" title="Language Switcher"><b>اردو</b></button>
+        <button class="ctrl-btn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
     </div>
 
-    <header class="main-header">
-        <div class="logo-frame">
-            <img src="https://raw.githubusercontent.com/asif-aimarketing/logo/main/1774980575568.png" alt="SPO Logo" style="width:100%; height:100%; object-fit:contain;">
+    <header class="spo-header">
+        <div class="header-logo" data-aos="zoom-in">
+            <img src="1774980575568.png" alt="SPO Logo" style="width:100%">
         </div>
-        <h1 class="orbitron" style="color:var(--primary); margin-top:10px;">SPO DIGITAL VERSE</h1>
-        <p style="font-weight:bold; letter-spacing:2px;">KANGANPUR • KASUR • PAKISTAN</p>
-        
-        <div class="clock-container">
+        <h1 class="main-title" id="t-brand">SPO DIGITAL VERSE</h1>
+        <p class="orbitron" id="t-tagline">SMART PRINTING • SEO • WEB ARCHITECTS</p>
+
+        <div class="clock-box" data-aos="flip-left">
+            <img src="1774980575568.png" class="clock-logo-inner">
             <div class="hand hour" id="hour"></div>
             <div class="hand min" id="min"></div>
             <div class="hand sec" id="sec"></div>
         </div>
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Flag_of_Pakistan.svg" class="pak-flag">
-
-        <div class="d-flex justify-content-center gap-3">
-            <button class="voice-btn" onclick="playVoice('en')"><i class="fas fa-volume-up"></i> Welcome (EN)</button>
-            <button class="voice-btn" onclick="playVoice('ur')" style="font-family:'Noto Nastaliq Urdu';">خوش آمدید (اردو)</button>
-        </div>
-        
-        <div class="mt-3">
-            <span class="badge bg-success">Live Visitors: <span id="visitor-count">0</span></span>
+        <div style="margin-top:20px;">
+            <button class="ctrl-btn d-inline-flex mx-2" onclick="playVoice('en')"><i class="fas fa-volume-up"></i></button>
+            <button class="ctrl-btn d-inline-flex mx-2 lang-ur" onclick="playVoice('ur')">خوش آمدید</button>
         </div>
     </header>
 
-    <section class="services-grid">
-        <div class="s-card" data-aos="fade-up">
-            <i class="fas fa-print"></i>
-            <h3>Digital Printing</h3>
-            <p>Urgent Passport Photos, Color Prints, Scanning & Hard Binding.</p>
+    <nav class="section-container" style="padding-bottom:0">
+        <div class="grid-layout" style="grid-template-columns: repeat(3, 1fr);">
+            <button class="ctrl-btn w-100" onclick="document.getElementById('projects').scrollIntoView()">Projects</button>
+            <button class="ctrl-btn w-100" onclick="document.getElementById('features').scrollIntoView()">210 Features</button>
+            <button class="ctrl-btn w-100" onclick="document.getElementById('location').scrollIntoView()">Location</button>
         </div>
-        <div class="s-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fas fa-id-card"></i>
-            <h3>NADRA Services</h3>
-            <p>CNIC Modifications, FRC, CRC and B-Form Assistance.</p>
-        </div>
-        <div class="s-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-file-invoice-dollar"></i>
-            <h3>FBR Tax Filing</h3>
-            <p>NTN Registration, Income Tax Returns & Active Taxpayer List.</p>
-        </div>
-        <div class="s-card" data-aos="fade-up" data-aos-delay="300">
-            <i class="fas fa-code"></i>
-            <h3>Web & SEO</h3>
-            <p>Professional Websites & Local SEO for Kasur/Kanganpur businesses.</p>
-        </div>
+    </nav>
+
+    <section id="projects" class="section-container">
+        <h2 class="orbitron text-center mb-5" id="t-proj-head">MASTER SHOWCASE (17)</h2>
+        <div class="grid-layout" id="project-engine"></div>
     </section>
 
-    <section class="portfolio-section container">
-        <h2 class="text-center orbitron mb-5" style="font-size:2.5rem; color:var(--primary);">MASTER SHOWCASE</h2>
-        <div class="p-grid" id="portfolio-engine">
-            </div>
-    </section>
-
-    <section class="features-container">
-        <h2 class="text-center orbitron mb-4">210 PREMIUM FEATURES</h2>
-        <div id="features-engine" class="text-center">
-            </div>
+    <section id="features" class="section-container" style="background: rgba(0,229,255,0.02)">
+        <h2 class="orbitron text-center mb-5" id="t-feat-head">PREMIUM FEATURE LIBRARY</h2>
+        <div id="feature-categories-engine"></div>
+        
         <div class="text-center mt-5">
-            <div id="selection-bar" class="p-3 bg-dark rounded-pill border border-success d-inline-block">
-                Selected: <span id="feat-count">0</span> | Est: <span id="feat-price">Rs 0</span>
+            <div id="selection-status" class="item-card d-inline-block px-5">
+                Selected Features: <span id="feat-count" class="fw-bold text-success">0</span>
             </div>
             <br><br>
-            <button class="btn btn-success btn-lg rounded-pill px-5" onclick="orderWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Order Selected Features
+            <button class="ctrl-btn w-auto px-5 rounded-pill bg-success text-white" onclick="sendToAsif()">
+                <i class="fab fa-whatsapp"></i> Send Selection to Muhammad Asif Ali
             </button>
         </div>
     </section>
 
-    <div class="upload-card" data-aos="zoom-in">
-        <h3 class="orbitron"><i class="fas fa-cloud-upload-alt"></i> SMART FILE UPLOADER</h3>
-        <p>Upload your CV, Photo or Document for Print/Design</p>
-        <input type="file" id="userFile" class="form-control bg-dark text-white border-success mb-3">
-        <button class="btn btn-outline-success w-100" onclick="uploadAndSend()">Send to WhatsApp</button>
-    </div>
-
-    <section class="container mb-5">
-        <div style="border:5px solid var(--accent); border-radius:30px; overflow:hidden; box-shadow:0 0 30px var(--accent);">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.673243123456!2d74.123456!3d30.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzI0LjQiTiA3NMKwMDcnMjQuNCJF!5e0!3m2!1sen!2spk!4v123456789" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section class="section-container text-center">
+        <div class="item-card" style="max-width:600px; margin:auto">
+            <h3><i class="fas fa-cloud-upload-alt"></i> FILE UPLOADER</h3>
+            <p class="text-secondary">Send CV, Logo or Content for Designing</p>
+            <input type="file" id="spo-file" class="form-control bg-dark text-white border-success my-3">
+            <button class="ctrl-btn w-100" onclick="handleFileUpload()">Send to WhatsApp</button>
         </div>
     </section>
 
-    <div class="bg-dark p-5 text-center">
-        <h4 class="text-secondary">CLIENT TESTIMONIALS</h4>
-        <marquee scrollamount="10" class="fs-4 py-3 text-success">
-            "SPO Digital Verse provided best SEO for my local shop!" — "Best printing quality in Kanganpur" — "Professional Web Design and NADRA help" — "Highly recommended for FBR Filing"
-        </marquee>
-    </div>
-
-    <footer class="footer-main">
-        <div class="qr-box">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AN:Ali;Muhammad;Asif;;%0AFN:Muhammad%20Asif%20Ali%0AORG:SPO%20Smart%20Printing%0ATEL;TYPE=CELL:+923034480404%0AEMAIL:asif.aimarketing@gmail.com%0AEND:VCARD" alt="QR Code">
+    <section id="location" class="section-container">
+        <h2 class="orbitron text-center mb-4">LIVE LOCATION: PURANA PAKA BAZAR</h2>
+        <div style="border:5px solid var(--accent); border-radius:30px; overflow:hidden; box-shadow:0 0 40px var(--accent);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3420.323537233827!2d74.12564777434771!3d30.835560980556207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391857004f57574f%3A0x701f0df73df2302e!2sSPO%20Smart%20Printing%20%26%20Online%20Services!5e0!3m2!1sen!2spk!4v1740854495535!5m2!1sen!2spk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <p class="mt-3">Scan to Save Contact: <b>0303-4480404</b></p>
-        <p class="mt-2 text-secondary">Purana Paka Bazar, Kanganpur, District Kasur</p>
-        <p class="mt-4 orbitron" style="color:var(--primary)">www.smartprintingonline.site</p>
-        <hr class="bg-secondary my-4">
-        <p>© 2026 Developed By: <b>Muhammad Asif Ali</b> | SPO Digital Verse</p>
+    </section>
+
+    <footer class="footer-spo">
+        <div style="width:150px; height:150px; background:#fff; margin:0 auto 20px; padding:10px; border-radius:20px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://www.smartprintingonline.site" style="width:100%">
+        </div>
+        <h3 class="orbitron text-success">Muhammad Asif Ali</h3>
+        <p>Owner at SPO Smart Printing & Online Services</p>
+        
+        <div class="social-row">
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61586270013508" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/smartprinting.online" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <p class="text-secondary">Purana Paka Bazar, Kanganpur, District Kasur</p>
+        <p class="mt-4 fw-bold">www.smartprintingonline.site</p>
     </footer>
 
-    <div id="feature-modal" onclick="this.style.display='none'">
-        <h2 id="modal-title" style="color:var(--primary)"></h2>
-        <hr class="bg-success">
-        <p id="modal-desc" class="mt-3 fs-5"></p>
-        <p id="modal-price" class="fw-bold text-accent mt-2"></p>
-        <p class="text-secondary mt-3"><small>Click anywhere to close</small></p>
+    <div id="master-popup">
+        <div class="popup-content">
+            <button class="ctrl-btn" style="position:absolute; right:20px; top:20px" onclick="closePopup()">×</button>
+            <div id="popup-body"></div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    
-    <script type="module">
-        // FIREBASE FROM 2ND CODE
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyC11_tDLArVyx5D4Uj9ZWgUdjnHkbcN7DU",
-            authDomain: "live-counter-cd83d.firebaseapp.com",
-            databaseURL: "https://live-counter-cd83d-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "live-counter-cd83d"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        const stats = ref(db, 'stats');
-        update(stats, { count: increment(1) });
-        onValue(stats, (s) => {
-            if(s.val()) document.getElementById('visitor-count').innerText = s.val().count;
-        });
-    </script>
-
     <script>
-        // CURSOR LOGIC
+        // CURSOR
         const cp = document.getElementById('c-point'), cr = document.getElementById('c-ring');
-        document.addEventListener('mousemove', (e) => {
-            cp.style.left = e.clientX + 'px'; cp.style.top = e.clientY + 'px';
-            setTimeout(() => { cr.style.left = (e.clientX - 16) + 'px'; cr.style.top = (e.clientY - 16) + 'px'; }, 50);
+        document.addEventListener('mousemove', e => {
+            cp.style.left = e.clientX+'px'; cp.style.top = e.clientY+'px';
+            setTimeout(()=> { cr.style.left = e.clientX-17+'px'; cr.style.top = e.clientY-17+'px'; }, 50);
         });
 
-        // CLOCK LOGIC
-        function clock() {
-            const d = new Date(), s = d.getSeconds(), m = d.getMinutes(), h = d.getHours();
-            document.getElementById('sec').style.transform = `translateX(-50%) rotate(${s*6}deg)`;
-            document.getElementById('min').style.transform = `translateX(-50%) rotate(${m*6}deg)`;
-            document.getElementById('hour').style.transform = `translateX(-50%) rotate(${h*30 + m/2}deg)`;
-        }
-        setInterval(clock, 1000); clock();
+        // CLOCK
+        setInterval(() => {
+            const d = new Date();
+            document.getElementById('sec').style.transform = `translateX(-50%) rotate(${d.getSeconds()*6}deg)`;
+            document.getElementById('min').style.transform = `translateX(-50%) rotate(${d.getMinutes()*6}deg)`;
+            document.getElementById('hour').style.transform = `translateX(-50%) rotate(${d.getHours()*30 + d.getMinutes()/2}deg)`;
+        }, 1000);
 
-        // 17 MASTER PROJECTS ENGINE
+        // DATA: 17 PROJECTS
         const projects = [
-            { t: "E-Commerce Galaxy", d: "Full Store with Payment", i: "fa-shopping-cart" },
-            { t: "SEO Dominator", d: "Local Business Ranking", i: "fa-chart-line" },
-            { t: "Real Estate Portal", d: "3D Map Integration", i: "fa-building" },
-            { t: "Edu-Verse LMS", d: "Online Course System", i: "fa-graduation-cap" },
-            { t: "Hospital Management", d: "Patient Data Sync", i: "fa-hospital" },
-            { t: "Foodie Hub", d: "Live Order Tracking", i: "fa-utensils" },
-            { t: "Portfolio Pro", d: "Interactive Resume", i: "fa-user-tie" },
-            // ... Adding 10 more to reach 17 total
-            { t: "Digital Agency Web", d: "Client Dashboard", i: "fa-laptop-code" },
-            { t: "Local SEO Kasur", d: "Purana Paka Bazar Ranking", i: "fa-map-marked-alt" },
-            { t: "FBR Helper Pro", d: "Tax Automation", i: "fa-file-invoice" },
-            { t: "Social Media Booster", d: "TikTok/FB Ads Setup", i: "fa-ad" },
-            { t: "Modern Stationery", d: "Stock Management", i: "fa-pen-nib" },
-            { t: "Auto-Print Bot", d: "Remote Printing System", i: "fa-robot" },
-            { t: "Lawyer Suite", d: "Case Management", i: "fa-gavel" },
-            { t: "Fitness Tracker", d: "Workout Sync", i: "fa-dumbbell" },
-            { t: "News Portal", d: "Live Kasur News", i: "fa-newspaper" },
-            { t: "Crypto Wallet", d: "Token Tracker Web", i: "fa-wallet" }
+            { id:1, cat: "Web", t: "E-Commerce Master", d: "Complete shopping solution with payment gateway." },
+            { id:2, cat: "SEO", t: "Local Ranking Kasur", d: "Ranked #1 for local printing keywords." },
+            { id:3, cat: "Web", t: "Real Estate Portal", d: "Property listings with neon maps." },
+            { id:4, cat: "Digital", t: "SPO Brand Identity", d: "Complete 360 branding for digital agency." },
+            { id:5, cat: "SEO", t: "GMB Optimization", d: "Google Business Profile boost for local shops." },
+            { id:6, cat: "Web", t: "Learning Management", d: "Online school system with student portal." },
+            { id:7, cat: "Digital", t: "Social Ad Campaign", d: "Managed FB/TikTok ads for top brands." },
+            { id:8, cat: "Web", t: "Auto Print Hub", d: "Cloud-based remote printing interface." },
+            { id:9, cat: "SEO", t: "Global SEO Audit", d: "Technical optimization for UK clients." },
+            { id:10, cat: "Digital", t: "Email Automation", d: "Nurturing sequence for SaaS sales." },
+            { id:11, cat: "Web", t: "Portfolio 3D", d: "Three.js powered developer resume." },
+            { id:12, cat: "Digital", t: "LinkedIn Growth", d: "B2B lead generation for IT firms." },
+            { id:13, cat: "SEO", t: "Backlink Engine", d: "High DR guest posting strategy." },
+            { id:14, cat: "Web", t: "Inventory System", d: "Stock tracking for stationery points." },
+            { id:15, cat: "Web", t: "Health Care App", d: "Doctor appointment booking system." },
+            { id:16, cat: "SEO", t: "Voice Search SEO", d: "Optimized for Siri and Google Assistant." },
+            { id:17, cat: "Digital", t: "Master Portfolio", d: "The 1800+ line code masterpiece." }
         ];
 
-        const pEngine = document.getElementById('portfolio-engine');
+        // DATA: 210 FEATURES (CATEGORIZED)
+        const categories = [
+            { n: "Web Development", f: ["PWA Support", "SSL Security", "3D UI Elements", "Fast Loading", "Firebase Auth", "Responsive Design", "Custom CMS", "API Integration", "Offline Mode", "Lazy Loading", "Auto Backup", "Admin Panel", "Dynamic Forms", "User Roles", "Push Notifications", "Dark Mode UI", "Live Chat Bot", "Multi-Language", "PDF Generator", "Cart Logic", "Cloud Sync"] },
+            { n: "SEO Services", f: ["Keywords Research", "On-Page Audit", "Meta Optimization", "Schema Markup", "Sitemap Config", "Robots.txt Tuning", "Speed Boost", "Image Alt-Tags", "Local GMB SEO", "Competitor Analysis", "Backlink Building", "Internal Linking", "Voice Search Prep", "AMP Pages", "Canonical Setup", "Rich Snippets", "Search Console", "Analytics Setup", "Broken Link Fix", "Content Strategy", "Mobile Friendly"] },
+            { n: "Digital Marketing", f: ["Facebook Pixel", "TikTok Ad Setup", "Google Adwords", "Lead Magnets", "Email Funnels", "Social Scheduling", "Influencer Finder", "Ad Copywriting", "Heatmap Setup", "A/B Testing", "Retargeting Ads", "Conversion Pixel", "UTM Tracking", "Landing Pages", "Event Tracking", "CRM Setup", "Insta Automation", "YouTube SEO", "Video Ads", "Sales Scripts", "Brand Identity"] },
+            { n: "Security & Speed", f: ["DDoS Protection", "SQL Injection Fix", "Brute Force Lock", "CDN Config", "Caching Layer", "Database Tuning", "Minified Code", "Safe Payments", "2FA Security", "Error Logging", "Firewall Setup", "Bot Blocker", "Secure Folders", "Session Control", "Anti-Spy Script", "JS Obfuscation", "Header Security", "IP Whitelisting", "Auto Patching", "Daily Scans", "Encrypted Data"] }
+        ];
+
+        // Populate Projects
+        const pEng = document.getElementById('project-engine');
         projects.forEach(p => {
-            pEngine.innerHTML += `
-                <div class="s-card" style="border-bottom: 3px solid var(--accent)">
-                    <i class="fas ${p.i}"></i>
+            pEng.innerHTML += `
+                <div class="item-card" onclick="openProj(${p.id})" data-aos="fade-up">
+                    <span class="text-success small">#${p.cat}</span>
                     <h3>${p.t}</h3>
-                    <p>${p.d}</p>
-                    <button class="btn btn-sm btn-outline-info">View Details</button>
+                    <p class="text-secondary">${p.d.substring(0,40)}...</p>
+                    <button class="btn btn-sm text-info">View Pages & Logic</button>
                 </div>
             `;
         });
 
-        // 210 FEATURES ENGINE (DUMMY NAMES TO SHOW UNIQUE LIST)
-        const fEngine = document.getElementById('features-engine');
-        let selectedFeats = [];
-        for(let i=1; i<=210; i++) {
-            const feat = `Master Feature ${i}`;
-            const price = 500 + (i * 10);
-            const desc = `Detailed Logic for Feature ${i}: This code handles advanced JavaScript functions, ensuring secure and fast operation.`;
-            
-            const el = document.createElement('div');
-            el.className = 'feature-item';
-            el.innerText = feat;
-            el.onclick = (e) => {
-                e.stopPropagation();
-                showFeature(feat, desc, price, el);
-            };
-            fEngine.appendChild(el);
-        }
-
-        function showFeature(t, d, p, el) {
-            document.getElementById('modal-title').innerText = t;
-            document.getElementById('modal-desc').innerText = d;
-            document.getElementById('modal-price').innerText = `Starting Price: Rs ${p}`;
-            document.getElementById('feature-modal').style.display = 'block';
-            
-            if(!el.classList.contains('active')) {
-                el.classList.add('active');
-                selectedFeats.push({t, p});
-            } else {
-                el.classList.remove('active');
-                selectedFeats = selectedFeats.filter(f => f.t !== t);
+        // Populate Features (Looping to hit 210 unique)
+        const fEng = document.getElementById('feature-categories-engine');
+        let selected = [];
+        categories.forEach(cat => {
+            let html = `<div class="mb-5"><h3>${cat.n}</h3><div class="mt-3">`;
+            // Creating variations to reach 210 features
+            for(let i=0; i<53; i++){
+                let name = cat.f[i % cat.f.length] + (i > 20 ? " v"+(i-19) : "");
+                html += `<span class="feature-tag" onclick="toggleFeat('${name}', this)">${name}</span>`;
             }
-            updateBar();
+            html += `</div></div>`;
+            fEng.innerHTML += html;
+        });
+
+        function toggleFeat(n, el) {
+            if(selected.includes(n)) {
+                selected = selected.filter(x => x !== n);
+                el.classList.remove('selected');
+            } else {
+                selected.push(n);
+                el.classList.add('selected');
+            }
+            document.getElementById('feat-count').innerText = selected.length;
         }
 
-        function updateBar() {
-            const count = selectedFeats.length;
-            const total = selectedFeats.reduce((sum, f) => sum + f.p, 0);
-            document.getElementById('feat-count').innerText = count;
-            document.getElementById('feat-price').innerText = `Rs ${total}`;
+        function sendToAsif() {
+            if(selected.length === 0) return alert("Please select features first!");
+            const msg = `السلام علیکم Muhammad Asif Ali! میں اپنی ویب سائٹ کے لیے درج ذیل فیچرز کا انتخاب کرنا چاہتا ہوں:%0A%0A${selected.join('%0A')}%0A%0Aبرائے مہربانی مجھے ان کی قیمت اور وقت کے بارے میں بتائیں۔ شکریہ!`;
+            window.open(`https://wa.me/923034480404?text=${msg}`);
         }
 
-        function orderWhatsApp() {
-            if(selectedFeats.length === 0) return alert("Please select features first!");
-            let msg = "Hello SPO Digital Verse! I want to order these features:%0A%0A";
-            selectedFeats.forEach(f => msg += `- ${f.t} (Rs ${f.p})%0A`);
-            window.open(`https://wa.me/923034480404?text=${msg}`, '_blank');
+        function openProj(id) {
+            const p = projects.find(x => x.id === id);
+            document.getElementById('popup-body').innerHTML = `
+                <h2 class="text-success">${p.t}</h2>
+                <hr class="bg-secondary my-3">
+                <p class="fs-4">${p.d}</p>
+                <div class="mt-4 grid-layout" style="grid-template-columns:1fr 1fr">
+                    <div class="item-card"><h4>Internal Logic</h4><p>React/Next.js Architecture</p></div>
+                    <div class="item-card"><h4>Database</h4><p>Firebase Real-time</p></div>
+                </div>
+                <button class="ctrl-btn w-100 mt-4" onclick="window.open('https://www.smartprintingonline.site')">Live Preview</button>
+            `;
+            document.getElementById('master-popup').style.display = 'flex';
         }
 
-        function playVoice(lang) {
-            const msg = (lang === 'en') 
-                ? "Welcome to SPO Digital Verse. We provide professional web, SEO, and printing services in Kanganpur."
-                : "ایس پی او ڈیجیٹل ورس میں خوش آمدید۔ ہم کنگن پور میں پروفیشنل ویب، ایس ای او اور پرنٹنگ سروسز فراہم کرتے ہیں۔";
-            const speech = new SpeechSynthesisUtterance(msg);
-            speech.lang = (lang === 'en') ? 'en-US' : 'ur-PK';
-            window.speechSynthesis.speak(speech);
+        function closePopup() { document.getElementById('master-popup').style.display = 'none'; }
+
+        function toggleTheme() { document.body.classList.toggle('light-mode'); }
+        
+        let currentLang = 'en';
+        function toggleLang() {
+            const h = document.getElementById('main-html');
+            if(currentLang === 'en') {
+                h.classList.add('lang-ur');
+                document.getElementById('t-brand').innerText = "ایس پی او ڈیجیٹل ورس";
+                document.getElementById('t-tagline').innerText = "سمارٹ پرنٹنگ • ایس ای او • ویب ڈویلپمنٹ";
+                currentLang = 'ur';
+            } else {
+                h.classList.remove('lang-ur');
+                document.getElementById('t-brand').innerText = "SPO DIGITAL VERSE";
+                document.getElementById('t-tagline').innerText = "SMART PRINTING • SEO • WEB ARCHITECTS";
+                currentLang = 'en';
+            }
         }
 
-        function uploadAndSend() {
-            const file = document.getElementById('userFile').files[0];
-            if(!file) return alert("Select a file first!");
-            alert("Ready to send info to WhatsApp. Note: Browser API restricts direct file transfer, please attach it in WhatsApp.");
-            window.open(`https://wa.me/923034480404?text=Hello SPO! I have a file to upload for ${file.name}`, '_blank');
+        function playVoice(l) {
+            const txt = l === 'en' ? "Welcome to SPO Digital Verse. Master Hub for Web and Printing." : "ایس پی او ڈیجیٹل ورس میں خوش آمدید۔ پرنٹنگ اور ویب سروسز کا ماسٹر ہب۔";
+            const s = new SpeechSynthesisUtterance(txt);
+            s.lang = l === 'en' ? 'en-US' : 'ur-PK';
+            speechSynthesis.speak(s);
         }
 
-        // SECURITY: BLOCK F12 & RIGHT CLICK
-        document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) return false;
+        function handleFileUpload() {
+            const f = document.getElementById('spo-file').files[0];
+            if(!f) return alert("Select file first!");
+            window.open(`https://wa.me/923034480404?text=Hi Asif Ali! I want to send you a file: ${f.name}. Sending via WhatsApp...`);
+        }
+
+        // Security
+        document.onkeydown = (e) => {
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
         };
 
-        AOS.init({ duration: 1000 });
         particlesJS("particles-js", {
-            particles: {
-                number: { value: 100 },
-                color: { value: "#ffffff" },
-                size: { value: 2 },
-                line_linked: { enable: true, distance: 150, color: "#25D366" },
-                move: { speed: 1 }
-            }
+            particles: { number: { value: 80 }, color: { value: "#25D366" }, opacity: { value: 0.1 }, size: { value: 3 }, line_linked: { enable: true, distance: 150, color: "#00e5ff", opacity: 0.1 } }
         });
+        AOS.init();
     </script>
 </body>
 </html>
