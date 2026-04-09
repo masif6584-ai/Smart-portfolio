@@ -1,187 +1,288 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="neon">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART DIGITAL VERSE | Official Master Hub</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg: #010409; --primary: #25D366; --accent: #00e5ff; --text: #fff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* THEME CORES */
-        [data-theme="blue"] { --primary: #007bff; --accent: #fff; }
-        [data-theme="purple"] { --primary: #bc13fe; --accent: #ff00ff; }
-        [data-theme="red"] { --primary: #ff0000; --accent: #ffbd07; }
-        [data-theme="light"] { --bg: #f4f4f4; --text: #000; --primary: #25D366; }
+<!-- SEO -->
+<title>SPO Smart Digital Verse | Best Services in Kanganpur</title>
+<meta name="description" content="Printing, NADRA, SEO, Web Development services in Kanganpur Kasur.">
+<meta name="keywords" content="printing Kanganpur, NADRA, SEO Kasur, web development Pakistan">
 
-        * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s; }
-        body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "SPO Smart Printing & Online Services",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Purana Paka Bazar",
+   "addressLocality": "Kanganpur",
+   "addressRegion": "Punjab",
+   "addressCountry": "Pakistan"
+ },
+ "telephone": "+923034480404"
+}
+</script>
 
-        /* MEGA HEADER */
-        header {
-            position: fixed; top: 0; width: 100%; height: 100px; z-index: 1000;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(15px);
-            border-bottom: 3px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 4%;
-        }
-        .logo-ring { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--primary); overflow: hidden; box-shadow: 0 0 20px var(--primary); }
-        .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
+<link rel="icon" href="1774980575568.png">
 
-        nav ul { display: flex; gap: 20px; list-style: none; }
-        .nav-btn { background: var(--primary); color: #000; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.7rem; font-weight: 900; }
-        .nav-btn:hover { background: var(--accent); transform: scale(1.1); }
+<!-- LIBS -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* HERO & 4D CLOCK NAVIGATION */
-        .hero { height: 110vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; }
-        
-        .clock-nav {
-            width: 320px; height: 320px; border: 10px double var(--primary); border-radius: 50%;
-            position: relative; margin-bottom: 40px; box-shadow: 0 0 50px var(--primary);
-            display: flex; align-items: center; justify-content: center;
-        }
-        .clock-logo { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; z-index: 10; position: absolute; }
-        .clock-logo img { width: 100%; height: 100%; object-fit: cover; }
+<style>
+:root { --bg:#010409; --primary:#25D366; --accent:#00e5ff; --text:#fff; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Poppins;overflow-x:hidden}
 
-        /* SOCIAL LINKS ON CLOCK */
-        .clock-link { position: absolute; width: 50px; height: 50px; background: var(--bg); border: 2px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; text-decoration: none; z-index: 20; }
-        .link-12 { top: -25px; left: 50%; transform: translateX(-50%); } /* FB */
-        .link-3 { right: -25px; top: 50%; transform: translateY(-50%); } /* INSTA */
-        .link-6 { bottom: -25px; left: 50%; transform: translateX(-50%); } /* TIKTOK */
-        .link-9 { left: -25px; top: 50%; transform: translateY(-50%); } /* WHATSAPP */
+/* BACKGROUND */
+#particles-js, #shooting-stars, .nebula {
+position:fixed;top:0;left:0;width:100%;height:100%;
+}
+#particles-js{z-index:-3}
+#shooting-stars{z-index:-2}
+.nebula{
+z-index:-4;
+background:
+radial-gradient(circle at 20% 40%, rgba(37,211,102,0.15), transparent),
+radial-gradient(circle at 80% 20%, rgba(0,229,255,0.15), transparent);
+}
 
-        .clock-link:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
+/* HEADER */
+header{
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;
+padding:15px 5%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+border-bottom:2px solid var(--primary);
+z-index:1000;
+}
 
-        .main-title { font-family: 'Orbitron'; font-size: 4rem; color: var(--primary); text-shadow: 0 0 20px var(--primary); margin-top: 20px; }
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
-        /* THEME SWITCHER */
-        .theme-panel { position: fixed; left: 20px; top: 120px; display: flex; flex-direction: column; gap: 10px; z-index: 2000; }
-        .t-btn { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; }
+/* CLOCK */
+.clock{
+width:260px;height:260px;
+border:6px solid var(--primary);
+border-radius:50%;
+position:relative;
+margin-bottom:30px;
+box-shadow:0 0 30px var(--primary);
+}
+.hand{
+position:absolute;
+width:50%;
+height:3px;
+background:var(--accent);
+top:50%;
+transform-origin:100%;
+}
+#hour{height:5px}
+#sec{background:red}
 
-        /* URDU CONTENT SECTION */
-        .urdu-intro { padding: 80px 10%; text-align: center; background: rgba(255,255,255,0.02); }
-        .urdu-intro h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 30px; }
-        .urdu-intro p { font-size: 1.6rem; line-height: 2.8; opacity: 0.9; }
+/* SOCIAL CLOCK */
+.clock-link{
+position:absolute;
+width:50px;height:50px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:var(--bg);
+border:2px solid var(--primary);
+color:var(--primary);
+}
+.link-12{top:-25px;left:50%;transform:translateX(-50%)}
+.link-3{right:-25px;top:50%;transform:translateY(-50%)}
+.link-6{bottom:-25px;left:50%;transform:translateX(-50%)}
+.link-9{left:-25px;top:50%;transform:translateY(-50%)}
 
-        /* FOOTER */
-        footer { background: #000; padding: 80px 5%; border-top: 5px solid var(--primary); text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .f-social { display: flex; justify-content: center; gap: 20px; font-size: 2rem; }
-        .f-social a { color: var(--primary); transition: 0.3s; }
-        .f-social a:hover { transform: scale(1.3) rotate(10deg); color: var(--accent); }
+/* BUTTON */
+.btn-main{
+background:var(--primary);
+color:#000;
+padding:12px 25px;
+border-radius:10px;
+text-decoration:none;
+}
 
-    </style>
+/* FOOTER */
+footer{
+text-align:center;
+padding:50px;
+border-top:2px solid var(--primary);
+}
+.f-social{
+display:flex;
+justify-content:center;
+gap:20px;
+font-size:25px;
+margin-top:20px;
+}
+.f-social a{color:var(--primary)}
+</style>
 </head>
+
 <body>
 
-    <div class="theme-panel">
-        <div class="t-btn" style="background: #25D366;" onclick="setTheme('neon')"></div>
-        <div class="t-btn" style="background: #007bff;" onclick="setTheme('blue')"></div>
-        <div class="t-btn" style="background: #bc13fe;" onclick="setTheme('purple')"></div>
-        <div class="t-btn" style="background: #ff0000;" onclick="setTheme('red')"></div>
-        <div class="t-btn" style="background: #fff; border: 2px solid #000;" onclick="setTheme('light')"></div>
-    </div>
+<!-- BACKGROUND -->
+<div class="nebula"></div>
+<div id="particles-js"></div>
+<canvas id="shooting-stars"></canvas>
 
-    <header>
-        <div class="logo-ring">
-            <img src="1774980575568.png" alt="SPO">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="web-hub.html" class="nav-btn">WEB DEV</a></li>
-                <li><a href="seo-mastery.html" class="nav-btn">SEO MASTERY</a></li>
-                <li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
-                <li><a href="portfolio-hub.html" class="nav-btn">PORTFOLIO</a></li>
-            </ul>
-        </nav>
-        <div id="v-count" style="font-family: 'Orbitron'; color: var(--primary); border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px; box-shadow: inset 0 0 10px var(--primary);">
-            VISITORS: <span id="count">0000</span>
-        </div>
-    </header>
+<header>
+<h3>SPO VERSE</h3>
+<div>Visitors: <span id="count">0000</span></div>
+</header>
 
-    <section class="hero">
-        <div class="clock-nav">
-            <div class="clock-logo">
-                <img src="1774980575568.png" alt="SPO Logo">
-            </div>
-            <a href="https://facebook.com/sposmartprinting" class="clock-link link-12" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/asif_spo" class="clock-link link-3" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@asif_it_expert" class="clock-link link-6" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404" class="clock-link link-9" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
-        </div>
+<section class="hero">
 
-        <h1 class="main-title">SPO SMART DIGITAL VERSE</h1>
-        <p style="letter-spacing: 10px; font-size: 1.2rem; color: var(--accent);">MUHAMMAD ASIF ALI | CEO</p>
+<!-- CLOCK -->
+<div class="clock">
 
-        <div style="margin-top: 50px; display: flex; gap: 20px;">
-            <a href="explore-verse.html" class="nav-btn" style="padding: 20px 40px; font-size: 1rem;">EXPLORE VERSE</a>
-            <button onclick="playAIVoice()" class="nav-btn" style="background: transparent; color: #fff; border: 2px solid var(--primary);">PLAY AI INTRO</button>
-        </div>
-    </section>
+<div id="hour" class="hand"></div>
+<div id="min" class="hand"></div>
+<div id="sec" class="hand"></div>
 
-    <section class="urdu-intro urdu">
-        <h2>ہم کیا خدمات فراہم کرتے ہیں؟</h2>
-        <p>
-            ایس پی او اسمارٹ ڈیجیٹل ورس میں ہم آپ کے کاروبار کو انٹرنیٹ کی دنیا میں ایک نئی پہچان دیتے ہیں۔<br>
-            ہماری خدمات میں شامل ہیں: <br>
-            ✨ **پروفیشنل ویب سائٹ ڈویلپمنٹ** - جو آپ کے بزنس کو خودکار بناتی ہے۔<br>
-            🚀 **ایس ای او ماسٹری** - گوگل سرچ میں آپ کے بزنس کو پہلے نمبر پر لانا۔<br>
-            📱 **ڈیجیٹل مارکیٹنگ** - فیس بک، انسٹاگرام اور ٹک ٹاک کے ذریعے سیلز بڑھانا۔<br>
-            📍 **جی ایم بی سروسز** - کنگن پور اور گردونواح میں لوکل کسٹمرز تک رسائی۔
-        </p>
-    </section>
+<!-- SOCIAL -->
+<a href="https://facebook.com/sposmartprinting" target="_blank" class="clock-link link-12"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com/asif_spo" target="_blank" class="clock-link link-3"><i class="fab fa-instagram"></i></a>
+<a href="https://tiktok.com/@asif_it_expert" target="_blank" class="clock-link link-6"><i class="fab fa-tiktok"></i></a>
+<a href="https://wa.me/923034480404" target="_blank" class="clock-link link-9"><i class="fab fa-whatsapp"></i></a>
 
-    <section class="urdu-intro" style="background: var(--bg); border-top: 1px solid var(--primary);">
-        <h2 class="urdu">کنگن پور لوکل حب</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
-            <a href="https://wa.me/923034480404?text=Aslamoalaikum%20SPO%20Printing%20Service" class="nav-btn">Color Printing</a>
-            <a href="https://wa.me/923034480404?text=Aslamoalaikum%20SPO%20CV%20Service" class="nav-btn">CV Making</a>
-            <a href="https://wa.me/923034480404?text=Aslamoalaikum%20SPO%20Online%20Form" class="nav-btn">NADRA Services</a>
-        </div>
-    </section>
+</div>
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <h3 style="color:var(--primary); font-family:'Orbitron';">SPO VERSE</h3>
-                <p>Purana Paka Bazar, Kanganpur.<br>District Kasur, Pakistan.</p>
-            </div>
-            <div class="f-social">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
-        <p style="opacity: 0.5;">© 2026 SPO SMART DIGITAL VERSE | ALL RIGHTS RESERVED</p>
-    </footer>
+<h1>SPO SMART DIGITAL VERSE</h1>
 
-    <script>
-        // THEME ENGINE
-        function setTheme(t) {
-            document.documentElement.setAttribute('data-theme', t);
-            localStorage.setItem('spo-theme', t);
-        }
+<br>
 
-        // AI VOICE ENGINE (Bilingual)
-        function playAIVoice() {
-            const intro = "Assalam o Alaikum! Welcome to SPO Smart Digital Verse, managed by Muhammad Asif Ali. We are experts in Web Architecture, SEO Domination, and Digital Marketing. Hum aapkay business ko digital dunya mein kamyab banatay hain. Select a service to start your journey.";
-            const utterance = new SpeechSynthesisUtterance(intro);
-            utterance.rate = 0.9;
-            utterance.pitch = 1.1;
-            window.speechSynthesis.speak(utterance);
-        }
+<button onclick="sendInquiry('Web Development')" class="btn-main">
+WhatsApp Inquiry
+</button>
 
-        // VISITORS COUNTER (Dummy for UI, can be linked to Firebase)
-        let count = 2540;
-        setInterval(() => {
-            count += Math.floor(Math.random() * 3);
-            document.getElementById('count').innerText = count.toString().padStart(4, '0');
-        }, 3000);
-    </script>
+</section>
+
+<footer>
+<p>© 2026 SPO Smart Digital Verse</p>
+
+<div class="f-social">
+<a href="https://facebook.com/sposmartprinting" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://wa.me/923034480404" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://instagram.com/asif_spo" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://tiktok.com/@asif_it_expert" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<br>
+
+<a href="https://g.page/r/CeMAyj32H6_wEBI/review" target="_blank">Google Review</a><br>
+<a href="https://maps.app.goo.gl/ADCkK6y1HNCnxRFt7" target="_blank">Get Directions</a>
+
+</footer>
+
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js",{
+particles:{
+number:{value:160},
+color:{value:["#25D366","#00e5ff","#ffffff"]},
+shape:{type:["circle","star"]},
+move:{speed:2},
+line_linked:{enable:true,color:"#00e5ff"}
+}
+});
+</script>
+
+<!-- SHOOTING STARS -->
+<script>
+const canvas=document.getElementById('shooting-stars');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let stars=[];
+function createStar(){return {x:Math.random()*canvas.width,y:0,speed:8}}
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+if(Math.random()<0.05)stars.push(createStar());
+
+stars.forEach((s,i)=>{
+ctx.beginPath();
+ctx.moveTo(s.x,s.y);
+ctx.lineTo(s.x-50,s.y+50);
+ctx.strokeStyle="white";
+ctx.stroke();
+
+s.x-=s.speed;
+s.y+=s.speed;
+
+if(s.y>canvas.height)stars.splice(i,1);
+});
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+<!-- CLOCK -->
+<script>
+function updateClock(){
+const now=new Date();
+const s=now.getSeconds();
+const m=now.getMinutes();
+const h=now.getHours();
+
+document.getElementById('sec').style.transform=`rotate(${s*6}deg)`;
+document.getElementById('min').style.transform=`rotate(${m*6}deg)`;
+document.getElementById('hour').style.transform=`rotate(${h*30+m/2}deg)`;
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+<!-- WHATSAPP -->
+<script>
+function sendInquiry(service){
+const msg=`Assalam o Alaikum SPO! Mujhe ${service} service chahiye.`;
+window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+const firebaseConfig = {
+apiKey:"PASTE_KEY",
+authDomain:"PASTE_DOMAIN",
+databaseURL:"PASTE_DB",
+projectId:"PASTE_ID",
+storageBucket:"PASTE_BUCKET",
+messagingSenderId:"PASTE_MSG",
+appId:"PASTE_APP"
+};
+
+const app=initializeApp(firebaseConfig);
+const db=getDatabase(app);
+const statsRef=ref(db,'stats');
+
+update(statsRef,{count:increment(1)});
+
+onValue(statsRef,(snap)=>{
+document.getElementById("count").innerText=snap.val()?.count||1;
+});
+</script>
+
 </body>
 </html>
