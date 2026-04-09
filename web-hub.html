@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>SPO Web Hub | Professional Architecture</title>
+</head>
+<body style="background:#010409; color:#fff; font-family:'Poppins', sans-serif; padding:50px;">
+    <h1 style="text-align:center; color:#25D366; font-family:'Orbitron';">WEB ARCHITECTURE & PROJECT HUB</h1>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; margin-top:50px;">
+        <div style="background:#0d1117; padding:30px; border-radius:20px; border:1px solid #25D366;">
+            <h3>E-Commerce Store</h3>
+            <p>Multi-vendor, Cart, Payment Gateway.</p>
+            <button onclick="order('E-Commerce Store')" style="background:#25D366; border:none; padding:10px; width:100%; border-radius:5px; margin-top:10px;">Select & Order</button>
+        </div>
+        <div style="background:#0d1117; padding:30px; border-radius:20px; border:1px solid #25D366;">
+            <h3>Professional Portfolio</h3>
+            <p>3D Effects, Glassmorphism, Animations.</p>
+            <button onclick="order('Portfolio Website')" style="background:#25D366; border:none; padding:10px; width:100%; border-radius:5px; margin-top:10px;">Select & Order</button>
+        </div>
+        </div>
+    <script>
+        function order(svc) {
+            window.open(`https://wa.me/923034480404?text=Assalam o Alaikum SPO, I Want these Special Additions: ${svc}`);
+        }
+    </script>
+</body>
+</html>
