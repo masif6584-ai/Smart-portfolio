@@ -4,157 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>SPO Smart Digital Verse | Best Printing & Online Services in Kanganpur</title>
-<meta name="description" content="Printing, NADRA, SEO, Web Development services in Kanganpur Kasur.">
-<meta name="keywords" content="printing Kanganpur, NADRA services, SEO Kasur">
+<title>SPO SMART DIGITAL VERSE | Official Master Hub</title>
 
-<!-- SCHEMA -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "LocalBusiness",
- "name": "SPO Smart Printing & Online Services",
- "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "Purana Paka Bazar",
-   "addressLocality": "Kanganpur",
-   "addressRegion": "Punjab",
-   "addressCountry": "Pakistan"
- },
- "telephone": "+923034480404"
-}
-</script>
-
+<!-- ICON FIX -->
 <link rel="icon" href="1774980575568.png">
 
-<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- PARTICLES -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 :root { --bg:#010409; --primary:#25D366; --accent:#00e5ff; --text:#fff; }
 
-/* BACKGROUND FIX */
-.bg-wrapper{
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-z-index:-10;
-pointer-events:none;
-}
-#particles-js,#shooting-stars,.nebula-bg{
-position:absolute;width:100%;height:100%;
-}
-.nebula-bg{
+/* SAFE BACKGROUND */
+#ultra-bg{
+position:fixed;top:0;left:0;width:100%;height:100%;
+z-index:-9999;
 background:
-radial-gradient(circle at 20% 40%, rgba(37,211,102,0.15), transparent),
-radial-gradient(circle at 80% 20%, rgba(0,229,255,0.15), transparent);
+radial-gradient(circle at 10% 20%, rgba(0,255,200,0.05), transparent),
+radial-gradient(circle at 80% 30%, rgba(0,150,255,0.05), transparent),
+#010409;
 }
 
-/* ORIGINAL STYLES */
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:Poppins;overflow-x:hidden}
+#stars-bg{
+position:fixed;top:0;left:0;width:100%;height:100%;
+z-index:-9998;pointer-events:none;
+}
+
+/* ORIGINAL CSS SAME */
+*{margin:0;padding:0;box-sizing:border-box;transition:0.4s;}
+body{background:var(--bg);color:var(--text);font-family:Poppins;overflow-x:hidden;}
 
 header{
-position:fixed;top:0;width:100%;
-background:rgba(0,0,0,0.8);
-display:flex;justify-content:space-between;
-padding:15px 5%;z-index:1000;
-border-bottom:2px solid var(--primary);
+position:fixed;top:0;width:100%;height:100px;z-index:1000;
+background:rgba(0,0,0,0.8);backdrop-filter:blur(15px);
+border-bottom:3px solid var(--primary);
+display:flex;align-items:center;justify-content:space-between;padding:0 4%;
 }
 
-.hero{
-height:110vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-}
+.logo-ring{width:80px;height:80px;border-radius:50%;border:3px solid var(--primary);overflow:hidden;box-shadow:0 0 20px var(--primary);}
+.logo-ring img{width:100%;height:100%;object-fit:cover;}
 
-/* CLOCK */
+nav ul{display:flex;gap:20px;list-style:none;}
+.nav-btn{background:var(--primary);color:#000;padding:10px 20px;border-radius:10px;text-decoration:none;font-family:Orbitron;font-size:0.7rem;font-weight:900;}
+.nav-btn:hover{background:var(--accent);transform:scale(1.1);}
+
+.hero{height:110vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+
 .clock-nav{
-width:300px;height:300px;
-border:8px double var(--primary);
-border-radius:50%;
-position:relative;
-margin-bottom:30px;
+width:320px;height:320px;border:10px double var(--primary);border-radius:50%;
+position:relative;margin-bottom:40px;box-shadow:0 0 50px var(--primary);
 display:flex;align-items:center;justify-content:center;
-box-shadow:0 0 40px var(--primary);
 }
+
+.clock-logo{width:150px;height:150px;border-radius:50%;overflow:hidden;position:absolute;}
+.clock-logo img{width:100%;height:100%;object-fit:cover;}
 
 .clock-link{
-position:absolute;width:50px;height:50px;
-border-radius:50%;
+position:absolute;width:50px;height:50px;background:var(--bg);
+border:2px solid var(--primary);border-radius:50%;
 display:flex;align-items:center;justify-content:center;
-border:2px solid var(--primary);
-color:var(--primary);
-background:var(--bg);
+color:var(--primary);font-size:1.5rem;text-decoration:none;
 }
-.link-12{top:-25px;left:50%;transform:translateX(-50%)}
-.link-3{right:-25px;top:50%;transform:translateY(-50%)}
-.link-6{bottom:-25px;left:50%;transform:translateX(-50%)}
-.link-9{left:-25px;top:50%;transform:translateY(-50%)}
 
-/* CLOCK HANDS */
-.hand{
-position:absolute;
-width:50%;
-height:2px;
-background:var(--accent);
-top:50%;
-transform-origin:100%;
-}
-#hour{height:4px}
-#sec{background:red}
+.link-12{top:-25px;left:50%;transform:translateX(-50%);}
+.link-3{right:-25px;top:50%;transform:translateY(-50%);}
+.link-6{bottom:-25px;left:50%;transform:translateX(-50%);}
+.link-9{left:-25px;top:50%;transform:translateY(-50%);}
+
+.clock-link:hover{background:var(--primary);color:#000;}
+
+.main-title{font-family:Orbitron;font-size:4rem;color:var(--primary);text-shadow:0 0 20px var(--primary);}
 
 /* FOOTER */
-footer{
-background:#000;
-padding:60px;
-text-align:center;
-border-top:3px solid var(--primary);
-}
-.f-social{
-display:flex;
-justify-content:center;
-gap:20px;
-font-size:25px;
-margin-top:20px;
-}
-.f-social a{color:var(--primary)}
+footer{background:#000;padding:80px 5%;border-top:5px solid var(--primary);text-align:center;}
+.f-social{display:flex;justify-content:center;gap:20px;font-size:2rem;}
+.f-social a{color:var(--primary);}
+.f-social a:hover{transform:scale(1.3);color:var(--accent);}
 </style>
 </head>
 
 <body>
 
 <!-- BACKGROUND -->
-<div class="bg-wrapper">
-<div class="nebula-bg"></div>
-<div id="particles-js"></div>
-<canvas id="shooting-stars"></canvas>
-</div>
+<div id="ultra-bg"></div>
+<canvas id="stars-bg"></canvas>
 
 <header>
-<h3>SPO VERSE</h3>
-<div>Visitors: <span id="count">0000</span></div>
+<div class="logo-ring"><img src="1774980575568.png"></div>
+<div>VISITORS: <span id="count">0000</span></div>
 </header>
 
 <section class="hero">
 
 <div class="clock-nav">
 
-<!-- CLOCK HANDS -->
-<div id="hour" class="hand"></div>
-<div id="min" class="hand"></div>
-<div id="sec" class="hand"></div>
+<div class="clock-logo">
+<img src="1774980575568.png">
+</div>
 
-<!-- SOCIAL -->
+<!-- FIXED SOCIAL -->
 <a href="https://facebook.com/sposmartprinting" target="_blank" class="clock-link link-12"><i class="fab fa-facebook-f"></i></a>
 <a href="https://instagram.com/asif_spo" target="_blank" class="clock-link link-3"><i class="fab fa-instagram"></i></a>
 <a href="https://tiktok.com/@asif_it_expert" target="_blank" class="clock-link link-6"><i class="fab fa-tiktok"></i></a>
@@ -162,16 +110,11 @@ margin-top:20px;
 
 </div>
 
-<h1>SPO SMART DIGITAL VERSE</h1>
-
-<button onclick="sendInquiry('Web Development')" style="margin-top:20px;padding:10px 25px;">
-WhatsApp Inquiry
-</button>
+<h1 class="main-title">SPO SMART DIGITAL VERSE</h1>
 
 </section>
 
 <footer>
-<p>© 2026 SPO Smart Digital Verse</p>
 
 <div class="f-social">
 <a href="https://facebook.com/sposmartprinting" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -180,80 +123,32 @@ WhatsApp Inquiry
 <a href="https://tiktok.com/@asif_it_expert" target="_blank"><i class="fab fa-tiktok"></i></a>
 </div>
 
-<br>
-<a href="https://g.page/r/CeMAyj32H6_wEBI/review" target="_blank">Google Review</a><br>
-<a href="https://maps.app.goo.gl/ADCkK6y1HNCnxRFt7" target="_blank">Get Directions</a>
-
 </footer>
 
-<!-- PARTICLES -->
+<!-- STAR BACKGROUND -->
 <script>
-particlesJS("particles-js",{
-particles:{
-number:{value:120},
-color:{value:["#25D366","#00e5ff"]},
-shape:{type:["circle","star"]},
-move:{speed:1.5},
-line_linked:{enable:true,color:"#00e5ff",opacity:0.3}
-}
-});
-</script>
-
-<!-- SHOOTING STARS -->
-<script>
-const canvas=document.getElementById('shooting-stars');
-const ctx=canvas.getContext('2d');
-canvas.width=innerWidth;
-canvas.height=innerHeight;
+const c=document.getElementById("stars-bg");
+const ctx=c.getContext("2d");
+c.width=innerWidth;c.height=innerHeight;
 
 let stars=[];
-function createStar(){return {x:Math.random()*canvas.width,y:0,speed:6}}
+for(let i=0;i<80;i++){
+stars.push({x:Math.random()*c.width,y:Math.random()*c.height,size:Math.random()*2,speed:Math.random()*0.5});
+}
 
-function drawStars(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-if(Math.random()<0.03)stars.push(createStar());
-
-stars.forEach((s,i)=>{
+function animate(){
+ctx.clearRect(0,0,c.width,c.height);
+stars.forEach(s=>{
 ctx.beginPath();
-ctx.moveTo(s.x,s.y);
-ctx.lineTo(s.x-40,s.y+40);
-ctx.strokeStyle="white";
-ctx.stroke();
-
-s.x-=s.speed;
+ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
+ctx.fillStyle="white";
+ctx.fill();
 s.y+=s.speed;
-
-if(s.y>canvas.height)stars.splice(i,1);
+if(s.y>c.height)s.y=0;
 });
-
-requestAnimationFrame(drawStars);
+requestAnimationFrame(animate);
 }
-drawStars();
-</script>
-
-<!-- CLOCK -->
-<script>
-function updateClock(){
-const now=new Date();
-const s=now.getSeconds();
-const m=now.getMinutes();
-const h=now.getHours();
-
-document.getElementById('sec').style.transform=`rotate(${s*6}deg)`;
-document.getElementById('min').style.transform=`rotate(${m*6}deg)`;
-document.getElementById('hour').style.transform=`rotate(${h*30+m/2}deg)`;
-}
-setInterval(updateClock,1000);
-updateClock();
-</script>
-
-<!-- WHATSAPP -->
-<script>
-function sendInquiry(service){
-const msg=`Assalam o Alaikum SPO! Mujhe ${service} service chahiye.`;
-window.open(`https://wa.me/923034480404?text=${encodeURIComponent(msg)}`,'_blank');
-}
+animate();
 </script>
 
 <!-- FIREBASE -->
@@ -262,8 +157,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getDatabase, ref, update, increment, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
-apiKey:"YOUR_KEY",
-databaseURL:"YOUR_DB"
+apiKey:"PASTE_YOUR_KEY",
+databaseURL:"PASTE_DB_URL"
 };
 
 const app=initializeApp(firebaseConfig);
@@ -273,9 +168,7 @@ const statsRef=ref(db,'stats');
 update(statsRef,{count:increment(1)});
 
 onValue(statsRef,(snap)=>{
-if(snap.exists()){
-document.getElementById("count").innerText=snap.val().count;
-}
+document.getElementById("count").innerText=snap.val()?.count || 1;
 });
 </script>
 
