@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>SPO SEO Mastery</title></head>
+<body style="background:#010409; color:#fff; font-family:'Poppins', sans-serif; padding:50px;">
+    <h1 style="text-align:center; color:#00e5ff; font-family:'Orbitron';">SEO DOMINATION ENGINE</h1>
+    <div style="padding:40px; border:2px solid #00e5ff; border-radius:20px;">
+        <h3>GMB Special Features:</h3>
+        <ul>
+            <li>Local Keyword Ranking</li>
+            <li>Google Maps Authority</li>
+            <li>Review Management System</li>
+        </ul>
+        <button onclick="order('SEO + GMB Service')" style="background:#00e5ff; padding:15px 30px; border-radius:10px;">ORDER SEO PACKAGE</button>
+    </div>
+    <script>function order(s){ window.open(`https://wa.me/923034480404?text=Assalam o Alaikum SPO, I Want these Special Additions: ${s}`); }</script>
+</body>
+</html>
