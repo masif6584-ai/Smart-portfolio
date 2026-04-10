@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART DIGITAL VERSE | Official Master Hub</title>
+    <title>SPO SMART DIGITAL VERSE | Official Website</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,190 +11,189 @@
     <style>
         :root {
             --bg: #010409; --primary: #25D366; --accent: #00e5ff; --text: #fff;
-            --glass: rgba(255, 255, 255, 0.08);
+            --glass: rgba(255, 255, 255, 0.1);
         }
 
-        /* HIGH VISION MODES */
+        /* VISION MODES */
+        body.light-mode { --bg: #ffffff; --text: #000; --glass: rgba(0,0,0,0.05); }
         body.medium-vision { --bg: #2c3e50; --text: #ecf0f1; }
         body.ultra-vision { --bg: #000; --text: #ffff00; --primary: #ffff00; }
-        body.light-mode { --bg: #ffffff; --text: #000; --glass: rgba(0,0,0,0.05); }
 
-        * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s; font-weight: 900 !important; }
+        * { margin:0; padding:0; box-sizing:border-box; transition: 0.3s; font-weight: 900 !important; }
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif; overflow-x: hidden; }
         .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; text-align: right; }
 
-        /* HEADER */
+        /* HEADER FIX */
         header {
             position: fixed; top: 0; width: 100%; height: 100px; z-index: 1000;
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
+            background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
             border-bottom: 4px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
         }
-        .header-title { font-family: 'Orbitron'; color: var(--primary); font-size: 1.2rem; letter-spacing: 2px; animation: glow 2s infinite alternate; }
-        @keyframes glow { from { text-shadow: 0 0 5px var(--primary); } to { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--accent); } }
+        .header-name { font-family: 'Orbitron'; color: var(--primary); font-size: clamp(0.8rem, 3vw, 1.5rem); animation: pulseGlow 2s infinite; }
+        @keyframes pulseGlow { 0% { text-shadow: 0 0 5px var(--primary); } 50% { text-shadow: 0 0 20px var(--primary); } 100% { text-shadow: 0 0 5px var(--primary); } }
 
-        .logo-box-right { width: 85px; height: 85px; border: 3px solid var(--primary); border-radius: 50%; overflow: hidden; margin-right: 20px; }
-        .logo-box-right img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-container { width: 85px; height: 85px; border: 3px solid var(--primary); border-radius: 50%; overflow: hidden; display: flex; }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ANALOG CLOCK ENGINE */
-        .clock-master { position: relative; width: 380px; height: 380px; margin: 50px auto; display: flex; align-items: center; justify-content: center; }
+        /* CLOCK ENGINE & ROTATING RING */
+        .clock-section { position: relative; width: 400px; height: 400px; margin: 60px auto; display: flex; align-items: center; justify-content: center; }
         
-        .rotating-text-ring {
+        .rotating-ring-text {
             position: absolute; width: 100%; height: 100%;
-            animation: rotateClockwise 20s linear infinite;
-            font-family: 'Orbitron'; color: var(--primary); font-weight: 900;
+            animation: rotateCW 15s linear infinite;
         }
-        @keyframes rotateClockwise { 100% { transform: rotate(360deg); } }
+        @keyframes rotateCW { 100% { transform: rotate(360deg); } }
 
         .clock-face { 
-            width: 250px; height: 250px; border: 10px solid var(--primary); border-radius: 50%; 
+            width: 260px; height: 260px; border: 10px solid var(--primary); border-radius: 50%; 
             background: #000; position: relative; box-shadow: 0 0 40px var(--primary);
             display: flex; align-items: center; justify-content: center;
         }
-        .clock-logo-inner { width: 100px; height: 100px; border-radius: 50%; z-index: 5; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); box-shadow: 0 0 20px var(--primary); } 100% { transform: scale(1); } }
+        .inner-logo { width: 110px; height: 110px; border-radius: 50%; z-index: 5; border: 2px solid var(--primary); }
 
         .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; background: var(--primary); border-radius: 10px; transform: translateX(-50%); }
         .hour { width: 8px; height: 60px; }
         .min { width: 6px; height: 90px; }
-        .sec { width: 3px; height: 100px; background: #ff0000; }
+        .sec { width: 3px; height: 100px; background: red; }
 
-        /* VISION BUTTONS */
-        .vision-panel { position: fixed; left: 20px; top: 120px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; }
-        .v-btn { padding: 10px; border-radius: 10px; border: 2px solid var(--primary); cursor: pointer; background: var(--bg); color: var(--text); font-size: 0.7rem; }
+        /* SOCIAL NODES (OUTER CLOCK) */
+        .social-node { position: absolute; width: 50px; height: 50px; background: var(--bg); border: 2px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.5rem; text-decoration: none; z-index: 50; }
+        .n-fb { top: 0; } .n-insta { right: 0; } .n-tiktok { bottom: 0; } .n-wa { left: 0; }
 
-        /* LOCAL HUB & WHATSAPP BOXES */
-        .local-hub { background: var(--glass); border: 2px solid var(--accent); margin: 40px 5%; padding: 40px; border-radius: 30px; }
-        .service-list-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px; }
-        .hub-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px; border: 1px solid var(--primary); text-decoration: none; color: var(--text); display: block; }
-        .hub-item:hover { background: var(--primary); color: #000; transform: scale(1.05); }
+        /* VISION & THEME PANEL */
+        .side-panel { position: fixed; left: 15px; top: 120px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; }
+        .v-btn { background: var(--glass); border: 2px solid var(--primary); color: var(--text); padding: 8px; border-radius: 10px; font-size: 0.6rem; cursor: pointer; }
 
-        /* CALENDAR */
-        .calendar-section { background: var(--glass); padding: 20px; border-radius: 20px; margin: 20px auto; max-width: 400px; border: 1px solid var(--primary); }
+        /* SERVICE CARDS (OLD + NEW) */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 5%; }
+        .s-card { background: var(--glass); border: 2px solid var(--primary); padding: 25px; border-radius: 20px; text-decoration: none; color: var(--text); position: relative; }
+        .s-card:hover { background: var(--primary); color: #000; transform: translateY(-10px); }
+
+        /* KANGANPUR HUB */
+        .local-hub { background: var(--glass); border: 3px solid var(--accent); margin: 40px 5%; padding: 40px; border-radius: 30px; }
+        .hub-link { display: inline-block; background: rgba(0,0,0,0.4); border: 1px solid var(--primary); padding: 15px; margin: 10px; border-radius: 15px; color: var(--text); text-decoration: none; width: 100%; max-width: 300px; }
 
         /* FOOTER */
-        footer { background: #000; border-top: 5px solid var(--primary); padding: 60px 5%; position: relative; }
-        .footer-name { font-family: 'Orbitron'; font-size: 2.5rem; color: var(--primary); animation: text-shine 3s infinite linear; }
-        @keyframes text-shine { 0% { background: linear-gradient(90deg, #25D366, #fff, #25D366); -webkit-background-clip: text; color: transparent; } 100% { background-position: 500px; } }
+        footer { background: #000; padding: 60px 5%; border-top: 5px solid var(--primary); text-align: center; }
+        .footer-logo-text { font-family: 'Orbitron'; font-size: 2.5rem; color: var(--primary); text-shadow: 0 0 15px var(--primary); }
 
-        .whatsapp-float-huge {
-            position: fixed; bottom: 40px; left: 40px; width: 80px; height: 80px;
+        .wa-float {
+            position: fixed; bottom: 30px; left: 30px; width: 80px; height: 80px;
             background: #25D366; color: #fff; border-radius: 50%; display: flex;
             align-items: center; justify-content: center; font-size: 45px;
-            box-shadow: 0 0 30px var(--primary); z-index: 5000; text-decoration: none;
-            animation: bounce 2s infinite;
+            box-shadow: 0 0 30px #25D366; z-index: 5000; animation: bounce 2s infinite;
         }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
     </style>
 </head>
-<body id="mainBody">
+<body id="masterBody">
 
-    <a href="https://wa.me/923034480404" class="whatsapp-float-huge" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/923034480404" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    <div class="vision-panel">
-        <button class="v-btn" onclick="setVision('light')">LIGHT MODE</button>
-        <button class="v-btn" onclick="setVision('medium')">MEDIUM VISION</button>
-        <button class="v-btn" onclick="setVision('ultra')">ULTRA HIGH</button>
-        <button class="v-btn" style="background:linear-gradient(45deg,red,blue);" onclick="toggleRainbow()">RAINBOW 🌈</button>
+    <div class="side-panel">
+        <button class="v-btn" onclick="setV('light')">LIGHT</button>
+        <button class="v-btn" onclick="setV('medium')">MEDIUM</button>
+        <button class="v-btn" onclick="setV('ultra')">ULTRA</button>
+        <button class="v-btn" style="background:linear-gradient(red,blue);" onclick="toggleR()">RAINBOW 🌈</button>
     </div>
 
     <header>
-        <div class="header-title">SPO SMART DIGITAL VERSE</div>
+        <div class="header-name">SPO SMART DIGITAL VERSE</div>
         <nav>
-            <a href="seo-mastery.html" style="color:var(--primary); text-decoration:none; margin-left:20px;">SEO MASTERY</a>
-            <a href="portfolio-hub.html" style="color:#fff; text-decoration:none;">PORTFOLIO</a>
+            <a href="seo-mastery.html" style="color:var(--primary); text-decoration:none; margin-left:15px; border:1px solid; padding:5px;">SEO MASTER</a>
+            <a href="portfolio-hub.html" style="color:#fff; text-decoration:none;">PROJECTS</a>
         </nav>
-        <div class="logo-box-right">
+        <div class="logo-container">
             <img src="1774980575568.png" alt="SPO">
         </div>
     </header>
 
-    <section style="padding-top: 150px;">
-        <h1 class="urdu" style="color:var(--primary); text-align:center;">ہم کیا خدمات فراہم کرتے ہیں؟</h1>
-        
-        <div class="clock-master">
-            <svg class="rotating-text-ring" viewBox="0 0 400 400">
-                <path id="circlePath" d="M 200, 200 m -160, 0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0" fill="transparent"/>
-                <text fill="var(--primary)" font-size="20">
-                    <textPath xlink:href="#circlePath">
-                        SMART DIGITAL VERSE • SMART DIGITAL VERSE • SMART DIGITAL VERSE • 
-                    </textPath>
+    <section style="padding-top: 140px;">
+        <div class="urdu" style="text-align:center; padding: 0 10%;">
+            <h2 style="color:var(--primary);">ہم کیا خدمات فراہم کرتے ہیں؟</h2>
+            <p>ایس پی او اسمارٹ ڈیجیٹل ورس میں ہم آپ کے کاروبار کو انٹرنیٹ کی دنیا میں ایک نئی پہچان دیتے ہیں۔</p>
+        </div>
+
+        <div class="clock-section">
+            <svg class="rotating-ring-text" viewBox="0 0 400 400">
+                <path id="txtPath" d="M 200, 200 m -170, 0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0" fill="transparent"/>
+                <text fill="var(--primary)" font-size="18" font-family="Orbitron">
+                    <textPath xlink:href="#txtPath">SMART DIGITAL VERSE • SMART DIGITAL VERSE • SMART DIGITAL VERSE •</textPath>
                 </text>
             </svg>
 
-            <a href="https://facebook.com/share/1EqvcWcyu1/" style="position:absolute; top:10px; color:var(--primary); font-size:2rem;"><i class="fab fa-facebook"></i></a>
-            
+            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-node n-fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/smartprinting.online" target="_blank" class="social-node n-insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="social-node n-tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923034480404" target="_blank" class="social-node n-wa"><i class="fab fa-whatsapp"></i></a>
+
             <div class="clock-face">
-                <img src="1774980575568.png" class="clock-logo-inner" alt="SPO">
+                <img src="1774980575568.png" class="inner-logo" alt="SPO">
                 <div class="hand hour" id="hour"></div>
                 <div class="hand min" id="min"></div>
                 <div class="hand sec" id="sec"></div>
             </div>
         </div>
 
-        <div class="calendar-section">
-            <h3 id="cal-date">---</h3>
-            <p id="cal-day" style="color:var(--primary);">---</p>
+        <div id="calendar" class="urdu" style="text-align:center; background:var(--glass); margin:20px 30%; padding:15px; border-radius:15px; border:1px solid var(--primary);">
+            <h4 id="dateText">---</h4>
+            <p id="timeText" style="color:var(--primary);">---</p>
         </div>
     </section>
 
     <div class="local-hub urdu">
         <h2 style="text-align:center; color:var(--accent);">کنگن پور لوکل حب</h2>
-        <div class="service-list-hub">
-            <a href="https://wa.me/923034480404?text=I need Printing Service" class="hub-item">🖨️ پرنٹنگ اور فوٹو کاپی</a>
-            <a href="https://wa.me/923034480404?text=I need Online Job Apply" class="hub-item">🌐 آن لائن جاب اپلائی</a>
-            <a href="https://wa.me/923034480404?text=I need NADRA Services" class="hub-item">🆔 نادرا و ایف بی آر سروسز</a>
-            <a href="https://wa.me/923034480404?text=I need Web Development" class="hub-item">💻 ویب ڈویلپمنٹ</a>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
+            <a href="https://wa.me/923034480404?text=Printing Service" class="hub-link">🖨️ پرنٹنگ اور فوٹو کاپی</a>
+            <a href="https://wa.me/923034480404?text=Job Application" class="hub-link">🌐 آن لائن جاب اپلائی</a>
+            <a href="https://wa.me/923034480404?text=NADRA Services" class="hub-link">🆔 نادرا و ایف بی آر سروسز</a>
+            <a href="https://wa.me/923034480404?text=Web Design" class="hub-link">💻 ویب ڈویلپمنٹ</a>
         </div>
+        <p style="text-align:center; margin-top:20px;">📍 پرانا پکا بازار، کنگن پور | 📞 0303-4480404</p>
+    </div>
+
+    <div class="services-grid urdu">
+        <a href="https://wa.me/923034480404?text=Web Design" class="s-card"><h3>✨ ویب سائٹ ڈویلپمنٹ</h3><p>جو آپ کے بزنس کو خودکار بناتی ہے۔</p></a>
+        <a href="https://wa.me/923034480404?text=SEO Services" class="s-card"><h3>🚀 ایس ای او ماسٹری</h3><p>گوگل میں ٹاپ رینکنگ حاصل کریں۔</p></a>
+        <a href="https://wa.me/923034480404?text=Marketing" class="s-card"><h3>📱 ڈیجیٹل مارکیٹنگ</h3><p>فیس بک، انسٹا اور ٹک ٹاک ایڈز۔</p></a>
+        <a href="https://wa.me/923034480404?text=GMB Ranking" class="s-card"><h3>📍 جی ایم بی سروسز</h3><p>لوکل کسٹمرز تک رسائی۔</p></a>
     </div>
 
     <footer>
-        <div class="footer-name">SPO SMART DIGITAL VERSE</div>
-        <p class="urdu" style="margin-top:20px;">پرانا پکا بازار، کنگن پور | 0303-4480404</p>
+        <div class="footer-logo-text">SPO SMART DIGITAL VERSE</div>
+        <p class="urdu" style="margin-top:20px; text-align:center;">کنگن پور کا نمبر 1 ڈیجیٹل مرکز</p>
         <p>Web: <a href="http://www.smartprintingonline.site" style="color:var(--primary);">www.smartprintingonline.site</a></p>
         <p>Email: <a href="mailto:asif.aimarketing@gmail.com" style="color:var(--primary);">asif.aimarketing@gmail.com</a></p>
     </footer>
 
     <script>
-        // ANALOG CLOCK
-        function updateClock() {
+        function updateTime() {
             const now = new Date();
-            const s = now.getSeconds();
-            const m = now.getMinutes();
-            const h = now.getHours();
+            const s = now.getSeconds(); const m = now.getMinutes(); const h = now.getHours();
             document.getElementById('sec').style.transform = `translateX(-50%) rotate(${s * 6}deg)`;
             document.getElementById('min').style.transform = `translateX(-50%) rotate(${m * 6}deg)`;
             document.getElementById('hour').style.transform = `translateX(-50%) rotate(${h * 30 + m/2}deg)`;
             
-            // Calendar Update
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('cal-date').innerText = now.toLocaleDateString('ur-PK', options);
-            document.getElementById('cal-day').innerText = now.toLocaleTimeString();
+            const opt = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('dateText').innerText = now.toLocaleDateString('ur-PK', opt);
+            document.getElementById('timeText').innerText = now.toLocaleTimeString();
         }
-        setInterval(updateClock, 1000);
+        setInterval(updateTime, 1000);
 
-        // VISION MODES
-        function setVision(mode) {
+        function setV(m) {
             document.body.className = '';
-            if(mode === 'light') document.body.classList.add('light-mode');
-            if(mode === 'medium') document.body.classList.add('medium-vision');
-            if(mode === 'ultra') document.body.classList.add('ultra-vision');
+            if(m === 'light') document.body.classList.add('light-mode');
+            if(m === 'medium') document.body.classList.add('medium-vision');
+            if(m === 'ultra') document.body.classList.add('ultra-vision');
         }
 
-        // RAINBOW
-        let rStatus = false;
-        let rInterval;
-        function toggleRainbow() {
-            if(rStatus) { clearInterval(rInterval); rStatus = false; }
-            else {
-                rStatus = true;
-                rInterval = setInterval(() => {
-                    const clrs = ['#25D366', '#ff00ff', '#00e5ff', '#ffff00', '#ff4757'];
-                    document.documentElement.style.setProperty('--primary', clrs[Math.floor(Math.random()*clrs.length)]);
-                }, 10000);
-            }
+        let rs = false; let ri;
+        function toggleR() {
+            if(rs) { clearInterval(ri); rs = false; }
+            else { rs = true; ri = setInterval(() => {
+                const c = ['#25D366','#ff00ff','#00e5ff','#ffff00','#ff4757'];
+                document.documentElement.style.setProperty('--primary', c[Math.floor(Math.random()*c.length)]);
+            }, 5000); }
         }
     </script>
 </body>
