@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO Web Architecture Hub | Muhammad Asif Ali</title>
+    <title>Web Architecture Hub | SPO SMART DIGITAL VERSE</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,6 @@
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
         .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
 
-        /* SAME HEADER AS HOME */
         header {
             position: fixed; top: 0; width: 100%; height: 90px; z-index: 1000;
             background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
@@ -28,40 +27,41 @@
         .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
 
-        .nav-links { display: flex; gap: 15px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 8px 15px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.65rem; border: 1px solid var(--primary); }
+        .nav-links { display: flex; gap: 10px; list-style: none; }
+        .nav-btn { background: var(--glass); color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.6rem; border: 1px solid var(--primary); }
         .nav-btn:hover, .nav-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
 
-        /* HUB HERO */
-        .hub-hero { 
-            padding: 150px 5% 50px; text-align: center; 
-            background: linear-gradient(180deg, rgba(37, 211, 102, 0.1) 0%, transparent 100%);
-        }
-        .hub-hero h1 { font-family: 'Orbitron'; font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; }
+        .hub-hero { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at top, rgba(37, 211, 102, 0.15), transparent); }
+        .hub-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); }
 
-        /* ADVANCED SERVICE CARDS */
-        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         
         .web-card {
-            background: var(--glass); border-radius: 30px; padding: 40px; border: 1px solid rgba(255,255,255,0.1);
-            position: relative; overflow: hidden; backdrop-filter: blur(10px);
+            background: var(--glass); border-radius: 30px; padding: 35px; border: 1px solid rgba(255,255,255,0.1);
+            position: relative; overflow: hidden; backdrop-filter: blur(10px); display: flex; flex-direction: column;
         }
-        .web-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        .web-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-        .web-card h2 { font-family: 'Orbitron'; margin-bottom: 15px; color: var(--accent); }
-        .web-card ul { list-style: none; margin-bottom: 25px; opacity: 0.8; }
-        .web-card ul li { margin-bottom: 8px; font-size: 0.9rem; }
-        .web-card ul li::before { content: "▹ "; color: var(--primary); }
+        .web-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        
+        .project-list { background: rgba(0,0,0,0.3); border-radius: 15px; padding: 15px; margin: 15px 0; border-left: 3px solid var(--accent); }
+        .project-list h4 { font-size: 0.8rem; color: var(--primary); margin-bottom: 5px; text-transform: uppercase; }
+        .project-item { font-size: 0.85rem; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .project-item i { font-size: 0.7rem; color: var(--accent); }
 
-        .order-btn {
-            display: inline-block; width: 100%; padding: 15px; background: var(--primary);
-            color: #000; text-align: center; text-decoration: none; font-weight: 900;
-            border-radius: 12px; font-family: 'Orbitron'; transition: 0.3s;
-        }
-        .order-btn:hover { background: var(--accent); transform: scale(1.05); }
+        /* FEATURE VAULT CARD */
+        .feature-vault { grid-column: 1 / -1; background: linear-gradient(45deg, #0d1117, #161b22); border: 2px dashed var(--primary); }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
+        .f-tag { font-size: 0.75rem; background: rgba(255,255,255,0.05); padding: 5px 10px; border-radius: 5px; border: 1px solid rgba(37,211,102,0.2); cursor: pointer; }
+        .f-tag:hover { background: var(--primary); color: #000; }
 
-        /* FOOTER */
-        footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; margin-top: 100px; }
+        .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; }
+
+        .tech-stack { padding: 50px 8%; text-align: center; }
+        .tech-icons { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; font-size: 2.5rem; opacity: 0.6; }
+
+        footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
+        .social-icons { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; margin: 20px 0; }
+        .social-icons a { color: #fff; transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary); transform: scale(1.2); }
     </style>
 </head>
 <body>
@@ -75,7 +75,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-btn">HOME</a></li>
                 <li><a href="web-hub.html" class="nav-btn active">WEB HUB</a></li>
-                <li><a href="seo-mastery.html" class="nav-btn">SEO</a></li>
+                <li><a href="seo-mastery.html" class="nav-btn">SEO MASTERY</a></li>
                 <li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
                 <li><a href="portfolio-hub.html" class="nav-btn">PROJECTS</a></li>
             </ul>
@@ -83,82 +83,111 @@
     </header>
 
     <section class="hub-hero">
-        <h1 data-aos="fade-up">Web Architecture <span style="color:var(--accent)">Vault</span></h1>
-        <p class="urdu" style="font-size:1.5rem;">انٹرنیشنل معیار کی ویب سائٹ ڈویلپمنٹ اور ہائی ٹیک فیچرز</p>
+        <h1>Web Architecture <span style="color:var(--accent)">Vault</span></h1>
+        <p class="urdu" style="font-size:1.5rem;">پروفیشنل ویب ڈویلپمنٹ اور 50+ ایڈوانسڈ فیچرز</p>
     </section>
 
     <div class="service-container">
         <div class="web-card">
-            <i class="fas fa-shopping-basket"></i>
+            <i class="fas fa-shopping-cart"></i>
             <h2>E-Commerce Enterprise</h2>
-            <p class="urdu">ملٹی وینڈر اسٹور اور آن لائن پیمنٹ سسٹم</p>
-            <ul>
-                <li>Advanced Inventory Management</li>
-                <li>JazzCash / EasyPaisa / Stripe Integration</li>
-                <li>User Dashboard & Order Tracking</li>
-            </ul>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want an Enterprise E-Commerce Website with Special Additions." class="order-btn">BOOK NOW</a>
+            <p class="urdu">آن لائن اسٹور پیکیج</p>
+            <div class="project-list">
+                <h4>Completed Projects:</h4>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Mart (Multi-Vendor)</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> SPO Stationery Point Store</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Fashion Verse Global</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I am interested in E-Commerce Enterprise Package." class="order-btn">ORDER NOW</a>
         </div>
 
         <div class="web-card">
-            <i class="fas fa-microchip"></i>
-            <h2>Corporate PWA App</h2>
-            <p class="urdu">اینڈرائڈ ایپ جیسی تیز رفتار ویب سائٹ</p>
-            <ul>
-                <li>Offline Working Capability</li>
-                <li>Push Notifications System</li>
-                <li>Mobile-First UI/UX Design</li>
-            </ul>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want a Corporate PWA App for my Business." class="order-btn">BOOK NOW</a>
+            <i class="fas fa-mobile-alt"></i>
+            <h2>Corporate PWA</h2>
+            <p class="urdu">ہائی ٹیک ویب ایپس</p>
+            <div class="project-list">
+                <h4>Completed Projects:</h4>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Business Management PWA</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Service Tracking App</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Smart Inventory Hub</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to discuss Corporate PWA Application." class="order-btn">ORDER NOW</a>
         </div>
 
         <div class="web-card">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-home"></i>
             <h2>Dynamic Real Estate</h2>
-            <p class="urdu">پراپرٹی لسٹنگ اور سرچ انجن سسٹم</p>
-            <ul>
-                <li>Custom Search Filters</li>
-                <li>Google Maps Integration</li>
-                <li>Automated Lead Generation</li>
-            </ul>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want a Dynamic Real Estate Portal." class="order-btn">BOOK NOW</a>
+            <p class="urdu">پراپرٹی لسٹنگ پورٹلز</p>
+            <div class="project-list">
+                <h4>Completed Projects:</h4>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Kasur Property Linker</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> SPO Estate Finder</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Plot Management System</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need a Dynamic Real Estate Portal." class="order-btn">ORDER NOW</a>
+        </div>
+
+        <div class="web-card feature-vault">
+            <h2 style="color:var(--primary); text-align:center;"><i class="fas fa-bolt"></i> 50+ SPECIAL FEATURES VAULT</h2>
+            <p class="urdu" style="text-align:center;">اپنی پسند کے فیچرز منتخب کریں اور ویب سائٹ کو طاقتور بنائیں</p>
+            <div class="feature-grid">
+                <span class="f-tag">Dark/Light Mode</span><span class="f-tag">Live Chatbot AI</span>
+                <span class="f-tag">JazzCash API</span><span class="f-tag">Auto-SEO Schema</span>
+                <span class="f-tag">Admin Dashboard</span><span class="f-tag">Real-time Stats</span>
+                <span class="f-tag">Voice Search</span><span class="f-tag">3D Animations</span>
+                <span class="f-tag">Email Automation</span><span class="f-tag">SMS Alerts</span>
+                <span class="f-tag">Multi-Language</span><span class="f-tag">Cloud Database</span>
+            </div>
+            <p style="font-size: 0.8rem; opacity: 0.6; text-align: center;">...And many more handle through Advanced Coding</p>
+            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want a website with Special Features like AI Chat, Payment Gateway and 50+ Additions." class="order-btn" style="background:#fff;">SELECT SPECIAL FEATURES</a>
         </div>
 
         <div class="web-card">
-            <i class="fas fa-user-tie"></i>
+            <i class="fas fa-user-circle"></i>
             <h2>3D Personal Brand</h2>
-            <p class="urdu">پرسنل برانڈنگ کے لیے تھری ڈی پورٹ فولیو</p>
-            <ul>
-                <li>Glassmorphism & Parallax Effects</li>
-                <li>Interactive CV Download</li>
-                <li>Social Media Ecosystem Connect</li>
-            </ul>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want an Ultra-Personal 3D Portfolio." class="order-btn">BOOK NOW</a>
+            <p class="urdu">تھری ڈی پورٹ فولیو</p>
+            <div class="project-list">
+                <h4>Completed Projects:</h4>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Asif Ali Official Hub</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Creative Artist Verse</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Tech Expert Portfolio</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want an Ultra 3D Personal Portfolio." class="order-btn">ORDER NOW</a>
         </div>
 
         <div class="web-card">
-            <i class="fas fa-graduation-cap"></i>
-            <h2>Learning Management</h2>
-            <p class="urdu">اسکول اور اکیڈمی کے لیے مکمل پورٹل</p>
-            <ul>
-                <li>Student/Teacher Portals</li>
-                <li>Online Quiz & Result System</li>
-                <li>Fee Management Module</li>
-            </ul>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want an LMS Portal for my Institution." class="order-btn">BOOK NOW</a>
+            <i class="fas fa-laptop-house"></i>
+            <h2>LMS / School System</h2>
+            <p class="urdu">ایجوکیشن مینجمنٹ پورٹل</p>
+            <div class="project-list">
+                <h4>Completed Projects:</h4>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Academy LMS</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> SPO E-Learning Portal</div>
+                <div class="project-item"><i class="fas fa-check-circle"></i> Smart Result System</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need an LMS System for my Institution." class="order-btn">ORDER NOW</a>
         </div>
     </div>
 
+    <section class="tech-stack">
+        <h2 style="font-family:'Orbitron';">Tech Stack We Use</h2>
+        <div class="tech-icons">
+            <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i>
+            <i class="fab fa-bootstrap"></i><i class="fab fa-react"></i><i class="fab fa-php"></i>
+            <i class="fab fa-github"></i><i class="fab fa-wordpress"></i>
+        </div>
+    </section>
+
     <footer>
         <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px;">SPO SMART DIGITAL VERSE</p>
-        <div style="margin: 20px 0; font-size: 1.5rem; display: flex; justify-content: center; gap: 20px;">
-            <a href="#" style="color:#fff;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/923034480404" style="color:#25D366;"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-icons">
+            <a href="https://facebook.com/sposmartprinting"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/asif_spo"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@asif_it_expert"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="opacity:0.5; font-size:0.8rem;">Design & Developed By Muhammad Asif Ali</p>
+        <p style="opacity:0.5; font-size:0.8rem;">Design & Developed By Muhammad Asif Ali | Kanganpur</p>
     </footer>
 
 </body>
-    </html>
-    
+</html>
