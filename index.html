@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART DIGITAL VERSE | Master Hub 2026</title>
+    <title>SPO SMART DIGITAL VERSE | Official Master Hub</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,104 +16,109 @@
 
         * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s; scroll-behavior: smooth; font-weight: 900 !important; }
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif; overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; text-align: right; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; text-align: right; }
 
-        /* 1. HEADER - PERFECT ROUND LOGO & 3D TEXT */
+        /* HEADER - PERFECT ROUND LOGO & 3D BRAND */
         header {
-            position: fixed; top: 0; width: 100%; height: 100px; z-index: 1000;
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
-            border-bottom: 3px solid var(--primary); display: flex; align-items: center; justify-content: flex-start; padding: 0 4%;
+            position: fixed; top: 0; width: 100%; height: 110px; z-index: 1000;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
+            border-bottom: 4px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 4%;
         }
         .header-content { display: flex; align-items: center; gap: 20px; width: 100%; flex-direction: row-reverse; }
         
         .logo-box { 
-            width: 75px; height: 75px; border-radius: 50%; overflow: hidden; 
-            box-shadow: 0 0 20px var(--primary); border: 2px solid var(--primary);
-            flex-shrink: 0; aspect-ratio: 1/1; /* Force perfect round */
+            width: 85px; height: 85px; border-radius: 50%; overflow: hidden; 
+            box-shadow: 0 0 25px var(--primary); border: 3px solid var(--primary);
+            flex-shrink: 0; aspect-ratio: 1/1;
         }
         .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 
         .brand-name { 
-            font-family: 'Orbitron'; font-size: 1.7rem; color: #fff; 
-            text-shadow: 2px 2px 0px var(--primary), 4px 4px 8px rgba(0,0,0,0.8);
-            cursor: pointer; animation: float3D 4s ease-in-out infinite;
+            font-family: 'Orbitron'; font-size: 2.2rem; color: #fff; 
+            text-shadow: 3px 3px 0px var(--primary), 6px 6px 12px rgba(0,0,0,0.9);
+            cursor: pointer; position: relative; animation: float3D 4s ease-in-out infinite;
         }
-        @keyframes float3D { 0%, 100% { transform: translateY(0) rotateX(0deg); } 50% { transform: translateY(-10px) rotateX(10deg); } }
+        @keyframes float3D { 0%, 100% { transform: translateY(0) rotateY(0deg); } 50% { transform: translateY(-15px) rotateY(10deg); } }
+        .brand-name:hover { color: var(--primary); transform: scale(1.05); }
 
         nav { margin-right: auto; }
-        nav ul { display: flex; gap: 8px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 10px 12px; border-radius: 10px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.65rem; border: 1px solid var(--primary); }
-        .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
+        nav ul { display: flex; gap: 12px; list-style: none; }
+        .nav-btn { background: var(--glass); color: #fff; padding: 12px 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.75rem; border: 2px solid var(--primary); box-shadow: inset 0 0 10px rgba(37,211,102,0.2); }
+        .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 25px var(--primary); transform: translateY(-5px); }
 
-        /* 2. THEME PANEL */
-        .theme-panel { position: fixed; left: 15px; top: 120px; z-index: 2000; display: flex; flex-direction: column; gap: 10px; }
-        .color-dot { width: 32px; height: 32px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; }
-        .rainbow-btn { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(45deg, red, yellow, blue, green); animation: rotate 3s linear infinite; cursor: pointer; border: 2px solid #fff; }
+        /* THEME PANEL - 6 COLORS + RAINBOW */
+        .theme-panel { position: fixed; left: 20px; top: 140px; z-index: 2000; display: flex; flex-direction: column; gap: 12px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 40px; border: 1px solid var(--primary); }
+        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .rainbow-btn { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); animation: rotate 3s linear infinite; cursor: pointer; border: 2px solid #fff; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
 
-        /* 3. CLOCK SECTION - FULL LOGO ADJUSTMENT */
-        .top-clock-area { padding-top: 150px; text-align: center; }
-        .clock-wrapper { position: relative; width: 340px; height: 340px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+        /* CLOCK SECTION */
+        .top-clock-area { padding-top: 180px; text-align: center; }
+        .clock-wrapper { position: relative; width: 360px; height: 360px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
         .clock-face { 
-            width: 230px; height: 230px; border: 10px solid var(--primary); border-radius: 50%; 
-            background: url('verse.png') no-repeat center; background-size: cover; /* logo fills to border */
-            position: relative; box-shadow: 0 0 50px var(--primary); background-color: #000;
+            width: 250px; height: 250px; border: 12px solid var(--primary); border-radius: 50%; 
+            background: url('verse.png') no-repeat center; background-size: cover;
+            position: relative; box-shadow: 0 0 60px var(--primary); background-color: #000;
         }
-        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; background: var(--primary); transform: translateX(-50%); border-radius: 5px; }
-        .hour { width: 7px; height: 50px; z-index: 2; } .min { width: 5px; height: 80px; z-index: 2; } .sec { width: 2px; height: 95px; background: #ff0000; z-index: 3; }
+        .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; background: var(--primary); transform: translateX(-50%); border-radius: 10px; }
+        .hour { width: 8px; height: 60px; z-index: 2; } .min { width: 6px; height: 90px; z-index: 2; } .sec { width: 2px; height: 110px; background: #ff0000; z-index: 3; }
         
-        .social-node { position: absolute; width: 65px; height: 65px; background: var(--bg); border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.8rem; text-decoration: none; z-index: 10; }
-        .social-node:hover { background: var(--primary); color: #000; box-shadow: 0 0 25px var(--primary); transform: scale(1.15); }
+        .social-node { position: absolute; width: 70px; height: 70px; background: var(--bg); border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2rem; text-decoration: none; z-index: 10; box-shadow: 0 0 20px rgba(37,211,102,0.4); }
+        .social-node:hover { background: var(--primary); color: #000; box-shadow: 0 0 40px var(--primary); transform: scale(1.2); }
         .s-top { top: 0; } .s-right { right: 0; } .s-bottom { bottom: 0; } .s-left { left: 0; }
 
-        /* 4. HERO SECTION */
-        .hero-section { padding: 40px 5%; text-align: center; }
-        .hero-heading { color: var(--primary); font-size: clamp(1.5rem, 5vw, 2.8rem); margin-bottom: 20px; text-shadow: 0 0 10px var(--primary); }
+        /* HERO CONTENT - DETAILED URDU */
+        .hero-section { padding: 60px 5%; text-align: center; }
+        .hero-heading { color: var(--primary); font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 30px; text-shadow: 0 0 20px var(--primary); }
+        .hero-p { font-size: clamp(1.2rem, 3vw, 1.8rem); max-width: 1000px; margin: 0 auto; color: #e0e0e0; }
 
-        /* 5. SERVICE CARDS */
-        .services-container { padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--glass); border: 2px solid var(--primary); border-radius: 25px; padding: 25px; }
-        .card h3 { color: var(--accent); margin-bottom: 20px; font-family: 'Orbitron'; text-align: center; border-bottom: 1px solid var(--glass); padding-bottom: 15px; }
-        .lvl { display: block; background: rgba(0,0,0,0.4); padding: 15px; margin-bottom: 12px; border-radius: 15px; border-left: 5px solid var(--primary); text-decoration: none; color: #fff; transition: 0.3s; }
-        .lvl:hover { background: var(--primary); color: #000; transform: scale(1.05); }
-        .lvl b { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--primary); display: block; }
+        /* 4 SERVICE CARDS - FULL VERSION */
+        .services-container { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+        .card { background: var(--glass); border: 2px solid var(--primary); border-radius: 35px; padding: 35px; position: relative; overflow: hidden; }
+        .card::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(37,211,102,0.1) 0%, transparent 70%); }
+        .card h3 { color: var(--accent); margin-bottom: 25px; font-family: 'Orbitron'; text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 20px; font-size: 1.6rem; }
+        
+        .lvl { display: block; background: rgba(0,0,0,0.6); padding: 18px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--primary); text-decoration: none; color: #fff; transition: 0.4s; position: relative; z-index: 1; }
+        .lvl:hover { background: var(--primary); color: #000; transform: translateX(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .lvl b { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--primary); display: block; margin-bottom: 5px; }
         .lvl:hover b { color: #000; }
 
-        /* 6. KANGANPUR LOCAL HUB - MEGA GRID */
-        .local-hub-mega { background: var(--glass); border: 4px dashed var(--primary); margin: 60px 5%; padding: 50px 5%; border-radius: 50px; }
-        .hub-title { text-align: center; color: var(--accent); font-size: 2.2rem; margin-bottom: 15px; }
-        .hub-subtitle { text-align: center; margin-bottom: 40px; color: #fff; font-size: 1.2rem; opacity: 0.8; }
+        /* MEGA LOCAL HUB - KANGANPUR */
+        .local-hub-mega { background: var(--glass); border: 5px dashed var(--primary); margin: 80px 5%; padding: 60px 5%; border-radius: 60px; box-shadow: inset 0 0 50px rgba(37,211,102,0.1); }
+        .hub-title { text-align: center; color: var(--accent); font-size: 2.8rem; margin-bottom: 20px; text-shadow: 0 0 15px var(--accent); }
+        .hub-subtitle { text-align: center; margin-bottom: 50px; color: #fff; font-size: 1.5rem; }
         
-        .hub-category-title { color: var(--primary); border-right: 5px solid var(--primary); padding-right: 15px; margin: 30px 0 20px; font-size: 1.5rem; }
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .hub-item-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 20px; display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff; transition: 0.4s; }
-        .hub-item-box:hover { background: var(--primary); color: #000; border-color: #fff; transform: translateY(-5px); }
-        .hub-item-box i { font-size: 1.8rem; color: var(--primary); }
-        .hub-item-box:hover i { color: #000; }
+        .hub-cat { color: var(--primary); border-right: 6px solid var(--primary); padding-right: 20px; margin: 40px 0 25px; font-size: 1.8rem; background: rgba(37,211,102,0.05); display: inline-block; padding-left: 30px; border-radius: 0 15px 15px 0; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .hub-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 25px; display: flex; align-items: center; gap: 20px; text-decoration: none; color: #fff; font-size: 1.2rem; }
+        .hub-box:hover { background: var(--primary); color: #000; transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .hub-box i { font-size: 2.2rem; color: var(--primary); }
+        .hub-box:hover i { color: #000; }
 
-        /* 7. FOOTER - ROUND LOGO & 4 SOCIALS */
-        footer { background: #000; padding: 80px 5% 40px; border-top: 5px solid var(--primary); text-align: center; }
-        .f-logo { width: 110px; height: 110px; border-radius: 50%; border: 4px solid var(--primary); box-shadow: 0 0 25px var(--primary); margin-bottom: 25px; object-fit: cover; aspect-ratio: 1/1; }
-        .f-brand { font-family: 'Orbitron'; font-size: 2.2rem; color: var(--primary); text-shadow: 0 0 15px var(--primary); margin-bottom: 20px; }
+        /* FOOTER - COMPREHENSIVE */
+        footer { background: #000; padding: 100px 5% 50px; border-top: 8px solid var(--primary); text-align: center; }
+        .f-logo { width: 130px; height: 130px; border-radius: 50%; border: 5px solid var(--primary); box-shadow: 0 0 35px var(--primary); margin-bottom: 30px; object-fit: cover; }
+        .f-brand { font-family: 'Orbitron'; font-size: 2.8rem; color: var(--primary); text-shadow: 0 0 20px var(--primary); margin-bottom: 30px; }
         
-        .f-socials-row { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
-        .f-social-btn { font-size: 2.5rem; color: var(--primary); transition: 0.3s; text-decoration: none; }
-        .f-social-btn:hover { transform: scale(1.3); color: #fff; }
+        .f-socials { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; }
+        .f-link { font-size: 3rem; color: var(--primary); transition: 0.4s; }
+        .f-link:hover { transform: translateY(-15px) scale(1.2); color: #fff; }
         
-        .f-contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: #fff; margin-bottom: 40px; }
-        .f-contact-info a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .f-contact-info i { color: var(--primary); }
+        .f-info-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; color: #fff; margin-bottom: 50px; font-size: 1.1rem; }
+        .f-info-grid a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 15px; }
+        .f-info-grid i { color: var(--primary); font-size: 1.5rem; }
 
-        .f-copyright { opacity: 0.5; border-top: 1px solid var(--glass); padding-top: 30px; font-size: 0.9rem; line-height: 2; }
+        .f-copy { opacity: 0.6; border-top: 1px solid var(--glass); padding-top: 40px; font-size: 1rem; line-height: 2.5; }
 
         /* WHATSAPP FLOAT */
-        .wa-float { position: fixed; bottom: 30px; left: 30px; width: 80px; height: 80px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 45px; box-shadow: 0 0 30px #25D366; z-index: 5000; animation: bounce 2s infinite; text-decoration: none; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .wa-float { position: fixed; bottom: 40px; left: 40px; width: 90px; height: 90px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 0 40px #25D366; z-index: 5000; animation: wa-bounce 2s infinite; text-decoration: none; }
+        @keyframes wa-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
 
-        @media (max-width: 768px) {
-            header { height: auto; flex-direction: column; padding: 20px; }
-            .header-content { flex-direction: column; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
+        @media (max-width: 900px) {
+            header { height: auto; flex-direction: column; padding: 25px; }
+            .header-content { flex-direction: column; text-align: center; }
+            nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+            .brand-name { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -122,10 +127,13 @@
     <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <div class="theme-panel">
-        <div class="rainbow-btn" onclick="toggleRainbow()"></div>
+        <div class="rainbow-btn" onclick="toggleRainbow()" title="Rainbow Mode"></div>
         <div class="color-dot" style="background: #25D366;" onclick="setTheme('#25D366')"></div>
         <div class="color-dot" style="background: #00e5ff;" onclick="setTheme('#00e5ff')"></div>
         <div class="color-dot" style="background: #ff00ff;" onclick="setTheme('#ff00ff')"></div>
+        <div class="color-dot" style="background: #ffbd07;" onclick="setTheme('#ffbd07')"></div>
+        <div class="color-dot" style="background: #ff4757;" onclick="setTheme('#ff4757')"></div>
+        <div class="color-dot" style="background: #ffffff;" onclick="setTheme('#ffffff')"></div>
     </div>
 
     <header>
@@ -134,9 +142,9 @@
             <div class="brand-name">SPO SMART DIGITAL VERSE</div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="nav-btn">HOME</a></li>
-                    <li><a href="web-hub.html" class="nav-btn">WEB HUB</a></li>
-                    <li><a href="seo-mastery.html" class="nav-btn">SEO</a></li>
+                    <li><a href="index.html" class="nav-btn">HOME HUB</a></li>
+                    <li><a href="web-hub.html" class="nav-btn">WEB VERSE</a></li>
+                    <li><a href="seo-mastery.html" class="nav-btn">SEO PRO</a></li>
                     <li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
                     <li><a href="portfolio.html" class="nav-btn">PROJECTS</a></li>
                 </ul>
@@ -160,20 +168,34 @@
     </section>
 
     <section class="hero-section urdu">
-        <h1 class="hero-heading">ہم آپ کے کاروبار کو برانڈ بناتے ہیں</h1>
-        <p>جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔</p>
+        <h1 class="hero-heading">ہم آپ کے کاروبار کو صرف آن لائن نہیں لاتے، ہم اسے برانڈ بناتے ہیں!</h1>
+        <p class="hero-p">جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔ چاہے آپ ایک چھوٹا کاروبار ہوں یا ایک بڑا برانڈ، ہم آپ کو آن لائن دنیا میں نمایاں کرنے کے لیے مکمل حل فراہم کرتے ہیں۔</p>
     </section>
 
     <div class="services-container urdu">
         <div class="card">
-            <h3>Website Development</h3>
-            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>Business Starter</a>
-            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>E-commerce Store</a>
+            <h3>Web Development</h3>
+            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>بزنس پورٹ فولیو ویب سائٹ</a>
+            <a href="https://wa.me/923034480404?text=Standard Web" class="lvl"><b>STANDARD</b>پروفیشنل بزنس ویب سائٹ</a>
+            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>ای کامرس آن لائن اسٹور</a>
         </div>
         <div class="card">
-            <h3>SEO & Marketing</h3>
-            <a href="https://wa.me/923034480404?text=SEO Setup" class="lvl"><b>SEO</b>Local Google Ranking</a>
-            <a href="https://wa.me/923034480404?text=Social Marketing" class="lvl"><b>SOCIAL</b>Ads & Promotion</a>
+            <h3>SEO & Ranking</h3>
+            <a href="https://wa.me/923034480404?text=Local SEO" class="lvl"><b>LOCAL</b>گوگل بزنس پروفائل سیٹ اپ</a>
+            <a href="https://wa.me/923034480404?text=Standard SEO" class="lvl"><b>STANDARD</b>آن پیج اور ٹیکنیکل ایس ای او</a>
+            <a href="https://wa.me/923034480404?text=Pro SEO" class="lvl"><b>PRO</b>مکمل ماہانہ رینکنگ سروس</a>
+        </div>
+        <div class="card">
+            <h3>Digital Marketing</h3>
+            <a href="https://wa.me/923034480404?text=Social Growth" class="lvl"><b>GROWTH</b>سوشل میڈیا پیج مینجمنٹ</a>
+            <a href="https://wa.me/923034480404?text=Paid Ads" class="lvl"><b>ADS</b>فیس بک اور انسٹاگرام ایڈز</a>
+            <a href="https://wa.me/923034480404?text=Full Marketing" class="lvl"><b>PRO</b>کمپلیٹ ڈیجیٹل مارکیٹنگ پلان</a>
+        </div>
+        <div class="card">
+            <h3>Branding & Design</h3>
+            <a href="https://wa.me/923034480404?text=Logo Design" class="lvl"><b>LOGO</b>پروفیشنل لوگو ڈیزائننگ</a>
+            <a href="https://wa.me/923034480404?text=Stationery Design" class="lvl"><b>IDENTITY</b>بزنس کارڈ اور لیٹر ہیڈ</a>
+            <a href="https://wa.me/923034480404?text=Video Ads" class="lvl"><b>VIDEO</b>برانڈ پرومو ویڈیو ایڈز</a>
         </div>
     </div>
 
@@ -181,28 +203,30 @@
         <h2 class="hub-title">🏪 اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
         <p class="hub-subtitle">🪟 ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
 
-        <h3 class="hub-category-title">🖨️ پرنٹنگ اور ڈاکومنٹ سروسز</h3>
+        <h3 class="hub-cat">🖨️ پرنٹنگ اور ڈاکومنٹ سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Need Color Printing" class="hub-item-box"><i class="fas fa-print"></i> کلر اور بلیک پرنٹنگ</a>
-            <a href="https://wa.me/923034480404?text=Need Passport Photos" class="hub-item-box"><i class="fas fa-camera"></i> پاسپورٹ سائز فوٹوز</a>
-            <a href="https://wa.me/923034480404?text=Need Scanning" class="hub-item-box"><i class="fas fa-file-export"></i> ڈاکومنٹ اسکیننگ</a>
-            <a href="https://wa.me/923034480404?text=Need Photocopy" class="hub-item-box"><i class="fas fa-copy"></i> فوٹو کاپی سروس</a>
-            <a href="https://wa.me/923034480404?text=Need Binding" class="hub-item-box"><i class="fas fa-book-open"></i> بائنڈنگ و لیمینیشن</a>
+            <a href="https://wa.me/923034480404?text=Color Printing" class="hub-box"><i class="fas fa-print"></i> کلر اور بلیک پرنٹنگ</a>
+            <a href="https://wa.me/923034480404?text=Passport Photos" class="hub-box"><i class="fas fa-camera"></i> پاسپورٹ سائز فوٹوز</a>
+            <a href="https://wa.me/923034480404?text=Scanning" class="hub-box"><i class="fas fa-file-pdf"></i> ڈاکومنٹ اسکیننگ</a>
+            <a href="https://wa.me/923034480404?text=Binding" class="hub-box"><i class="fas fa-book-reader"></i> بائنڈنگ اور لیمینیشن</a>
+            <a href="https://wa.me/923034480404?text=Photocopy" class="hub-box"><i class="fas fa-copy"></i> تیز ترین فوٹو کاپی سروس</a>
         </div>
 
-        <h3 class="hub-category-title">🌐 آن لائن اور گورنمنٹ سروسز</h3>
+        <h3 class="hub-cat">🌐 آن لائن اور گورنمنٹ سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Job Apply Help" class="hub-item-box"><i class="fas fa-laptop-code"></i> آن لائن جاب اپلائی</a>
-            <a href="https://wa.me/923034480404?text=NADRA Guidance" class="hub-item-box"><i class="fas fa-id-card"></i> نادرا سروسز رہنمائی</a>
-            <a href="https://wa.me/923034480404?text=FBR Tax Filing" class="hub-item-box"><i class="fas fa-file-invoice-dollar"></i> ایف بی آر ٹیکس فائلنگ</a>
-            <a href="https://wa.me/923034480404?text=Domicile Help" class="hub-item-box"><i class="fas fa-certificate"></i> ڈومیسائل سروس</a>
+            <a href="https://wa.me/923034480404?text=Online Job Apply" class="hub-box"><i class="fas fa-user-graduate"></i> آن لائن جاب اپلائی</a>
+            <a href="https://wa.me/923034480404?text=Job Updates" class="hub-box"><i class="fas fa-bell"></i> سرکاری نوکریوں کی اپڈیٹس</a>
+            <a href="https://wa.me/923034480404?text=NADRA Help" class="hub-box"><i class="fas fa-id-card"></i> نادرا سروسز رہنمائی</a>
+            <a href="https://wa.me/923034480404?text=FBR Tax" class="hub-box"><i class="fas fa-file-invoice-dollar"></i> ایف بی آر ٹیکس فائلنگ</a>
+            <a href="https://wa.me/923034480404?text=Domicile" class="hub-box"><i class="fas fa-certificate"></i> ڈومیسائل اور سرٹیفیکیٹس</a>
         </div>
 
-        <h3 class="hub-category-title">💻 پروفیشنل ڈیجیٹل سروسز</h3>
+        <h3 class="hub-cat">💻 پروفیشنل ڈیجیٹل سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Need CV Design" class="hub-item-box"><i class="fas fa-file-alt"></i> سی وی / ریزیومے بنوانا</a>
-            <a href="https://wa.me/923034480404?text=Need Web Service" class="hub-item-box"><i class="fas fa-globe"></i> ویب سائٹ ڈیویلپمنٹ</a>
-            <a href="https://wa.me/923034480404?text=Need Digital Marketing" class="hub-item-box"><i class="fas fa-chart-line"></i> ڈیجیٹل مارکیٹنگ</a>
+            <a href="https://wa.me/923034480404?text=CV Design" class="hub-box"><i class="fas fa-file-alt"></i> سی وی / ریزیومے بنوانا</a>
+            <a href="https://wa.me/923034480404?text=Web Development" class="hub-box"><i class="fas fa-globe"></i> ویب سائٹ ڈیویلپمنٹ</a>
+            <a href="https://wa.me/923034480404?text=Digital Marketing" class="hub-box"><i class="fas fa-chart-line"></i> ڈیجیٹل مارکیٹنگ</a>
+            <a href="https://wa.me/923034480404?text=SEO Help" class="hub-box"><i class="fas fa-search-plus"></i> آن لائن بزنس سلوشنز</a>
         </div>
     </section>
 
@@ -210,22 +234,22 @@
         <img src="verse.png" alt="SPO" class="f-logo">
         <div class="f-brand">SPO SMART DIGITAL VERSE</div>
         
-        <div class="f-socials-row">
-            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="f-social-btn"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/smartprinting.online" target="_blank" class="f-social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="f-social-btn"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404" target="_blank" class="f-social-btn"><i class="fab fa-whatsapp"></i></a>
+        <div class="f-socials">
+            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="f-link"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/smartprinting.online" target="_blank" class="f-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="f-link"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923034480404" target="_blank" class="f-link"><i class="fab fa-whatsapp"></i></a>
         </div>
 
-        <div class="f-contact-info urdu">
+        <div class="f-info-grid urdu">
             <a href="tel:03034480404"><i class="fas fa-phone"></i> 0303-4480404</a>
             <a href="mailto:asif.aimarketing@gmail.com"><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</a>
-            <a href="http://www.smartprintingonline.site"><i class="fas fa-globe"></i> www.smartprintingonline.site</a>
+            <a href="http://www.smartprintingonline.site" target="_blank"><i class="fas fa-globe"></i> www.smartprintingonline.site</a>
         </div>
 
-        <div class="f-copyright">
-            📍 پتہ: پرانا پکا بازار، کنگن پور<br>
-            © 2026 Developed By <b>Muhammad Asif Ali</b> | SEO & Web Specialist
+        <div class="f-copy urdu">
+            📍 پتہ: پرانا پکا بازار، کنگن پور | ✨ ہم آپ کے کام کو آسان بناتے ہیں!<br>
+            © 2026 Developed By <b>Muhammad Asif Ali</b> | SEO & Full-Stack Web Developer
         </div>
     </footer>
 
@@ -248,8 +272,8 @@
         function toggleRainbow() {
             clearInterval(rainbowTimer);
             rainbowTimer = setInterval(() => {
-                const colors = ['#25D366', '#00e5ff', '#ff00ff', '#ffbd07'];
-                document.documentElement.style.setProperty('--primary', colors[Math.floor(Math.random() * 4)]);
+                const colors = ['#25D366', '#00e5ff', '#ff00ff', '#ffbd07', '#ff4757', '#ffffff'];
+                document.documentElement.style.setProperty('--primary', colors[Math.floor(Math.random() * 6)]);
             }, 3000);
         }
     </script>
