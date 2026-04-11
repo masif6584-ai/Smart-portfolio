@@ -18,7 +18,7 @@
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif; overflow-x: hidden; }
         .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; text-align: right; }
 
-        /* HEADER - PERFECT ROUND LOGO & 3D BRAND */
+        /* HEADER - PERFECT ROUND LOGO & FIXED NAV LINK */
         header {
             position: fixed; top: 0; width: 100%; height: 110px; z-index: 1000;
             background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
@@ -39,16 +39,15 @@
             cursor: pointer; position: relative; animation: float3D 4s ease-in-out infinite;
         }
         @keyframes float3D { 0%, 100% { transform: translateY(0) rotateY(0deg); } 50% { transform: translateY(-15px) rotateY(10deg); } }
-        .brand-name:hover { color: var(--primary); transform: scale(1.05); }
 
         nav { margin-right: auto; }
         nav ul { display: flex; gap: 12px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 12px 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.75rem; border: 2px solid var(--primary); box-shadow: inset 0 0 10px rgba(37,211,102,0.2); }
+        .nav-btn { background: var(--glass); color: #fff; padding: 12px 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.75rem; border: 2px solid var(--primary); }
         .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 25px var(--primary); transform: translateY(-5px); }
 
-        /* THEME PANEL - 6 COLORS + RAINBOW */
+        /* THEME PANEL - 6 COLORS */
         .theme-panel { position: fixed; left: 20px; top: 140px; z-index: 2000; display: flex; flex-direction: column; gap: 12px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 40px; border: 1px solid var(--primary); }
-        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; }
         .rainbow-btn { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); animation: rotate 3s linear infinite; cursor: pointer; border: 2px solid #fff; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
 
@@ -63,54 +62,40 @@
         .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; background: var(--primary); transform: translateX(-50%); border-radius: 10px; }
         .hour { width: 8px; height: 60px; z-index: 2; } .min { width: 6px; height: 90px; z-index: 2; } .sec { width: 2px; height: 110px; background: #ff0000; z-index: 3; }
         
-        .social-node { position: absolute; width: 70px; height: 70px; background: var(--bg); border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2rem; text-decoration: none; z-index: 10; box-shadow: 0 0 20px rgba(37,211,102,0.4); }
+        .social-node { position: absolute; width: 70px; height: 70px; background: var(--bg); border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2rem; text-decoration: none; z-index: 10; }
         .social-node:hover { background: var(--primary); color: #000; box-shadow: 0 0 40px var(--primary); transform: scale(1.2); }
         .s-top { top: 0; } .s-right { right: 0; } .s-bottom { bottom: 0; } .s-left { left: 0; }
 
-        /* HERO CONTENT - DETAILED URDU */
+        /* HERO CONTENT */
         .hero-section { padding: 60px 5%; text-align: center; }
         .hero-heading { color: var(--primary); font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 30px; text-shadow: 0 0 20px var(--primary); }
         .hero-p { font-size: clamp(1.2rem, 3vw, 1.8rem); max-width: 1000px; margin: 0 auto; color: #e0e0e0; }
 
-        /* 4 SERVICE CARDS - FULL VERSION */
+        /* 4 SERVICE CARDS */
         .services-container { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .card { background: var(--glass); border: 2px solid var(--primary); border-radius: 35px; padding: 35px; position: relative; overflow: hidden; }
-        .card::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(37,211,102,0.1) 0%, transparent 70%); }
+        .card { background: var(--glass); border: 2px solid var(--primary); border-radius: 35px; padding: 35px; position: relative; }
         .card h3 { color: var(--accent); margin-bottom: 25px; font-family: 'Orbitron'; text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 20px; font-size: 1.6rem; }
-        
-        .lvl { display: block; background: rgba(0,0,0,0.6); padding: 18px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--primary); text-decoration: none; color: #fff; transition: 0.4s; position: relative; z-index: 1; }
-        .lvl:hover { background: var(--primary); color: #000; transform: translateX(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .lvl b { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--primary); display: block; margin-bottom: 5px; }
-        .lvl:hover b { color: #000; }
+        .lvl { display: block; background: rgba(0,0,0,0.6); padding: 18px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--primary); text-decoration: none; color: #fff; transition: 0.4s; }
+        .lvl:hover { background: var(--primary); color: #000; transform: translateX(-10px); }
+        .lvl b { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--primary); display: block; }
 
-        /* MEGA LOCAL HUB - KANGANPUR */
-        .local-hub-mega { background: var(--glass); border: 5px dashed var(--primary); margin: 80px 5%; padding: 60px 5%; border-radius: 60px; box-shadow: inset 0 0 50px rgba(37,211,102,0.1); }
-        .hub-title { text-align: center; color: var(--accent); font-size: 2.8rem; margin-bottom: 20px; text-shadow: 0 0 15px var(--accent); }
-        .hub-subtitle { text-align: center; margin-bottom: 50px; color: #fff; font-size: 1.5rem; }
-        
-        .hub-cat { color: var(--primary); border-right: 6px solid var(--primary); padding-right: 20px; margin: 40px 0 25px; font-size: 1.8rem; background: rgba(37,211,102,0.05); display: inline-block; padding-left: 30px; border-radius: 0 15px 15px 0; }
+        /* MEGA LOCAL HUB */
+        .local-hub-mega { background: var(--glass); border: 5px dashed var(--primary); margin: 80px 5%; padding: 60px 5%; border-radius: 60px; }
+        .hub-title { text-align: center; color: var(--accent); font-size: 2.8rem; margin-bottom: 20px; }
+        .hub-cat { color: var(--primary); border-right: 6px solid var(--primary); padding-right: 20px; margin: 40px 0 25px; font-size: 1.8rem; display: inline-block; }
         .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .hub-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 25px; display: flex; align-items: center; gap: 20px; text-decoration: none; color: #fff; font-size: 1.2rem; }
-        .hub-box:hover { background: var(--primary); color: #000; transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .hub-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 25px; display: flex; align-items: center; gap: 20px; text-decoration: none; color: #fff; }
+        .hub-box:hover { background: var(--primary); color: #000; transform: scale(1.05); }
         .hub-box i { font-size: 2.2rem; color: var(--primary); }
-        .hub-box:hover i { color: #000; }
 
-        /* FOOTER - COMPREHENSIVE */
+        /* FOOTER */
         footer { background: #000; padding: 100px 5% 50px; border-top: 8px solid var(--primary); text-align: center; }
         .f-logo { width: 130px; height: 130px; border-radius: 50%; border: 5px solid var(--primary); box-shadow: 0 0 35px var(--primary); margin-bottom: 30px; object-fit: cover; }
-        .f-brand { font-family: 'Orbitron'; font-size: 2.8rem; color: var(--primary); text-shadow: 0 0 20px var(--primary); margin-bottom: 30px; }
-        
+        .f-brand { font-family: 'Orbitron'; font-size: 2.8rem; color: var(--primary); margin-bottom: 30px; }
         .f-socials { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; }
         .f-link { font-size: 3rem; color: var(--primary); transition: 0.4s; }
-        .f-link:hover { transform: translateY(-15px) scale(1.2); color: #fff; }
-        
-        .f-info-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; color: #fff; margin-bottom: 50px; font-size: 1.1rem; }
-        .f-info-grid a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 15px; }
-        .f-info-grid i { color: var(--primary); font-size: 1.5rem; }
+        .f-link:hover { transform: translateY(-15px); color: #fff; }
 
-        .f-copy { opacity: 0.6; border-top: 1px solid var(--glass); padding-top: 40px; font-size: 1rem; line-height: 2.5; }
-
-        /* WHATSAPP FLOAT */
         .wa-float { position: fixed; bottom: 40px; left: 40px; width: 90px; height: 90px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 0 40px #25D366; z-index: 5000; animation: wa-bounce 2s infinite; text-decoration: none; }
         @keyframes wa-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
 
@@ -118,7 +103,6 @@
             header { height: auto; flex-direction: column; padding: 25px; }
             .header-content { flex-direction: column; text-align: center; }
             nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
-            .brand-name { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -127,7 +111,7 @@
     <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <div class="theme-panel">
-        <div class="rainbow-btn" onclick="toggleRainbow()" title="Rainbow Mode"></div>
+        <div class="rainbow-btn" onclick="toggleRainbow()"></div>
         <div class="color-dot" style="background: #25D366;" onclick="setTheme('#25D366')"></div>
         <div class="color-dot" style="background: #00e5ff;" onclick="setTheme('#00e5ff')"></div>
         <div class="color-dot" style="background: #ff00ff;" onclick="setTheme('#ff00ff')"></div>
@@ -146,7 +130,7 @@
                     <li><a href="web-hub.html" class="nav-btn">WEB VERSE</a></li>
                     <li><a href="seo-mastery.html" class="nav-btn">SEO PRO</a></li>
                     <li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
-                    <li><a href="portfolio.html" class="nav-btn">PROJECTS</a></li>
+                    <li><a href="portfolio-hub.html" class="nav-btn">PROJECTS</a></li>
                 </ul>
             </nav>
         </div>
@@ -168,88 +152,65 @@
     </section>
 
     <section class="hero-section urdu">
-        <h1 class="hero-heading">ہم آپ کے کاروبار کو صرف آن لائن نہیں لاتے، ہم اسے برانڈ بناتے ہیں!</h1>
-        <p class="hero-p">جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔ چاہے آپ ایک چھوٹا کاروبار ہوں یا ایک بڑا برانڈ، ہم آپ کو آن لائن دنیا میں نمایاں کرنے کے لیے مکمل حل فراہم کرتے ہیں۔</p>
+        <h1 class="hero-heading">ہم آپ کے کاروبار کو برانڈ بناتے ہیں!</h1>
+        <p class="hero-p">جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔</p>
     </section>
 
     <div class="services-container urdu">
         <div class="card">
             <h3>Web Development</h3>
-            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>بزنس پورٹ فولیو ویب سائٹ</a>
-            <a href="https://wa.me/923034480404?text=Standard Web" class="lvl"><b>STANDARD</b>پروفیشنل بزنس ویب سائٹ</a>
-            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>ای کامرس آن لائن اسٹور</a>
+            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>پورٹ فولیو ویب سائٹ</a>
+            <a href="https://wa.me/923034480404?text=Standard Web" class="lvl"><b>STANDARD</b>بزنس ویب سائٹ</a>
+            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>ای کامرس اسٹور</a>
         </div>
         <div class="card">
             <h3>SEO & Ranking</h3>
-            <a href="https://wa.me/923034480404?text=Local SEO" class="lvl"><b>LOCAL</b>گوگل بزنس پروفائل سیٹ اپ</a>
-            <a href="https://wa.me/923034480404?text=Standard SEO" class="lvl"><b>STANDARD</b>آن پیج اور ٹیکنیکل ایس ای او</a>
-            <a href="https://wa.me/923034480404?text=Pro SEO" class="lvl"><b>PRO</b>مکمل ماہانہ رینکنگ سروس</a>
+            <a href="https://wa.me/923034480404?text=Local SEO" class="lvl"><b>LOCAL</b>گوگل بزنس سیٹ اپ</a>
+            <a href="https://wa.me/923034480404?text=OnPage SEO" class="lvl"><b>STANDARD</b>آن پیج ایس ای او</a>
+            <a href="https://wa.me/923034480404?text=Monthly SEO" class="lvl"><b>PRO</b>ماہانہ رینکنگ پلان</a>
         </div>
         <div class="card">
             <h3>Digital Marketing</h3>
-            <a href="https://wa.me/923034480404?text=Social Growth" class="lvl"><b>GROWTH</b>سوشل میڈیا پیج مینجمنٹ</a>
-            <a href="https://wa.me/923034480404?text=Paid Ads" class="lvl"><b>ADS</b>فیس بک اور انسٹاگرام ایڈز</a>
-            <a href="https://wa.me/923034480404?text=Full Marketing" class="lvl"><b>PRO</b>کمپلیٹ ڈیجیٹل مارکیٹنگ پلان</a>
+            <a href="https://wa.me/923034480404?text=Social Growth" class="lvl"><b>GROWTH</b>سوشل میڈیا گروتھ</a>
+            <a href="https://wa.me/923034480404?text=FB Ads" class="lvl"><b>ADS</b>فیس بک اور انسٹا ایڈز</a>
+            <a href="https://wa.me/923034480404?text=360 Plan" class="lvl"><b>PRO</b>مکمل مارکیٹنگ سلوشن</a>
         </div>
         <div class="card">
-            <h3>Branding & Design</h3>
-            <a href="https://wa.me/923034480404?text=Logo Design" class="lvl"><b>LOGO</b>پروفیشنل لوگو ڈیزائننگ</a>
-            <a href="https://wa.me/923034480404?text=Stationery Design" class="lvl"><b>IDENTITY</b>بزنس کارڈ اور لیٹر ہیڈ</a>
-            <a href="https://wa.me/923034480404?text=Video Ads" class="lvl"><b>VIDEO</b>برانڈ پرومو ویڈیو ایڈز</a>
+            <h3>Branding</h3>
+            <a href="https://wa.me/923034480404?text=Logo Design" class="lvl"><b>LOGO</b>لوگو ڈیزائننگ</a>
+            <a href="https://wa.me/923034480404?text=Identity Kit" class="lvl"><b>IDENTITY</b>بزنس کارڈز وغیرہ</a>
+            <a href="https://wa.me/923034480404?text=Video Ads" class="lvl"><b>VIDEO</b>برانڈ پرومو ویڈیوز</a>
         </div>
     </div>
 
     <section class="local-hub-mega urdu">
         <h2 class="hub-title">🏪 اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
-        <p class="hub-subtitle">🪟 ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
-
-        <h3 class="hub-cat">🖨️ پرنٹنگ اور ڈاکومنٹ سروسز</h3>
+        <h3 class="hub-cat">🖨️ پرنٹنگ سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Color Printing" class="hub-box"><i class="fas fa-print"></i> کلر اور بلیک پرنٹنگ</a>
-            <a href="https://wa.me/923034480404?text=Passport Photos" class="hub-box"><i class="fas fa-camera"></i> پاسپورٹ سائز فوٹوز</a>
-            <a href="https://wa.me/923034480404?text=Scanning" class="hub-box"><i class="fas fa-file-pdf"></i> ڈاکومنٹ اسکیننگ</a>
-            <a href="https://wa.me/923034480404?text=Binding" class="hub-box"><i class="fas fa-book-reader"></i> بائنڈنگ اور لیمینیشن</a>
-            <a href="https://wa.me/923034480404?text=Photocopy" class="hub-box"><i class="fas fa-copy"></i> تیز ترین فوٹو کاپی سروس</a>
+            <a href="https://wa.me/923034480404?text=Printing" class="hub-box"><i class="fas fa-print"></i> کلر اور بلیک پرنٹنگ</a>
+            <a href="https://wa.me/923034480404?text=Photos" class="hub-box"><i class="fas fa-camera"></i> پاسپورٹ سائز فوٹوز</a>
+            <a href="https://wa.me/923034480404?text=Scan" class="hub-box"><i class="fas fa-file-pdf"></i> ڈاکومنٹ اسکیننگ</a>
         </div>
-
-        <h3 class="hub-cat">🌐 آن لائن اور گورنمنٹ سروسز</h3>
+        <h3 class="hub-cat">🌐 آن لائن سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Online Job Apply" class="hub-box"><i class="fas fa-user-graduate"></i> آن لائن جاب اپلائی</a>
-            <a href="https://wa.me/923034480404?text=Job Updates" class="hub-box"><i class="fas fa-bell"></i> سرکاری نوکریوں کی اپڈیٹس</a>
-            <a href="https://wa.me/923034480404?text=NADRA Help" class="hub-box"><i class="fas fa-id-card"></i> نادرا سروسز رہنمائی</a>
-            <a href="https://wa.me/923034480404?text=FBR Tax" class="hub-box"><i class="fas fa-file-invoice-dollar"></i> ایف بی آر ٹیکس فائلنگ</a>
-            <a href="https://wa.me/923034480404?text=Domicile" class="hub-box"><i class="fas fa-certificate"></i> ڈومیسائل اور سرٹیفیکیٹس</a>
-        </div>
-
-        <h3 class="hub-cat">💻 پروفیشنل ڈیجیٹل سروسز</h3>
-        <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=CV Design" class="hub-box"><i class="fas fa-file-alt"></i> سی وی / ریزیومے بنوانا</a>
-            <a href="https://wa.me/923034480404?text=Web Development" class="hub-box"><i class="fas fa-globe"></i> ویب سائٹ ڈیویلپمنٹ</a>
-            <a href="https://wa.me/923034480404?text=Digital Marketing" class="hub-box"><i class="fas fa-chart-line"></i> ڈیجیٹل مارکیٹنگ</a>
-            <a href="https://wa.me/923034480404?text=SEO Help" class="hub-box"><i class="fas fa-search-plus"></i> آن لائن بزنس سلوشنز</a>
+            <a href="https://wa.me/923034480404?text=Job Apply" class="hub-box"><i class="fas fa-user-graduate"></i> آن لائن جاب اپلائی</a>
+            <a href="https://wa.me/923034480404?text=FBR Tax" class="hub-box"><i class="fas fa-file-invoice-dollar"></i> ٹیکس فائلنگ / FBR</a>
+            <a href="https://wa.me/923034480404?text=NADRA" class="hub-box"><i class="fas fa-id-card"></i> نادرا و پاسپورٹ مدد</a>
         </div>
     </section>
 
     <footer>
         <img src="verse.png" alt="SPO" class="f-logo">
         <div class="f-brand">SPO SMART DIGITAL VERSE</div>
-        
         <div class="f-socials">
             <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="f-link"><i class="fab fa-facebook"></i></a>
             <a href="https://instagram.com/smartprinting.online" target="_blank" class="f-link"><i class="fab fa-instagram"></i></a>
             <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="f-link"><i class="fab fa-tiktok"></i></a>
             <a href="https://wa.me/923034480404" target="_blank" class="f-link"><i class="fab fa-whatsapp"></i></a>
         </div>
-
-        <div class="f-info-grid urdu">
-            <a href="tel:03034480404"><i class="fas fa-phone"></i> 0303-4480404</a>
-            <a href="mailto:asif.aimarketing@gmail.com"><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</a>
-            <a href="http://www.smartprintingonline.site" target="_blank"><i class="fas fa-globe"></i> www.smartprintingonline.site</a>
-        </div>
-
         <div class="f-copy urdu">
-            📍 پتہ: پرانا پکا بازار، کنگن پور | ✨ ہم آپ کے کام کو آسان بناتے ہیں!<br>
-            © 2026 Developed By <b>Muhammad Asif Ali</b> | SEO & Full-Stack Web Developer
+            📍 پتہ: پرانا پکا بازار، کنگن پور | فون: 0303-4480404<br>
+            © 2026 Developed By <b>Muhammad Asif Ali</b>
         </div>
     </footer>
 
