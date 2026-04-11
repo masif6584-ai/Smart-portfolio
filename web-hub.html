@@ -25,7 +25,6 @@
         .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
         .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
-
         .brand-text { font-family: 'Orbitron'; font-size: 0.7rem; letter-spacing: 1px; line-height: 1.2; }
         .brand-text span { color: var(--primary); display: block; font-size: 0.9rem; }
 
@@ -44,32 +43,46 @@
         }
         .web-card:hover { border-color: var(--primary); transform: translateY(-10px); }
         .web-card i.main-icon { font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
-        
+
         .project-list { background: rgba(0,0,0,0.3); border-radius: 15px; padding: 15px; margin: 15px 0; border-left: 3px solid var(--accent); }
         .project-list h4 { font-size: 0.8rem; color: var(--primary); margin-bottom: 5px; text-transform: uppercase; }
         .project-item { font-size: 0.85rem; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
 
         /* FEATURE VAULT STYLING */
-        .feature-vault { grid-column: 1 / -1; background: linear-gradient(45deg, #0d1117, #161b22); border: 2px dashed var(--primary); }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 25px 0; }
-        .f-tag { font-size: 0.75rem; background: rgba(255,255,255,0.05); padding: 8px; border-radius: 5px; border: 1px solid rgba(37,211,102,0.2); cursor: pointer; display: flex; align-items: center; gap: 5px; }
-        .f-tag.selected { background: var(--primary); color: #000; border-color: #fff; font-weight: bold; }
-        .f-tag:hover { border-color: var(--primary); }
+        .feature-vault { grid-column: 1 / -1; border: 2px dashed var(--primary); background: #0d1117; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin: 30px 0; }
+        .f-item { 
+            background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); 
+            cursor: pointer; position: relative; transition: 0.3s;
+        }
+        .f-item.selected { border-color: var(--primary); background: rgba(37, 211, 102, 0.15); box-shadow: 0 0 15px var(--primary); }
+        .f-item h4 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .f-desc { font-size: 0.8rem; opacity: 0.8; line-height: 1.5; color: #eee; text-align: right; }
 
-        .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; cursor: pointer; }
+        .order-btn { display: block; width: 100%; padding: 18px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; cursor: pointer; font-size: 1rem; }
 
-        .tech-stack { padding: 50px 8%; text-align: center; background: rgba(255,255,255,0.02); }
-        .tech-icons { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; font-size: 3rem; }
-        .tech-icons i { color: var(--primary); opacity: 0.7; }
-        .tech-icons i:hover { opacity: 1; transform: scale(1.2); }
+        /* TECH STACK SECTION */
+        .tech-stack { padding: 80px 8%; text-align: center; background: rgba(255,255,255,0.02); }
+        .tech-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+        .tech-item { 
+            background: var(--glass); padding: 20px; border-radius: 15px; width: 130px; cursor: pointer; border: 1px solid transparent; transition: 0.3s;
+        }
+        .tech-item:hover { border-color: var(--primary); transform: scale(1.1); }
+        .tech-item i { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        
+        #tech-info-box { 
+            margin-top: 40px; padding: 25px; border-radius: 20px; background: rgba(0,229,255,0.08); 
+            border: 1px solid var(--accent); display: none; max-width: 850px; margin-left: auto; margin-right: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
         footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
-        .footer-logo { width: 80px; margin-bottom: 15px; }
-        .footer-info { margin: 20px 0; font-size: 0.9rem; }
-        .footer-info a { color: var(--accent); text-decoration: none; margin: 0 10px; }
-        .social-icons { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
-        .social-icons a { width: 45px; height: 45px; background: var(--glass); border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; text-decoration: none; font-size: 1.2rem; }
-        .social-icons a:hover { background: var(--primary); color: #000; transform: translateY(-5px); box-shadow: 0 5px 15px var(--primary); }
+        .footer-logo { width: 90px; margin-bottom: 15px; }
+        .footer-info { margin: 25px 0; line-height: 2.2; }
+        .footer-info a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .social-icons { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+        .social-icons a { width: 50px; height: 50px; border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; text-decoration: none; font-size: 1.4rem; background: var(--glass); }
+        .social-icons a:hover { background: var(--primary); color: #000; transform: translateY(-5px); box-shadow: 0 0 20px var(--primary); }
     </style>
 </head>
 <body>
@@ -77,9 +90,7 @@
 <header>
     <a href="index.html" class="logo-box">
         <div class="logo-ring"><img src="verse.png" alt="SPO"></div>
-        <div class="brand-text">
-            <span>SPO SMART</span> DIGITAL VERSE
-        </div>
+        <div class="brand-text"><span>SPO SMART</span> DIGITAL VERSE</div>
     </a>
     <nav>
         <ul class="nav-links">
@@ -93,8 +104,8 @@
 </header>
 
 <section class="hub-hero">
-    <h1>Web Architecture <span style="color:var(--accent)">Vault</span></h1>
-    <p class="urdu" style="font-size:1.5rem;">پروفیشنل ویب ڈویلپمنٹ اور 50+ ایڈوانسڈ فیچرز</p>
+    <h1>Architecture <span style="color:var(--accent)">Vault</span></h1>
+    <p class="urdu" style="font-size:1.8rem;">جدید ویب ٹیکنالوجی اور 50+ ایڈوانسڈ فیچرز</p>
 </section>
 
 <div class="service-container">
@@ -104,8 +115,8 @@
         <p class="urdu">آن لائن اسٹور پیکیج</p>
         <div class="project-list">
             <h4>Completed Projects:</h4>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Mart</div>
-            <div class="project-item"><i class="fas fa-check-circle"></i> SPO Stationery Point</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Mart (Multi-Vendor)</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> SPO Stationery Point Store</div>
         </div>
         <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I am interested in E-Commerce Enterprise Package." class="order-btn">ORDER NOW</a>
     </div>
@@ -115,10 +126,9 @@
         <h2>Healthcare Digital Hub</h2>
         <p class="urdu">ہسپتال اور کلینک مینجمنٹ سسٹم</p>
         <div class="project-list">
-            <h4>Key Features:</h4>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Patient Appointment System</div>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Doctor Portal & Records</div>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Pharmacy Billing</div>
+            <h4>Special Features:</h4>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Appointment Booking System</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Patient History Portal</div>
         </div>
         <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need a Hospital/Clinic Management Website." class="order-btn">ORDER NOW</a>
     </div>
@@ -135,14 +145,11 @@
         <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want to discuss Corporate PWA Application." class="order-btn">ORDER NOW</a>
     </div>
 
-    <div class="web-card feature-vault" id="vault">
-        <h2 style="color:var(--primary); text-align:center;"><i class="fas fa-bolt"></i> 50+ SPECIAL FEATURES VAULT</h2>
-        <p class="urdu" style="text-align:center;">اپنی پسند کے فیچرز منتخب کریں اور آرڈر کریں</p>
-        
-        <div class="feature-grid" id="featureGrid">
-            </div>
-
-        <button onclick="sendOrder()" class="order-btn" style="background:#fff;">SEND SELECTED FEATURES VIA WHATSAPP</button>
+    <div class="web-card feature-vault">
+        <h2 style="color:var(--primary); text-align:center;"><i class="fas fa-bolt"></i> 50+ SPECIAL FEATURES CATALOGUE</h2>
+        <p class="urdu" style="text-align:center;">اپنی پسند کے فیچرز پر کلک کریں اور لسٹ واٹس ایپ کریں</p>
+        <div class="feature-grid" id="featureGrid"></div>
+        <button onclick="sendOrder()" class="order-btn" style="background:#fff; color:#000;">SEND SELECTED FEATURES TO WHATSAPP</button>
     </div>
 
     <div class="web-card">
@@ -152,7 +159,7 @@
         <div class="project-list">
             <h4>Completed Projects:</h4>
             <div class="project-item"><i class="fas fa-check-circle"></i> Kasur Property Linker</div>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Plot Management System</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> SPO Estate Finder</div>
         </div>
         <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need a Dynamic Real Estate Portal." class="order-btn">ORDER NOW</a>
     </div>
@@ -171,79 +178,97 @@
 </div>
 
 <section class="tech-stack">
-    <h2 style="font-family:'Orbitron';">Tech Stack We Use</h2>
-    <div class="tech-icons">
-        <i class="fab fa-html5" title="HTML5"></i>
-        <i class="fab fa-css3-alt" title="CSS3"></i>
-        <i class="fab fa-js" title="JavaScript"></i>
-        <i class="fab fa-react" title="React JS"></i>
-        <i class="fab fa-php" title="PHP"></i>
-        <i class="fab fa-laravel" title="Laravel"></i>
-        <i class="fab fa-node-js" title="Node JS"></i>
-        <i class="fab fa-python" title="Python"></i>
-        <i class="fab fa-wordpress" title="WordPress"></i>
-        <i class="fab fa-github" title="GitHub"></i>
-        <i class="fas fa-database" title="MySQL/MongoDB"></i>
-        <i class="fab fa-aws" title="Cloud Hosting"></i>
+    <h2 style="font-family:'Orbitron';">Professional Tech Stack</h2>
+    <p class="urdu" style="color:var(--accent)">ٹیکنالوجی پر کلک کریں اور اردو میں تفصیل جانیں</p>
+    <div class="tech-grid">
+        <div class="tech-item" onclick="showTech('html')"><i class="fab fa-html5"></i><p>HTML5</p></div>
+        <div class="tech-item" onclick="showTech('react')"><i class="fab fa-react"></i><p>REACT JS</p></div>
+        <div class="tech-item" onclick="showTech('node')"><i class="fab fa-node-js"></i><p>NODE JS</p></div>
+        <div class="tech-item" onclick="showTech('php')"><i class="fab fa-php"></i><p>PHP MYSQL</p></div>
+        <div class="tech-item" onclick="showTech('wp')"><i class="fab fa-wordpress"></i><p>WORDPRESS</p></div>
+        <div class="tech-item" onclick="showTech('python')"><i class="fab fa-python"></i><p>PYTHON AI</p></div>
+    </div>
+    <div id="tech-info-box" class="urdu">
+        <h3 id="tech-title" style="color:var(--primary); margin-bottom:10px;"></h3>
+        <p id="tech-desc"></p>
     </div>
 </section>
 
 <footer>
     <img src="verse.png" alt="SPO Logo" class="footer-logo">
     <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px;">SPO SMART DIGITAL VERSE</p>
-    
     <div class="footer-info">
         <p><i class="fas fa-envelope"></i> <a href="mailto:asif.aimarketing@gmail.com">asif.aimarketing@gmail.com</a></p>
         <p><i class="fas fa-globe"></i> <a href="https://www.SmartPrintingOnline.site" target="_blank">www.SmartPrintingOnline.site</a></p>
         <p><i class="fas fa-phone-alt"></i> <a href="https://wa.me/923034480404">0303 4480404</a></p>
     </div>
-
     <div class="social-icons">
-        <a href="https://www.facebook.com/share/1EqFB.https" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    
-    <p style="opacity:0.5; font-size:0.8rem;">© 2026 Design & Developed By Muhammad Asif Ali | Kanganpur</p>
+    <p style="opacity:0.5; font-size:0.8rem;">Design & Developed By Muhammad Asif Ali | Kanganpur</p>
 </footer>
 
 <script>
-    const features = [
-        "Dark/Light Mode", "Live Chatbot AI", "JazzCash API", "Auto SEO Schema", "Admin Dashboard", "Real-time Stats",
-        "Voice Search", "3D Animations", "Email Automation", "SMS Alerts", "Multi-Language", "Cloud Database",
-        "PWA Mode", "Offline Mode", "Auto Save Forms", "Smart Search", "Infinite Scroll", "Lazy Loading",
-        "2-Factor Auth", "reCAPTCHA", "Encrypted Login", "IP Blocking", "Heatmap Tracking", "User Behavior",
-        "Shopping Cart", "Wishlist", "Coupon System", "Order Tracking", "Invoice Generator", "Social Auto Post",
-        "WhatsApp Chat", "Social Login", "AI Content Gen", "AI Image Gen", "AI Recommendation", "Auto Backup",
-        "Cron Jobs", "Glassmorphism UI", "Neon Effects", "REST API", "GraphQL Support", "Push Notifications",
-        "Affiliate System", "Booking System", "QR Generator", "PDF Generator", "Multi-User Roles"
+    const featureData = [
+        {t: "Dark/Light Mode", d: "یوزر اپنی پسند کے مطابق ویب سائٹ کا رنگ تبدیل کر سکتا ہے۔"},
+        {t: "Live Chatbot AI", d: "AI خودکار طور پر کسٹمرز کے سوالات کے جواب دیتا ہے۔"},
+        {t: "JazzCash API", d: "آن لائن پیمنٹ JazzCash کے ذریعے وصول کرنے کی سہولت۔"},
+        {t: "Auto SEO Schema", d: "ویب سائٹ خود بخود گوگل رینکنگ کے لیے آپٹیمائز ہوتی ہے۔"},
+        {t: "Admin Dashboard", d: "مالک کے لیے مکمل کنٹرول پینل اور آرڈر مینجمنٹ۔"},
+        {t: "Real-time Stats", d: "لائیو وزٹرز اور سیلز کی رپورٹ دیکھنے کی سہولت۔"},
+        {t: "Voice Search", d: "یوزر بول کر ویب سائٹ پر چیزیں سرچ کر سکتا ہے۔"},
+        {t: "SMS Alerts", d: "آرڈر یا سرگرمی پر کسٹمر کو خودکار SMS بھیجنا۔"},
+        {t: "Cloud Database", d: "ڈیٹا کلاؤڈ سرورز (Firebase/MongoDB) پر محفوظ کرنا۔"},
+        {t: "PWA Mode", d: "ویب سائٹ کو موبائل ایپ کی طرح انسٹال کرنے کا آپشن۔"},
+        {t: "2-Factor Auth", d: "لاگ ان کے لیے ڈبل سیکیورٹی کوڈ کا فیچر۔"},
+        {t: "Heatmap Tracking", d: "یوزر کے کلکس اور ویب سائٹ پر سرگرمی کا ٹریک رکھنا۔"},
+        {t: "AI Content Generator", d: "آرٹیفیشل انٹیلیجنس کے ذریعے خودکار مواد لکھنا۔"},
+        {t: "Appointment Booking", d: "آن لائن وقت اور سیٹ بک کرنے کا مکمل سسٹم۔"},
+        {t: "Social Media Auto Post", d: "نئی پوسٹ کا خودکار طریقے سے سوشل میڈیا پر جانا۔"},
+        {t: "Encrypted Login", d: "پاس ورڈز کو ہیکنگ سے بچانے کے لیے انکرپٹ کرنا۔"},
+        {t: "Multi-Language", d: "ویب سائٹ کو مختلف زبانوں میں چلانے کی سہولت۔"},
+        {t: "Invoice Generator", d: "آرڈر مکمل ہونے پر خودکار پی ڈی ایف بل بنانا۔"}
     ];
 
+    const techData = {
+        html: {t: "HTML5 & Modern CSS", d: "یہ ویب سائٹ کی بنیاد ہے جو اسے ہر قسم کی موبائل اور کمپیوٹر سکرین پر خوبصورت اور ذمہ دار (Responsive) بناتی ہے۔"},
+        react: {t: "React JS", d: "فیس بک کی تیار کردہ ٹیکنالوجی جو ویب سائٹ کو سپر فاسٹ بناتی ہے، اس میں پیجز بغیر لوڈ ہوئے تیزی سے کھلتے ہیں۔"},
+        node: {t: "Node JS", d: "بیک اینڈ کے لیے سب سے طاقتور ٹول جو ہزاروں وزٹرز کو ایک وقت میں ہینڈل کرنے کی صلاحیت رکھتا ہے۔"},
+        php: {t: "PHP & MySQL", d: "ڈیٹا بیس مینجمنٹ اور ڈائنامک ویب سائٹس کے لیے قابل بھروسہ ٹیکنالوجی جو سیکیورٹی فراہم کرتی ہے۔"},
+        wp: {t: "WordPress", d: "ای کامرس اور بلاگز کے لیے بہترین، جسے کسٹمر خود بھی آسانی سے اپ ڈیٹ کر سکتا ہے۔"},
+        python: {t: "Python AI", d: "جدید آٹومیشن اور مصنوعی ذہانت کے فیچرز کو ویب سائٹ میں شامل کرنے کے لیے استعمال ہوتی ہے۔"}
+    };
+
     const grid = document.getElementById('featureGrid');
-    features.forEach(f => {
-        const span = document.createElement('span');
-        span.className = 'f-tag';
-        span.innerHTML = `<i class="far fa-square"></i> ${f}`;
-        span.onclick = () => {
-            span.classList.toggle('selected');
-            const icon = span.querySelector('i');
-            icon.classList.toggle('fa-square');
-            icon.classList.toggle('fa-check-square');
+    featureData.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'f-item';
+        div.innerHTML = `<h4>${item.t} <i class="far fa-circle"></i></h4><p class="urdu f-desc">${item.d}</p>`;
+        div.onclick = () => {
+            div.classList.toggle('selected');
+            const icon = div.querySelector('i');
+            icon.classList.toggle('fa-circle');
+            icon.classList.toggle('fa-check-circle');
         };
-        grid.appendChild(span);
+        grid.appendChild(div);
     });
 
-    function sendOrder() {
-        const selected = Array.from(document.querySelectorAll('.f-tag.selected'))
-                              .map(el => el.innerText.trim());
-        
-        if(selected.length === 0) {
-            alert("Please select at least one feature!");
-            return;
-        }
+    function showTech(key) {
+        const box = document.getElementById('tech-info-box');
+        document.getElementById('tech-title').innerText = techData[key].t;
+        document.getElementById('tech-desc').innerText = techData[key].d;
+        box.style.display = 'block';
+        box.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }
 
-        const msg = encodeURIComponent(`Asslam o Alaikum SPO,\n\nI want to order a website with following Special Features:\n\n✅ ${selected.join('\n✅ ')}\n\nPlease provide a quote.`);
+    function sendOrder() {
+        const selected = Array.from(document.querySelectorAll('.f-item.selected'))
+                              .map(el => el.querySelector('h4').innerText.trim());
+        if(selected.length === 0) { alert("براہ کرم کوئی فیچر سلیکٹ کریں!"); return; }
+        const msg = encodeURIComponent(`Asslam o Alaikum SPO,\n\nI am interested in these Special Features:\n\n⭐ ${selected.join('\n⭐ ')}\n\nPlease guide further.`);
         window.location.href = `https://wa.me/923034480404?text=${msg}`;
     }
 </script>
