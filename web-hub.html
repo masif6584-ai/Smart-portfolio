@@ -25,7 +25,7 @@
         .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
         .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
-        .brand-text { font-family: 'Orbitron'; font-size: 0.7rem; letter-spacing: 1px; line-height: 1.2; }
+        .brand-text { font-family: 'Orbitron'; font-size: 0.7rem; letter-spacing: 1px; }
         .brand-text span { color: var(--primary); display: block; font-size: 0.9rem; }
 
         .nav-links { display: flex; gap: 10px; list-style: none; }
@@ -50,39 +50,32 @@
 
         /* FEATURE VAULT STYLING */
         .feature-vault { grid-column: 1 / -1; border: 2px dashed var(--primary); background: #0d1117; }
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin: 30px 0; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 30px 0; }
         .f-item { 
-            background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); 
+            background: rgba(255,255,255,0.03); padding: 15px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); 
             cursor: pointer; position: relative; transition: 0.3s;
         }
-        .f-item.selected { border-color: var(--primary); background: rgba(37, 211, 102, 0.15); box-shadow: 0 0 15px var(--primary); }
-        .f-item h4 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
-        .f-desc { font-size: 0.8rem; opacity: 0.8; line-height: 1.5; color: #eee; text-align: right; }
+        .f-item.selected { border-color: var(--primary); background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 10px var(--primary); }
+        .f-item h4 { font-size: 0.9rem; color: var(--accent); margin-bottom: 5px; display: flex; justify-content: space-between; }
+        .f-desc { font-size: 0.75rem; opacity: 0.8; line-height: 1.4; color: #ccc; }
 
         .order-btn { display: block; width: 100%; padding: 18px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; cursor: pointer; font-size: 1rem; }
 
-        /* TECH STACK SECTION */
-        .tech-stack { padding: 80px 8%; text-align: center; background: rgba(255,255,255,0.02); }
+        /* TECH STACK */
+        .tech-stack { padding: 80px 8%; text-align: center; }
         .tech-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
-        .tech-item { 
-            background: var(--glass); padding: 20px; border-radius: 15px; width: 130px; cursor: pointer; border: 1px solid transparent; transition: 0.3s;
-        }
-        .tech-item:hover { border-color: var(--primary); transform: scale(1.1); }
-        .tech-item i { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        .tech-item { background: var(--glass); padding: 20px; border-radius: 15px; width: 120px; cursor: pointer; border: 1px solid transparent; }
+        .tech-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
         
-        #tech-info-box { 
-            margin-top: 40px; padding: 25px; border-radius: 20px; background: rgba(0,229,255,0.08); 
-            border: 1px solid var(--accent); display: none; max-width: 850px; margin-left: auto; margin-right: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        #tech-info-box { margin-top: 30px; padding: 20px; border-radius: 15px; background: rgba(0,229,255,0.05); border: 1px solid var(--accent); display: none; }
 
         footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
         .footer-logo { width: 90px; margin-bottom: 15px; }
-        .footer-info { margin: 25px 0; line-height: 2.2; }
-        .footer-info a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .footer-info { margin: 25px 0; }
+        .footer-info a { color: var(--accent); text-decoration: none; margin: 0 15px; }
         .social-icons { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
         .social-icons a { width: 50px; height: 50px; border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; text-decoration: none; font-size: 1.4rem; background: var(--glass); }
-        .social-icons a:hover { background: var(--primary); color: #000; transform: translateY(-5px); box-shadow: 0 0 20px var(--primary); }
+        .social-icons a:hover { background: var(--primary); color: #000; box-shadow: 0 0 20px var(--primary); }
     </style>
 </head>
 <body>
@@ -117,20 +110,9 @@
             <h4>Completed Projects:</h4>
             <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Mart (Multi-Vendor)</div>
             <div class="project-item"><i class="fas fa-check-circle"></i> SPO Stationery Point Store</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Fashion Verse Global</div>
         </div>
-        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I am interested in E-Commerce Enterprise Package." class="order-btn">ORDER NOW</a>
-    </div>
-
-    <div class="web-card">
-        <i class="fas fa-hospital-user main-icon"></i>
-        <h2>Healthcare Digital Hub</h2>
-        <p class="urdu">ہسپتال اور کلینک مینجمنٹ سسٹم</p>
-        <div class="project-list">
-            <h4>Special Features:</h4>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Appointment Booking System</div>
-            <div class="project-item"><i class="fas fa-check-circle"></i> Patient History Portal</div>
-        </div>
-        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need a Hospital/Clinic Management Website." class="order-btn">ORDER NOW</a>
+        <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I am interested in E-Commerce Enterprise Package." class="order-btn">ORDER NOW</a>
     </div>
 
     <div class="web-card">
@@ -140,16 +122,10 @@
         <div class="project-list">
             <h4>Completed Projects:</h4>
             <div class="project-item"><i class="fas fa-check-circle"></i> Business Management PWA</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Service Tracking App</div>
             <div class="project-item"><i class="fas fa-check-circle"></i> Smart Inventory Hub</div>
         </div>
-        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want to discuss Corporate PWA Application." class="order-btn">ORDER NOW</a>
-    </div>
-
-    <div class="web-card feature-vault">
-        <h2 style="color:var(--primary); text-align:center;"><i class="fas fa-bolt"></i> 50+ SPECIAL FEATURES CATALOGUE</h2>
-        <p class="urdu" style="text-align:center;">اپنی پسند کے فیچرز پر کلک کریں اور لسٹ واٹس ایپ کریں</p>
-        <div class="feature-grid" id="featureGrid"></div>
-        <button onclick="sendOrder()" class="order-btn" style="background:#fff; color:#000;">SEND SELECTED FEATURES TO WHATSAPP</button>
+        <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to discuss Corporate PWA Application." class="order-btn">ORDER NOW</a>
     </div>
 
     <div class="web-card">
@@ -160,8 +136,42 @@
             <h4>Completed Projects:</h4>
             <div class="project-item"><i class="fas fa-check-circle"></i> Kasur Property Linker</div>
             <div class="project-item"><i class="fas fa-check-circle"></i> SPO Estate Finder</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Plot Management System</div>
         </div>
-        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need a Dynamic Real Estate Portal." class="order-btn">ORDER NOW</a>
+        <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need a Dynamic Real Estate Portal." class="order-btn">ORDER NOW</a>
+    </div>
+
+    <div class="web-card">
+        <i class="fas fa-hospital-user main-icon"></i>
+        <h2>Healthcare Digital Hub</h2>
+        <p class="urdu">ہسپتال اور لیب مینجمنٹ</p>
+        <div class="project-list">
+            <h4>Key Features:</h4>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Patient Appointment System</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Lab Reports Portal</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Pharmacy Management</div>
+        </div>
+        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need a Healthcare/Clinic Digital Hub." class="order-btn">ORDER NOW</a>
+    </div>
+
+    <div class="web-card feature-vault">
+        <h2 style="color:var(--primary); text-align:center;"><i class="fas fa-shield-virus"></i> 50+ ADVANCED FEATURES CATALOGUE</h2>
+        <p class="urdu" style="text-align:center; opacity:0.7;">اپنی پسند کے فیچرز منتخب کریں (Selected features will be sent to WhatsApp)</p>
+        <div class="feature-grid" id="featureGrid"></div>
+        <button onclick="sendOrder()" class="order-btn" style="background:#fff; color:#000;">SEND SELECTED FEATURES TO WHATSAPP</button>
+    </div>
+
+    <div class="web-card">
+        <i class="fas fa-user-circle main-icon"></i>
+        <h2>3D Personal Brand</h2>
+        <p class="urdu">تھری ڈی پورٹ فولیو</p>
+        <div class="project-list">
+            <h4>Completed Projects:</h4>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Asif Ali Official Hub</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Creative Artist Verse</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> Tech Expert Portfolio</div>
+        </div>
+        <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want an Ultra 3D Personal Portfolio." class="order-btn">ORDER NOW</a>
     </div>
 
     <div class="web-card">
@@ -171,9 +181,10 @@
         <div class="project-list">
             <h4>Completed Projects:</h4>
             <div class="project-item"><i class="fas fa-check-circle"></i> Kanganpur Academy LMS</div>
+            <div class="project-item"><i class="fas fa-check-circle"></i> SPO E-Learning Portal</div>
             <div class="project-item"><i class="fas fa-check-circle"></i> Smart Result System</div>
         </div>
-        <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I need an LMS System for my Institution." class="order-btn">ORDER NOW</a>
+        <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need an LMS System for my Institution." class="order-btn">ORDER NOW</a>
     </div>
 </div>
 
@@ -219,27 +230,56 @@
         {t: "Auto SEO Schema", d: "ویب سائٹ خود بخود گوگل رینکنگ کے لیے آپٹیمائز ہوتی ہے۔"},
         {t: "Admin Dashboard", d: "مالک کے لیے مکمل کنٹرول پینل اور آرڈر مینجمنٹ۔"},
         {t: "Real-time Stats", d: "لائیو وزٹرز اور سیلز کی رپورٹ دیکھنے کی سہولت۔"},
-        {t: "Voice Search", d: "یوزر بول کر ویب سائٹ پر چیزیں سرچ کر سکتا ہے۔"},
-        {t: "SMS Alerts", d: "آرڈر یا سرگرمی پر کسٹمر کو خودکار SMS بھیجنا۔"},
-        {t: "Cloud Database", d: "ڈیٹا کلاؤڈ سرورز (Firebase/MongoDB) پر محفوظ کرنا۔"},
-        {t: "PWA Mode", d: "ویب سائٹ کو موبائل ایپ کی طرح انسٹال کرنے کا آپشن۔"},
+        {t: "Voice Search", d: "یوزر ٹائپ کرنے کے بجائے بول کر چیزیں تلاش کر سکتا ہے۔"},
+        {t: "Email Automation", d: "آرڈر ہونے پر کسٹمر کو خودکار ای میل نوٹیفکیشن جانا۔"},
+        {t: "SMS Alerts", d: "آرڈر کنفرمیشن کے لیے کسٹمر کے موبائل پر میسج جانا۔"},
+        {t: "PWA (App Mode)", d: "ویب سائٹ کو موبائل ایپ کی طرح انسٹال کرنے کی سہولت۔"},
+        {t: "Offline Mode", d: "انٹرنیٹ نہ ہونے پر بھی ویب سائٹ کے کچھ حصے چلیں گے۔"},
+        {t: "Auto Save Forms", d: "ڈیٹا فل کرتے وقت خود بخود محفوظ ہو جائے گا۔"},
         {t: "2-Factor Auth", d: "لاگ ان کے لیے ڈبل سیکیورٹی کوڈ کا فیچر۔"},
-        {t: "Heatmap Tracking", d: "یوزر کے کلکس اور ویب سائٹ پر سرگرمی کا ٹریک رکھنا۔"},
-        {t: "AI Content Generator", d: "آرٹیفیشل انٹیلیجنس کے ذریعے خودکار مواد لکھنا۔"},
-        {t: "Appointment Booking", d: "آن لائن وقت اور سیٹ بک کرنے کا مکمل سسٹم۔"},
-        {t: "Social Media Auto Post", d: "نئی پوسٹ کا خودکار طریقے سے سوشل میڈیا پر جانا۔"},
+        {t: "reCAPTCHA Bot Protection", d: "ویب سائٹ کو سپیم بوٹس سے محفوظ رکھنے کا سسٹم۔"},
         {t: "Encrypted Login", d: "پاس ورڈز کو ہیکنگ سے بچانے کے لیے انکرپٹ کرنا۔"},
-        {t: "Multi-Language", d: "ویب سائٹ کو مختلف زبانوں میں چلانے کی سہولت۔"},
-        {t: "Invoice Generator", d: "آرڈر مکمل ہونے پر خودکار پی ڈی ایف بل بنانا۔"}
+        {t: "Heatmap Tracking", d: "یہ دیکھنا کہ وزٹر ویب سائٹ پر کہاں زیادہ کلک کرتے ہیں۔"},
+        {t: "User Behavior Tracking", d: "کسٹمر کی ویب سائٹ پر سرگرمی ریکارڈ کرنا۔"},
+        {t: "Conversion Tracking", d: "وزٹرز کو کسٹمرز میں تبدیل ہوتے دیکھنا۔"},
+        {t: "Live Visitor Map", d: "دیکھنا کہ دنیا میں کہاں سے لوگ آ رہے ہیں۔"},
+        {t: "Shopping Cart System", d: "مصنوعات کو ٹوکری میں جمع کرنے کا مکمل نظام۔"},
+        {t: "Wishlist System", d: "پسندیدہ اشیاء کو بعد کے لیے محفوظ کرنا۔"},
+        {t: "Coupon/Discount System", d: "پرومو کوڈز اور ڈسکاؤنٹ آفرز کا انتظام۔"},
+        {t: "Order Tracking", d: "آرڈر کی صورتحال لائیو ٹریک کرنا۔"},
+        {t: "Invoice Generator", d: "خودکار پی ڈی ایف بل تیار کر کے بھیجنا۔"},
+        {t: "Social Auto Post", d: "نئی پروڈکٹ خود بخود فیس بک/انسٹا پر جانا۔"},
+        {t: "WhatsApp Direct Chat", d: "ایک کلک پر براہِ راست واٹس ایپ چیٹ۔"},
+        {t: "Social Login", d: "گوگل یا فیس بک کے ذریعے آسان لاگ ان۔"},
+        {t: "AI Content Gen", d: "ویب سائٹ کے لیے مواد خود بخود لکھنا۔"},
+        {t: "AI Image Gen", d: "ویب سائٹ کے لیے تصاویر خود بنانا۔"},
+        {t: "AI Recommendation", d: "کسٹمر کو متعلقہ اشیاء دکھانے کا سمارٹ نظام۔"},
+        {t: "Auto Backup System", d: "ڈیٹا کا روزانہ خود بخود بیک اپ لینا۔"},
+        {t: "Cron Jobs Automation", d: "شیڈول کاموں کو خود بخود مکمل کرنا۔"},
+        {t: "Glassmorphism UI", d: "جدید شیشے جیسا خوبصورت ڈیزائن۔"},
+        {t: "Neon Glow Effects", d: "ویب سائٹ کو فیوچر اسٹک لک دینے کے لیے۔"},
+        {t: "REST API Integration", d: "دیگر ایپس کے ساتھ ویب سائٹ کو جوڑنا۔"},
+        {t: "GraphQL Support", d: "تیز ترین ڈیٹا فیچنگ کا نظام۔"},
+        {t: "Push Notifications", d: "براؤزر پر کسٹمر کو الرٹس بھیجنا۔"},
+        {t: "Affiliate System", d: "مارکیٹنگ اور کمیشن کا مکمل نظام۔"},
+        {t: "Booking System", d: "آن لائن اپائنٹمنٹ اور بکنگ کا انتظام۔"},
+        {t: "QR Code Generator", d: "لنکس کے لیے کیو آر کوڈ بنانا۔"},
+        {t: "PDF Reports Generator", d: "رپورٹس کو پی ڈی ایف میں ڈاؤن لوڈ کرنا۔"},
+        {t: "Multi-User Roles", d: "ایڈمن، اسٹاف اور یوزر کے الگ اختیارات۔"},
+        {t: "Image Optimization", d: "تصاویر کو بغیر کوالٹی گرائے چھوٹا کرنا (Fast Loading)۔"},
+        {t: "Custom Error Pages", d: "خوبصورت 404 ایرر پیجز۔"},
+        {t: "Lazy Loading", d: "ویب سائٹ کی رفتار بڑھانے کے لیے سمارٹ لوڈنگ۔"},
+        {t: "Infinite Scroll", d: "صفحہ ختم ہونے پر خود بخود ڈیٹا لوڈ ہونا۔"},
+        {t: "WebSocket Real-time", d: "لائیو چیٹ اور اپ ڈیٹس کے لیے تیز ترین سسٹم۔"}
     ];
 
     const techData = {
-        html: {t: "HTML5 & Modern CSS", d: "یہ ویب سائٹ کی بنیاد ہے جو اسے ہر قسم کی موبائل اور کمپیوٹر سکرین پر خوبصورت اور ذمہ دار (Responsive) بناتی ہے۔"},
-        react: {t: "React JS", d: "فیس بک کی تیار کردہ ٹیکنالوجی جو ویب سائٹ کو سپر فاسٹ بناتی ہے، اس میں پیجز بغیر لوڈ ہوئے تیزی سے کھلتے ہیں۔"},
-        node: {t: "Node JS", d: "بیک اینڈ کے لیے سب سے طاقتور ٹول جو ہزاروں وزٹرز کو ایک وقت میں ہینڈل کرنے کی صلاحیت رکھتا ہے۔"},
-        php: {t: "PHP & MySQL", d: "ڈیٹا بیس مینجمنٹ اور ڈائنامک ویب سائٹس کے لیے قابل بھروسہ ٹیکنالوجی جو سیکیورٹی فراہم کرتی ہے۔"},
-        wp: {t: "WordPress", d: "ای کامرس اور بلاگز کے لیے بہترین، جسے کسٹمر خود بھی آسانی سے اپ ڈیٹ کر سکتا ہے۔"},
-        python: {t: "Python AI", d: "جدید آٹومیشن اور مصنوعی ذہانت کے فیچرز کو ویب سائٹ میں شامل کرنے کے لیے استعمال ہوتی ہے۔"}
+        html: {t: "HTML5 & Modern CSS", d: "ویب سائٹ کا بنیادی ڈھانچہ اور موبائل فرینڈلی ڈیزائن جو ہر سکرین پر فٹ آتا ہے۔"},
+        react: {t: "React JS", d: "فیس بک کی تیز ترین ٹیکنالوجی، جو ویب سائٹ کو بغیر لوڈ ہوئے چلنے کے قابل بناتی ہے۔"},
+        node: {t: "Node JS", d: "بیک اینڈ پاور ہاؤس، جو ڈیٹا کو بجلی کی رفتار سے ہینڈل کرتا ہے۔"},
+        php: {t: "PHP & MySQL", d: "محفوظ ڈیٹا بیس اور ڈائنامک فنکشنز کے لیے بہترین انتخاب۔"},
+        wp: {t: "WordPress", d: "ای کامرس اور بزنس ویب سائٹس کے لیے دنیا کا سب سے زیادہ استعمال ہونے والا پلیٹ فارم۔"},
+        python: {t: "Python AI", d: "مصنوعی ذہانت اور آٹومیشن کے فیچرز ویب سائٹ میں شامل کرنے کے لیے۔"}
     };
 
     const grid = document.getElementById('featureGrid');
@@ -252,6 +292,7 @@
             const icon = div.querySelector('i');
             icon.classList.toggle('fa-circle');
             icon.classList.toggle('fa-check-circle');
+            icon.style.color = div.classList.contains('selected') ? '#25D366' : '#fff';
         };
         grid.appendChild(div);
     });
@@ -268,7 +309,7 @@
         const selected = Array.from(document.querySelectorAll('.f-item.selected'))
                               .map(el => el.querySelector('h4').innerText.trim());
         if(selected.length === 0) { alert("براہ کرم کوئی فیچر سلیکٹ کریں!"); return; }
-        const msg = encodeURIComponent(`Asslam o Alaikum SPO,\n\nI am interested in these Special Features:\n\n⭐ ${selected.join('\n⭐ ')}\n\nPlease guide further.`);
+        const msg = encodeURIComponent(`Asslam o Alaikum SPO,\n\nI want to order a website with these Advanced Features:\n\n⭐ ${selected.join('\n⭐ ')}\n\nPlease provide a quote.`);
         window.location.href = `https://wa.me/923034480404?text=${msg}`;
     }
 </script>
