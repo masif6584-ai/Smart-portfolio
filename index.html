@@ -8,269 +8,258 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{ --main:#00ff88; }
+:root{
+  --main:#00ff88;
+}
 
 body{
   margin:0;
   background:#000;
-  color:#fff;
-  font-family:'Segoe UI';
+  color:white;
+  font-family:Arial;
 }
 
 /* HEADER */
 header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:10px 20px;
- border-bottom:2px solid var(--main);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  border-bottom:2px solid var(--main);
 }
 
-.logo{
- display:flex;
- align-items:center;
+.logo-area{
+  display:flex;
+  align-items:center;
 }
 
-.logo img{
- width:55px;
- border-radius:50%;
+.logo-area img{
+  width:55px;
+  border-radius:50%;
 }
 
-.logo span{
- margin-left:10px;
- font-size:20px;
- color:var(--main);
- text-shadow:0 0 10px var(--main);
+.logo-text{
+  margin-left:10px;
+  font-size:20px;
+  color:var(--main);
+  text-shadow:0 0 10px var(--main);
 }
 
 nav a{
- margin:0 6px;
- padding:8px 14px;
- border:1px solid var(--main);
- border-radius:20px;
- color:white;
- text-decoration:none;
+  margin:0 8px;
+  padding:8px 14px;
+  border:1px solid var(--main);
+  border-radius:20px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
 }
 
 nav a:hover{
- background:var(--main);
- color:black;
+  background:var(--main);
+  color:black;
 }
 
 /* HERO */
 .hero{
- text-align:center;
- padding:40px 20px;
+  text-align:center;
+  padding:30px 20px;
 }
 
 .hero h1{
- color:var(--main);
+  color:var(--main);
 }
 
 .hero p{
- max-width:700px;
- margin:auto;
- line-height:1.6;
+  max-width:600px;
+  margin:auto;
 }
 
 /* CLOCK */
 .clock{
- width:230px;height:230px;
- border:4px solid var(--main);
- border-radius:50%;
- margin:30px auto;
- position:relative;
- box-shadow:0 0 25px var(--main);
+  width:200px;
+  height:200px;
+  border:4px solid var(--main);
+  border-radius:50%;
+  margin:30px auto;
+  position:relative;
+  box-shadow:0 0 20px var(--main);
 }
 
 .hand{
- position:absolute;
- bottom:50%;
- left:50%;
- transform-origin:bottom;
- background:var(--main);
+  position:absolute;
+  bottom:50%;
+  left:50%;
+  transform-origin:bottom;
+  background:var(--main);
 }
-.hour{width:4px;height:60px;}
-.minute{width:3px;height:80px;}
-.second{width:2px;height:100px;background:red;}
 
-/* NUMBERS */
-.num{
- position:absolute;
- color:var(--main);
-}
+.hour{width:4px;height:50px;}
+.minute{width:3px;height:70px;}
+.second{width:2px;height:90px;background:red;}
 
 /* SERVICES */
 .services{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
- gap:20px;
- padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
 .card{
- border:1px solid var(--main);
- padding:20px;
- border-radius:15px;
- box-shadow:0 0 15px var(--main);
+  border:1px solid var(--main);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 0 10px var(--main);
 }
 
-.card h3{color:var(--main);}
+.card h3{
+  color:var(--main);
+}
 
 .card a{
- display:block;
- margin:6px 0;
- text-decoration:none;
- color:white;
+  display:block;
+  margin:5px 0;
+  color:white;
+  text-decoration:none;
 }
 
-.card a:hover{color:var(--main);}
-
-/* LOCAL HUB */
-.local{
- padding:20px;
- text-align:center;
-}
-
-.local a{
- display:block;
- margin:5px;
+.card a:hover{
+  color:var(--main);
 }
 
 /* FOOTER */
 footer{
- text-align:center;
- padding:20px;
- border-top:2px solid var(--main);
+  text-align:center;
+  padding:20px;
+  border-top:2px solid var(--main);
 }
 
 /* WHATSAPP */
 .whatsapp{
- position:fixed;
- bottom:20px;
- right:20px;
- background:#25d366;
- padding:15px;
- border-radius:50%;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  padding:15px;
+  border-radius:50%;
+  color:white;
+  font-size:22px;
 }
 
 /* THEME PANEL */
 .theme{
- position:fixed;
- left:0;
- top:40%;
+  position:fixed;
+  top:40%;
+  left:0;
 }
 
 .theme div{
- width:25px;height:25px;margin:5px;cursor:pointer;
-}
-
-/* RAINBOW BTN */
-.rainbow{
- position:fixed;
- left:0;
- bottom:20%;
- background:linear-gradient(45deg,red,orange,yellow,green,blue,purple);
- padding:10px;
- cursor:pointer;
+  width:25px;
+  height:25px;
+  margin:5px;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="logo">
-<img src="verse.png">
-<span>SPO SMART DIGITAL VERSE</span>
-</div>
+  <div class="logo-area">
+    <img src="verse.png">
+    <div class="logo-text">SPO SMART DIGITAL VERSE</div>
+  </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Web</a>
-<a href="#">SEO</a>
-<a href="#">Marketing</a>
-<a href="#">Portfolio</a>
-</nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Web</a>
+    <a href="#">SEO</a>
+    <a href="#">Marketing</a>
+    <a href="#">Portfolio</a>
+  </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-<h1>ہم آپ کے کاروبار کو برانڈ بناتے ہیں</h1>
-<p>ہم جدید ڈیجیٹل ٹیکنالوجی، مارکیٹنگ اور ڈیزائن کے ذریعے آپ کے بزنس کو آن لائن دنیا میں نمایاں کرتے ہیں۔</p>
+  <h1>ہم آپ کے بزنس کو برانڈ بناتے ہیں</h1>
+  <p>
+  ہم جدید ٹیکنالوجی اور ڈیجیٹل مارکیٹنگ کے ذریعے آپ کے کاروبار کو نئی پہچان دیتے ہیں۔
+  </p>
 </div>
 
-<div class="clock" id="clock"></div>
+<!-- CLOCK -->
+<div class="clock">
+  <div class="hand hour" id="h"></div>
+  <div class="hand minute" id="m"></div>
+  <div class="hand second" id="s"></div>
+</div>
 
+<!-- SERVICES -->
 <div class="services">
 
 <div class="card">
 <h3>Website Development</h3>
-<a href="https://wa.me/923034480404?text=Basic Website">Basic</a>
-<a href="#">Standard</a>
-<a href="#">Pro</a>
+<a href="https://wa.me/923034480404?text=Basic Website">Basic Website</a>
+<a href="#">Business Website</a>
+<a href="#">Ecommerce Store</a>
 </div>
 
 <div class="card">
 <h3>SEO Services</h3>
-<a href="#">Basic</a>
-<a href="#">Standard</a>
-<a href="#">Pro</a>
+<a href="#">Basic SEO</a>
+<a href="#">On Page SEO</a>
+<a href="#">Advanced Ranking</a>
 </div>
 
 <div class="card">
 <h3>Digital Marketing</h3>
-<a href="#">Basic</a>
-<a href="#">Standard</a>
-<a href="#">Pro</a>
+<a href="#">Facebook Ads</a>
+<a href="#">Instagram Growth</a>
+<a href="#">TikTok Marketing</a>
 </div>
 
 <div class="card">
 <h3>Portfolio</h3>
-<a href="#">Basic</a>
-<a href="#">Standard</a>
-<a href="#">Pro</a>
+<a href="#">Personal Portfolio</a>
+<a href="#">Business Portfolio</a>
+<a href="#">Brand Design</a>
 </div>
 
 </div>
 
-<div class="local">
-<h2>کنگن پور لوکل حب</h2>
-<a href="https://wa.me/923034480404?text=Photo Copy">فوٹو کاپی</a>
-<a href="#">پرنٹنگ</a>
-<a href="#">FBR</a>
-</div>
-
+<!-- FOOTER -->
 <footer>
-<h3 style="color:var(--main)">SPO SMART DIGITAL VERSE</h3>
-<p>© 2026 All Rights Reserved</p>
+  <h3 style="color:var(--main)">SPO SMART DIGITAL VERSE</h3>
+  <p>© 2026 All Rights Reserved</p>
 </footer>
 
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/923034480404">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- THEME PANEL -->
 <div class="theme">
 <div style="background:#00ff88" onclick="theme('#00ff88')"></div>
 <div style="background:#00eaff" onclick="theme('#00eaff')"></div>
 <div style="background:#ff00c8" onclick="theme('#ff00c8')"></div>
+<div style="background:#ffcc00" onclick="theme('#ffcc00')"></div>
 </div>
-
-<div class="rainbow" onclick="rain()">🌈</div>
 
 <script>
 
-/* CLOCK HANDS */
+/* CLOCK */
 setInterval(()=>{
 let d=new Date();
 let h=d.getHours()%12;
 let m=d.getMinutes();
 let s=d.getSeconds();
 
-clock.innerHTML=`
-<div class="hand hour" style="transform:rotate(${h*30+m/2}deg)"></div>
-<div class="hand minute" style="transform:rotate(${m*6}deg)"></div>
-<div class="hand second" style="transform:rotate(${s*6}deg)"></div>
-`;
+document.getElementById("h").style.transform=`rotate(${h*30+m/2}deg)`;
+document.getElementById("m").style.transform=`rotate(${m*6}deg)`;
+document.getElementById("s").style.transform=`rotate(${s*6}deg)`;
 },1000);
 
 /* THEME */
@@ -278,16 +267,6 @@ function theme(c){
 document.documentElement.style.setProperty('--main',c);
 }
 
-/* RAINBOW */
-let i=0;
-let colors=["red","orange","yellow","green","cyan","blue","purple"];
-
-function rain(){
-setInterval(()=>{
-document.documentElement.style.setProperty('--main',colors[i]);
-i=(i+1)%colors.length;
-},1000);
-}
 </script>
 
 </body>
