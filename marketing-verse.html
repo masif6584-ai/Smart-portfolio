@@ -16,7 +16,7 @@
 
         * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s; }
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; line-height: 1.8; }
 
         header {
             position: fixed; top: 0; width: 100%; height: 90px; z-index: 1000;
@@ -24,8 +24,21 @@
             border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
         }
         .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
-        .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
+        .logo-ring { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; border: none; }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Unique Header Title Style */
+        .special-title {
+            font-family: 'Orbitron';
+            font-size: 0.9rem;
+            background: linear-gradient(90deg, #fff, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: shine 3s infinite linear;
+        }
+        @keyframes shine { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
 
         .nav-links { display: flex; gap: 10px; list-style: none; }
         .nav-btn { background: var(--glass); color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.6rem; border: 1px solid var(--primary); }
@@ -34,40 +47,48 @@
         .hub-hero { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at top, rgba(188, 19, 254, 0.15), transparent); }
         .hub-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); text-shadow: 0 0 10px var(--primary); }
 
-        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .market-card {
-            background: var(--glass); border-radius: 30px; padding: 35px; border: 1px solid rgba(255,255,255,0.1);
+            background: var(--glass); border-radius: 30px; padding: 30px; border: 1px solid rgba(255,255,255,0.1);
             position: relative; overflow: hidden; backdrop-filter: blur(10px); display: flex; flex-direction: column;
         }
-        .market-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .market-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2); }
         
-        .feature-list { background: rgba(188, 19, 254, 0.1); border-radius: 15px; padding: 20px; margin: 15px 0; border-right: 3px solid var(--accent); }
-        .feature-list h4 { font-size: 0.8rem; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; }
-        .feat-item { font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .card-desc { font-size: 0.8rem; margin: 10px 0; color: #ccc; }
+
+        .feature-list { background: rgba(188, 19, 254, 0.1); border-radius: 15px; padding: 15px; margin: 15px 0; border-right: 3px solid var(--accent); }
+        .feature-list h4 { font-size: 0.75rem; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; }
+        .feat-item { font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
         .feat-item i { color: var(--accent); }
 
         /* ANALYTICS VAULT */
-        .analytics-vault { grid-column: 1 / -1; background: #000; border: 2px solid var(--primary); padding: 40px; border-radius: 30px; text-align: center; }
+        .analytics-vault { grid-column: 1 / -1; background: #000; border: 2px solid var(--primary); padding: 40px; border-radius: 30px; text-align: center; margin: 20px 0; }
         .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
-        .stat-circle { border: 2px solid var(--primary); width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 0 20px var(--primary); }
-        .stat-circle h3 { color: var(--accent); font-family: 'Orbitron'; }
+        .stat-circle { border: 2px solid var(--primary); width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 0 20px var(--primary); background: rgba(188, 19, 254, 0.05); }
+        .stat-circle h3 { color: var(--accent); font-family: 'Orbitron'; font-size: 1.5rem; }
 
-        .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #fff; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; cursor: pointer; }
+        .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #fff; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; cursor: pointer; font-size: 0.8rem; }
         .order-btn:hover { background: var(--accent); letter-spacing: 2px; }
 
-        footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
-        .social-icons { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; margin: 20px 0; }
-        .social-icons a { color: #fff; transition: 0.3s; }
-        .social-icons a:hover { color: var(--primary); transform: scale(1.2); }
+        footer { background: #010409; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
+        .footer-logo { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 20px; border: none; }
+        
+        .social-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 25px 0; }
+        .soc-link { 
+            width: 50px; height: 50px; border-radius: 12px; background: var(--glass); 
+            display: flex; align-items: center; justify-content: center; 
+            color: #fff; text-decoration: none; font-size: 1.4rem; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .soc-link:hover { background: var(--primary); color: #000; transform: scale(1.1) rotate(10deg); border-color: var(--accent); }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo-box">
-            <div class="logo-ring"><img src="1774980575568.png" alt="SPO"></div>
-            <h2 style="font-family:'Orbitron'; font-size:0.8rem;">SPO VERSE</h2>
+            <div class="logo-ring"><img src="verse.png" alt="SPO"></div>
+            <h2 class="special-title">SPO SMART DIGITAL VERSE</h2>
         </a>
         <nav>
             <ul class="nav-links">
@@ -82,83 +103,115 @@
 
     <section class="hub-hero">
         <h1>Marketing <span style="color:var(--accent)">Engine</span></h1>
-        <p class="urdu" style="font-size:1.5rem;">برانڈ کو وائرل کریں اور سیلز کو کئی گنا بڑھائیں</p>
+        <p class="urdu" style="font-size:1.5rem;">جدید ڈیجیٹل مارکیٹنگ سے اپنے بزنس کو برانڈ بنائیں</p>
     </section>
 
     <div class="service-container">
         <div class="market-card">
             <i class="fab fa-facebook-square" style="font-size: 3rem; color: #1877F2;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">Meta Ads Mastery</h2>
-            <p class="urdu">فیس بک اور انسٹاگرام ایڈز</p>
+            <p class="urdu card-desc">فیس بک اور انسٹاگرام کے ذریعے درست کسٹمرز تک رسائی حاصل کریں اور اپنی سیلز کو یقینی بنائیں۔</p>
             <div class="feature-list">
                 <h4>Core Strategy:</h4>
-                <div class="feat-item"><i class="fas fa-bullseye"></i> Laser-Targeted Audience</div>
-                <div class="feat-item"><i class="fas fa-video"></i> High-Converting Ad Creatives</div>
-                <div class="feat-item"><i class="fas fa-retweet"></i> Re-targeting Campaigns</div>
+                <div class="feat-item"><i class="fas fa-bullseye"></i> Targeted Audience</div>
+                <div class="feat-item"><i class="fas fa-video"></i> Ad Creatives</div>
+                <div class="feat-item"><i class="fas fa-retweet"></i> Re-targeting</div>
             </div>
-            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to start Meta Ads (FB/Insta) for my Brand." class="order-btn">SCALE MY BRAND</a>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to start Meta Ads." class="order-btn">SCALE MY BRAND</a>
         </div>
 
         <div class="market-card">
             <i class="fab fa-tiktok" style="font-size: 3rem; color: #fff;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">TikTok Viral Growth</h2>
-            <p class="urdu">ٹک ٹاک ایڈز اور برانڈنگ</p>
+            <p class="urdu card-desc">ٹک ٹاک پر وائرل مواد اور اشتہارات کے ذریعے نوجوان نسل تک اپنے برانڈ کا پیغام پہنچائیں۔</p>
             <div class="feature-list">
                 <h4>Execution:</h4>
-                <div class="feat-item"><i class="fas fa-bolt"></i> Trending Music Integration</div>
-                <div class="feat-item"><i class="fas fa-users"></i> Influencer Collaborations</div>
-                <div class="feat-item"><i class="fas fa-chart-bar"></i> Direct Sales Conversion</div>
+                <div class="feat-item"><i class="fas fa-bolt"></i> Trending Music</div>
+                <div class="feat-item"><i class="fas fa-users"></i> Influencers</div>
+                <div class="feat-item"><i class="fas fa-chart-bar"></i> Sales Conversion</div>
             </div>
-            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to grow my Business through TikTok Ads." class="order-btn">GO VIRAL</a>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want TikTok Ads." class="order-btn">GO VIRAL</a>
         </div>
 
         <div class="market-card">
             <i class="fab fa-whatsapp" style="font-size: 3rem; color: #25D366;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">SPO WhatsApp CRM</h2>
-            <p class="urdu">واٹس ایپ مارکیٹنگ آٹومیشن</p>
+            <p class="urdu card-desc">واٹس ایپ مارکیٹنگ اور چیٹ بوٹ کے ذریعے کسٹمر سپورٹ اور مارکیٹنگ کو آٹومیٹک بنائیں۔</p>
             <div class="feature-list">
                 <h4>System:</h4>
-                <div class="feat-item"><i class="fas fa-robot"></i> Automated Customer Chatbots</div>
-                <div class="feat-item"><i class="fas fa-envelope-open-text"></i> Bulk Messaging (Non-Spam)</div>
-                <div class="feat-item"><i class="fas fa-id-card"></i> Client Database Management</div>
+                <div class="feat-item"><i class="fas fa-robot"></i> Chatbots</div>
+                <div class="feat-item"><i class="fas fa-envelope-open-text"></i> Bulk Messaging</div>
+                <div class="feat-item"><i class="fas fa-id-card"></i> Database Management</div>
             </div>
-            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need WhatsApp Automation and Marketing System." class="order-btn">START AUTOMATION</a>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need WhatsApp Automation." class="order-btn">START AUTOMATION</a>
+        </div>
+
+        <div class="market-card">
+            <i class="fas fa-star" style="font-size: 3rem; color: #FFD700;"></i>
+            <h2 style="margin-top:15px; font-family:'Orbitron';">Influencer Hub</h2>
+            <p class="urdu card-desc">مشہور سوشل میڈیا انفلوئنسرز کے ذریعے اپنے برانڈ پر لوگوں کا اعتماد اور پہچان بڑھائیں۔</p>
+            <div class="feature-list">
+                <h4>Network:</h4>
+                <div class="feat-item"><i class="fas fa-user-check"></i> Celebrity Collabs</div>
+                <div class="feat-item"><i class="fas fa-camera-retro"></i> Content Creation</div>
+                <div class="feat-item"><i class="fas fa-handshake"></i> Brand Loyalty</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want Influencer Marketing." class="order-btn">CONNECT NOW</a>
         </div>
 
         <div class="analytics-vault">
             <h2 style="font-family:'Orbitron'; color:var(--primary);">Campaign Analytics & ROI</h2>
-            <p class="urdu">ہم صرف ایڈز نہیں چلاتے، رزلٹ دیتے ہیں!</p>
+            <p class="urdu" style="color:#ccc;">ہم صرف اشتہار نہیں چلاتے بلکہ ڈیٹا کی بنیاد پر آپ کے منافع (ROI) کو یقینی بناتے ہیں۔ ہر مہم کی تفصیلی رپورٹ فراہم کی جاتی ہے۔</p>
             <div class="stats-grid">
                 <div class="stat-circle"><h3>10M+</h3><p>Impressions</p></div>
                 <div class="stat-circle"><h3>500k+</h3><p>Leads</p></div>
                 <div class="stat-circle"><h3>15x</h3><p>Avg ROI</p></div>
             </div>
-            <p style="margin-top:30px; opacity:0.7;">Detailed Reports Provided Weekly via Google Looker Studio</p>
+            <p style="margin-top:30px; opacity:0.7; font-size: 0.9rem;">ڈیٹا اینالیٹکس رپورٹ ہر ہفتے Google Looker Studio کے ذریعے شیئر کی جاتی ہے۔</p>
         </div>
 
-        <div class="market-card" style="border-color: #4285F4;">
+        <div class="market-card">
             <i class="fab fa-google" style="font-size: 3rem; color: #4285F4;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">Google Ads (SEM)</h2>
-            <p class="urdu">یوٹیوب اور سرچ مارکیٹنگ</p>
+            <p class="urdu card-desc">گوگل سرچ اور یوٹیوب پر ٹاپ رینک حاصل کریں تاکہ کسٹمر آپ کو خود ڈھونڈ سکے۔</p>
             <div class="feature-list">
                 <h4>Focus:</h4>
-                <div class="feat-item"><i class="fas fa-search-dollar"></i> PPC (Pay-Per-Click)</div>
-                <div class="feat-item"><i class="fab fa-youtube"></i> Video In-Stream Ads</div>
-                <div class="feat-item"><i class="fas fa-shopping-cart"></i> Google Shopping Ads</div>
+                <div class="feat-item"><i class="fas fa-search-dollar"></i> PPC Ads</div>
+                <div class="feat-item"><i class="fab fa-youtube"></i> Video Ads</div>
+                <div class="feat-item"><i class="fas fa-shopping-cart"></i> Shopping Ads</div>
             </div>
-            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need Google or YouTube Ads for my Product." class="order-btn" style="background:#4285F4;">GET ON GOOGLE</a>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need Google Ads." class="order-btn" style="background:#4285F4;">GET ON GOOGLE</a>
+        </div>
+
+        <div class="market-card">
+            <i class="fas fa-paper-plane" style="font-size: 3rem; color: #ff4b2b;"></i>
+            <h2 style="margin-top:15px; font-family:'Orbitron';">Email & SMS Pro</h2>
+            <p class="urdu card-desc">براہ راست کسٹمر کے ان باکس تک پہنچیں اور پروفیشنل ای میل مارکیٹنگ سے کسٹمرز کو بار بار واپس لائیں۔</p>
+            <div class="feature-list">
+                <h4>Direct Reach:</h4>
+                <div class="feat-item"><i class="fas fa-mail-bulk"></i> Auto Newsletters</div>
+                <div class="feat-item"><i class="fas fa-sms"></i> SMS Campaigns</div>
+                <div class="feat-item"><i class="fas fa-funnel-dollar"></i> Funnel Strategy</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need Email/SMS Marketing." class="order-btn" style="background:#ff4b2b;">START CAMPAIGN</a>
         </div>
     </div>
 
     <footer>
-        <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px;">SPO SMART DIGITAL VERSE</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/sposmartprinting"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/asif_spo"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@asif_it_expert"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
+        <img src="verse.png" alt="SPO Logo" class="footer-logo">
+        <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px; font-weight: 900;">SPO SMART DIGITAL VERSE</p>
+        
+        <div class="social-grid">
+            <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="soc-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" class="soc-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="soc-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="soc-link" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:asif.aimarketing@gmail.com" class="soc-link" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="http://www.SmartPrintingOnline.site" class="soc-link" title="Website"><i class="fas fa-globe"></i></a>
         </div>
-        <p style="opacity:0.5; font-size:0.8rem;">Digital Growth Specialist: Muhammad Asif Ali | +92 303 4480404</p>
+
+        <p class="urdu" style="opacity:0.8; font-size:0.9rem; margin-bottom: 10px;">آپ کی ہر ضرورت کا حل ایک ہی جگہ - SPO Smart Digital Verse</p>
+        <p style="opacity:0.5; font-size:0.7rem;">Digital Growth Specialist: Muhammad Asif Ali | +92 303 4480404</p>
     </footer>
 
 </body>
