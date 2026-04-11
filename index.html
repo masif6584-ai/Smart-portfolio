@@ -1,157 +1,218 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPO SMART DIGITAL VERSE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
---bg:#010409;
---primary:#25D366;
---accent:#00e5ff;
---text:#fff;
---glass:rgba(255,255,255,0.05);
+ --main:#00ffcc;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;transition:0.4s;scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Poppins','Noto Nastaliq Urdu';overflow-x:hidden;}
-.urdu{font-family:'Noto Nastaliq Urdu';line-height:2.5;text-align:right;}
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+ background:#000;
+ color:#fff;
+ font-family:'Segoe UI';
+ overflow-x:hidden;
+}
 
 /* HEADER */
 header{
-position:fixed;top:0;width:100%;height:100px;
-display:flex;align-items:center;justify-content:space-between;
-padding:0 5%;background:rgba(0,0,0,0.9);
-border-bottom:3px solid var(--primary);z-index:1000;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:15px 25px;
+ backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--main);
+ position:sticky;
+ top:0;
+ z-index:999;
 }
 
-.logo-area{
-display:flex;align-items:center;gap:15px;
-flex-direction:row-reverse;
+.logo{
+ display:flex;
+ align-items:center;
 }
 
-.logo-area img{
-width:110px;
+.logo img{
+ width:55px;
+ border-radius:50%;
 }
 
-.brand{
-font-family:'Orbitron';
-font-size:1.8rem;
-font-weight:900;
-background:linear-gradient(45deg,var(--primary),#fff,var(--accent));
--webkit-background-clip:text;
-color:transparent;
-text-shadow:0 0 20px var(--primary);
+.logo span{
+ margin-left:10px;
+ font-size:20px;
+ color:var(--main);
+ text-shadow:0 0 15px var(--main);
 }
 
-nav ul{display:flex;gap:20px;list-style:none;}
-.nav-btn{
-padding:16px 26px;
-border-radius:15px;
-border:1px solid var(--primary);
-text-decoration:none;
-color:#fff;
-font-family:'Orbitron';
-background:var(--glass);
-font-size:0.85rem;
+nav a{
+ margin:0 8px;
+ padding:8px 15px;
+ border-radius:20px;
+ border:1px solid var(--main);
+ color:white;
+ text-decoration:none;
+ transition:.3s;
 }
-.nav-btn:hover,.active-nav{
-background:var(--primary);
-color:#000;
-transform:scale(1.1);
-box-shadow:0 0 20px var(--primary);
+
+nav a:hover{
+ background:var(--main);
+ color:black;
 }
 
 /* HERO */
-.hero{padding:170px 5% 50px;text-align:center;}
-.hero h1{font-size:2.8rem;color:var(--primary);}
-.hero p{margin-top:20px;font-size:1.2rem;}
+.hero{
+ text-align:center;
+ padding:60px 20px;
+}
+
+.hero h1{
+ font-size:30px;
+ color:var(--main);
+ text-shadow:0 0 20px var(--main);
+}
+
+.hero p{
+ max-width:750px;
+ margin:20px auto;
+ line-height:1.8;
+}
 
 /* CLOCK */
-.clock-master{
-width:360px;height:360px;margin:40px auto;position:relative;
-display:flex;align-items:center;justify-content:center;
+.clock{
+ width:240px;height:240px;
+ border-radius:50%;
+ border:3px solid var(--main);
+ margin:40px auto;
+ position:relative;
+ box-shadow:0 0 30px var(--main);
 }
 
-.clock-face{
-width:250px;height:250px;border:8px solid var(--primary);
-border-radius:50%;background:#000;position:relative;
-box-shadow:0 0 30px var(--primary);
+.hand{
+ position:absolute;
+ bottom:50%;
+ left:50%;
+ transform-origin:bottom;
+ background:var(--main);
+}
+.hour{height:60px;width:4px;}
+.minute{height:80px;width:3px;}
+.second{height:100px;width:2px;background:red;}
+
+/* SERVICES */
+.services{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:25px;
+ padding:30px;
 }
 
-.center-logo{
-position:absolute;top:50%;left:50%;
-transform:translate(-50%,-50%);
-width:120px;height:120px;border-radius:50%;
-object-fit:cover;
+.card{
+ backdrop-filter:blur(15px);
+ border:1px solid var(--main);
+ border-radius:20px;
+ padding:20px;
+ transition:.4s;
 }
 
-/* CLOCK NUMBERS */
-.number{
-position:absolute;
-color:var(--primary);
-font-weight:bold;
+.card:hover{
+ transform:translateY(-10px);
+ box-shadow:0 0 25px var(--main);
 }
-.n12{top:5px;left:50%;transform:translateX(-50%);}
-.n3{right:5px;top:50%;transform:translateY(-50%);}
-.n6{bottom:5px;left:50%;transform:translateX(-50%);}
-.n9{left:5px;top:50%;transform:translateY(-50%);}
 
-/* HANDS */
-.hand{position:absolute;bottom:50%;left:50%;transform-origin:bottom;background:var(--primary);}
-.hour{height:60px;width:6px;}
-.min{height:85px;width:4px;}
-.sec{height:95px;width:2px;background:red;}
-
-/* SOCIAL */
-.social-node{
-position:absolute;width:60px;height:60px;
-border-radius:50%;display:flex;align-items:center;justify-content:center;
-background:var(--glass);border:2px solid var(--primary);
-color:var(--primary);font-size:1.6rem;text-decoration:none;
+.card h3{
+ color:var(--main);
+ margin-bottom:10px;
 }
-.social-node:hover{background:var(--primary);color:#000;transform:scale(1.2);}
-.top{top:0;} .right{right:0;} .bottom{bottom:0;} .left{left:0;}
+
+.level{
+ margin-top:10px;
+ padding:10px;
+ border-radius:10px;
+ border:1px solid var(--main);
+}
+
+.level a{
+ display:block;
+ margin:4px 0;
+ text-decoration:none;
+ color:white;
+}
+
+.level a:hover{color:var(--main);}
 
 /* LOCAL HUB */
-.local-hub{
-margin:50px 5%;padding:40px;border-radius:30px;
-border:2px solid var(--accent);background:var(--glass);
+.local{
+ padding:30px;
+ text-align:center;
 }
 
-/* SERVICE LINKS */
-.service-link{
-display:block;margin:6px 0;color:#fff;text-decoration:none;
+.local h2{
+ color:var(--main);
+ margin-bottom:10px;
 }
-.service-link:hover{color:var(--primary);}
+
+.local a{
+ display:block;
+ margin:6px;
+}
 
 /* FOOTER */
 footer{
-background:#000;padding:60px 5%;text-align:center;
-border-top:3px solid var(--primary);
-}
-.footer-title{
-font-family:'Orbitron';
-font-size:1.6rem;color:var(--primary);
-text-shadow:0 0 15px var(--primary);
+ text-align:center;
+ padding:25px;
+ border-top:1px solid var(--main);
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-position:fixed;
-bottom:20px;right:20px;
-background:#25D366;
-color:#fff;
-width:65px;height:65px;
-border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:2rem;
-z-index:999;
-box-shadow:0 0 20px #25D366;
+/* WHATSAPP */
+.whatsapp{
+ position:fixed;
+ right:20px;
+ bottom:20px;
+ background:#25d366;
+ padding:15px;
+ border-radius:50%;
+ font-size:22px;
+}
+
+/* THEME PANEL */
+.theme{
+ position:fixed;
+ left:0;
+ top:40%;
+}
+
+.theme div{
+ width:25px;height:25px;
+ margin:6px;
+ cursor:pointer;
+}
+
+/* RAINBOW */
+.rainbow{
+ position:fixed;
+ left:0;
+ bottom:25%;
+ background:linear-gradient(45deg,red,orange,yellow,green,blue,purple);
+ padding:10px;
+ cursor:pointer;
+}
+
+/* ANIMATION */
+.fade{
+ opacity:0;
+ transform:translateY(40px);
+ transition:1s;
+}
+.fade.show{
+ opacity:1;
+ transform:translateY(0);
 }
 </style>
 </head>
@@ -159,124 +220,132 @@ box-shadow:0 0 20px #25D366;
 <body>
 
 <header>
-
-<div class="logo-area">
+<div class="logo">
 <img src="verse.png">
-<div class="brand">SPO SMART DIGITAL VERSE</div>
+<span>SPO SMART DIGITAL VERSE</span>
 </div>
 
 <nav>
-<ul>
-<li><a href="index.html" class="nav-btn active-nav">HOME</a></li>
-<li><a href="web-hub.html" class="nav-btn">WEB HUB</a></li>
-<li><a href="seo-mastery.html" class="nav-btn">SEO</a></li>
-<li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
-<li><a href="portfolio-hub.html" class="nav-btn">PROJECTS</a></li>
-</ul>
+<a href="#">Home</a>
+<a href="#">Web</a>
+<a href="#">SEO</a>
+<a href="#">Marketing</a>
+<a href="#">Portfolio</a>
 </nav>
-
 </header>
 
-<section class="hero urdu">
-<h1>ہم کیا خدمات فراہم کرتے ہیں؟</h1>
-<p>ہم آپ کے بزنس کو برانڈ بناتے ہیں</p>
-
+<div class="hero fade">
+<h1>ہم آپ کے کاروبار کو صرف آن لائن نہیں لاتے، ہم اسے برانڈ بناتے ہیں</h1>
 <p>
-ایس پی او اسمارٹ ڈیجیٹل ورس میں ہم آپ کے کاروبار کو انٹرنیٹ کی دنیا میں ایک نئی پہچان دیتے ہیں۔
-ہماری خدمات میں شامل ہیں:
+ہم جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔
 </p>
+</div>
 
-<p>
-✨ ویب سائٹ ڈویلپمنٹ | 🚀 SEO | 📱 مارکیٹنگ | 📍 GMB سروسز
-</p>
+<div class="clock" id="clock"></div>
 
-<div class="clock-master">
+<div class="services">
 
-<a href="https://www.facebook.com/share/1EqvcWcyu1/" target="_blank" class="social-node top"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" target="_blank" class="social-node right"><i class="fab fa-instagram"></i></a>
-<a href="https://www.tiktok.com/@smartprintdigitalpk" target="_blank" class="social-node bottom"><i class="fab fa-tiktok"></i></a>
-<a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" target="_blank" class="social-node left"><i class="fab fa-whatsapp"></i></a>
-
-<div class="clock-face">
-
-<div class="number n12">12</div>
-<div class="number n3">3</div>
-<div class="number n6">6</div>
-<div class="number n9">9</div>
-
-<img src="verse.png" class="center-logo">
-
-<div class="hand hour" id="hour"></div>
-<div class="hand min" id="min"></div>
-<div class="hand sec" id="sec"></div>
-
+<div class="card fade">
+<h3>Website Development</h3>
+<div class="level">
+<b>Basic</b>
+<a href="https://wa.me/923034480404?text=Basic Website">Starter Site</a>
+</div>
+<div class="level">
+<b>Standard</b>
+<a href="#">Business Website</a>
+</div>
+<div class="level">
+<b>Pro</b>
+<a href="#">Ecommerce + Custom</a>
 </div>
 </div>
-</section>
 
-<div class="local-hub urdu">
+<div class="card fade">
+<h3>SEO Services</h3>
+<div class="level"><b>Basic</b><a href="#">Setup</a></div>
+<div class="level"><b>Standard</b><a href="#">On Page</a></div>
+<div class="level"><b>Pro</b><a href="#">Ranking</a></div>
+</div>
 
-<h2>📍 کنگن پور لوکل حب</h2>
+<div class="card fade">
+<h3>Digital Marketing</h3>
+<div class="level"><b>Basic</b><a href="#">Ads</a></div>
+<div class="level"><b>Standard</b><a href="#">Growth</a></div>
+<div class="level"><b>Pro</b><a href="#">Campaign</a></div>
+</div>
 
-<h3>🏪 اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h3>
-<p>🪟 ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
+<div class="card fade">
+<h3>Portfolio</h3>
+<div class="level"><b>Basic</b><a href="#">Personal</a></div>
+<div class="level"><b>Standard</b><a href="#">Business</a></div>
+<div class="level"><b>Pro</b><a href="#">Brand Identity</a></div>
+</div>
 
-<h3>💼 ہماری مکمل سروسز کی فہرست</h3>
+</div>
 
-<h4>🖨️ پرنٹنگ اور ڈاکومنٹ سروسز</h4>
-<a class="service-link" href="https://wa.me/923034480404?text=کلر پرنٹنگ">✔️ کلر اور بلیک پرنٹنگ</a>
-<a class="service-link" href="https://wa.me/923034480404?text=پاسپورٹ فوٹو">✔️ پاسپورٹ سائز فوٹوز</a>
-<a class="service-link" href="https://wa.me/923034480404?text=اسکیننگ">✔️ ڈاکومنٹ اسکیننگ</a>
-<a class="service-link" href="https://wa.me/923034480404?text=بائنڈنگ">✔️ بائنڈنگ اور لیمینیشن</a>
-<a class="service-link" href="https://wa.me/923034480404?text=فوٹو کاپی">✔️ فوٹو کاپی سروس</a>
-
-<h4>🌐 آن لائن سروسز</h4>
-<a class="service-link" href="https://wa.me/923034480404?text=جاب اپلائی">✔️ آن لائن جاب اپلائی</a>
-<a class="service-link" href="https://wa.me/923034480404?text=نادرا">✔️ نادرا سروسز</a>
-<a class="service-link" href="https://wa.me/923034480404?text=FBR">✔️ FBR سروسز</a>
-
-<h4>💻 ڈیجیٹل سروسز</h4>
-<a class="service-link" href="https://wa.me/923034480404?text=CV">✔️ CV بنوانا</a>
-<a class="service-link" href="https://wa.me/923034480404?text=ویب سائٹ">✔️ ویب ڈیولپمنٹ</a>
-<a class="service-link" href="https://wa.me/923034480404?text=مارکیٹنگ">✔️ ڈیجیٹل مارکیٹنگ</a>
-
-<p style="margin-top:20px;">
-📍 پرانا پکا بازار، کنگن پور <br>
-📞 0303-4480404
-</p>
-
+<div class="local fade">
+<h2>کنگن پور لوکل حب</h2>
+<a href="https://wa.me/923034480404?text=Photocopy">فوٹو کاپی</a>
+<a href="#">پرنٹنگ</a>
+<a href="#">FBR</a>
 </div>
 
 <footer>
-
-<div class="footer-title">SPO SMART DIGITAL VERSE</div>
-
-<p>
-<a href="mailto:asif.aimarketing@gmail.com" style="color:var(--primary)">📧 Email</a><br>
-<a href="http://www.smartprintingonline.site" target="_blank" style="color:var(--primary)">🌐 Website</a>
-</p>
-
-<p style="margin-top:20px;opacity:0.6;">
-© 2026 SPO SMART DIGITAL VERSE — All Rights Reserved<br>
-Developed By Muhammad Asif Ali
-</p>
-
+<h3 style="color:var(--main)">SPO SMART DIGITAL VERSE</h3>
+<p>© 2026 All Rights Reserved</p>
 </footer>
 
-<a href="https://wa.me/923034480404" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a class="whatsapp" href="https://wa.me/923034480404">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<div class="theme">
+<div style="background:#00ffcc" onclick="theme('#00ffcc')"></div>
+<div style="background:#ff00c8" onclick="theme('#ff00c8')"></div>
+<div style="background:#00eaff" onclick="theme('#00eaff')"></div>
+</div>
+
+<div class="rainbow" onclick="rain()">🌈</div>
 
 <script>
-function runClock(){
-const now=new Date();
-const s=now.getSeconds();
-const m=now.getMinutes();
-const h=now.getHours();
 
-document.getElementById('sec').style.transform=`translateX(-50%) rotate(${s*6}deg)`;
-document.getElementById('min').style.transform=`translateX(-50%) rotate(${m*6}deg)`;
-document.getElementById('hour').style.transform=`translateX(-50%) rotate(${h*30+m/2}deg)`;
+/* CLOCK */
+setInterval(()=>{
+let d=new Date();
+clock.innerHTML=`
+<div class="hand hour" style="transform:rotate(${(d.getHours()%12)*30}deg)"></div>
+<div class="hand minute" style="transform:rotate(${d.getMinutes()*6}deg)"></div>
+<div class="hand second" style="transform:rotate(${d.getSeconds()*6}deg)"></div>
+`;
+},1000);
+
+/* THEME */
+function theme(c){
+document.documentElement.style.setProperty('--main',c);
 }
-setInterval(runClock,1000);
+
+/* RAINBOW */
+let i=0;
+let colors=["red","orange","yellow","green","cyan","blue","purple"];
+
+function rain(){
+setInterval(()=>{
+document.documentElement.style.setProperty('--main',colors[i]);
+i=(i+1)%colors.length;
+},800);
+}
+
+/* SCROLL ANIMATION */
+let items=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+items.forEach(el=>{
+let pos=el.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
 </script>
 
 </body>
