@@ -12,61 +12,120 @@
         :root {
             --bg: #010409; --primary: #00e5ff; --accent: #25D366; --text: #fff;
             --glass: rgba(255, 255, 255, 0.05);
+            --neon-glow: 0 0 15px var(--primary);
         }
 
         * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s; scroll-behavior: smooth; }
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; line-height: 1.8; }
 
+        /* --- HEADER STYLES --- */
         header {
             position: fixed; top: 0; width: 100%; height: 90px; z-index: 1000;
             background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
             border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
         }
         .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
-        .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
-        .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-img { width: 55px; height: 55px; object-fit: contain; }
 
-        .nav-links { display: flex; gap: 10px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.6rem; border: 1px solid var(--primary); }
-        .nav-btn:hover, .nav-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
+        /* 3D Animated Branding Name */
+        .brand-name {
+            font-family: 'Orbitron';
+            font-size: 0.9rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 2px 2px 0px rgba(0, 229, 255, 0.3);
+        }
+        .brand-name:hover {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+            transform: scale(1.05) translateZ(20px);
+        }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0); }
+            50% { transform: translateY(-5px) rotateX(10deg); }
+        }
+
+        .nav-links { display: flex; gap: 8px; list-style: none; }
+        .nav-btn { background: var(--glass); color: #fff; padding: 8px 10px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.55rem; border: 1px solid var(--primary); }
+        .nav-btn:hover, .nav-btn.active { background: var(--primary); color: #000; box-shadow: var(--neon-glow); }
+
+        /* --- HERO SECTION --- */
         .hub-hero { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at top, rgba(0, 229, 255, 0.15), transparent); }
         .hub-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); }
 
-        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        /* --- SERVICES GRID --- */
+        .service-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
         
         .seo-card {
-            background: var(--glass); border-radius: 30px; padding: 35px; border: 1px solid rgba(255,255,255,0.1);
+            background: var(--glass); border-radius: 25px; padding: 30px; border: 1px solid rgba(255,255,255,0.1);
             position: relative; overflow: hidden; backdrop-filter: blur(10px); display: flex; flex-direction: column;
         }
-        .seo-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .seo-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1); }
+        .seo-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 15px; }
+        .seo-card h2 { font-family: 'Orbitron'; font-size: 1.3rem; margin-bottom: 10px; }
         
-        .stat-box { background: rgba(0, 229, 255, 0.1); border-radius: 15px; padding: 15px; margin: 15px 0; border-left: 3px solid var(--accent); }
-        .stat-box h4 { font-size: 0.8rem; color: var(--primary); margin-bottom: 5px; text-transform: uppercase; }
-        .stat-item { font-size: 0.85rem; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
-        .stat-item i { font-size: 0.7rem; color: var(--accent); }
+        .urdu-desc { font-size: 0.95rem; color: #ccc; margin-bottom: 15px; border-right: 3px solid var(--primary); padding-right: 10px; }
 
-        /* GMB SPECIAL VAULT */
+        .stat-box { background: rgba(0, 229, 255, 0.05); border-radius: 15px; padding: 15px; margin: 10px 0; border-left: 3px solid var(--accent); }
+        .stat-box h4 { font-size: 0.75rem; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; }
+        .stat-item { font-size: 0.8rem; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .stat-item i { font-size: 0.7rem; color: var(--accent); margin-bottom: 0; }
+
+        /* GMB VAULT */
         .gmb-vault { grid-column: 1 / -1; background: linear-gradient(45deg, #0d1117, #010409); border: 2px dashed var(--primary); }
-        .gmb-features { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .g-tag { font-size: 0.75rem; background: rgba(0, 229, 255, 0.05); padding: 10px; border-radius: 8px; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .g-tag i { color: var(--primary); margin-right: 8px; }
+        .gmb-features { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+        .g-tag { font-size: 0.7rem; background: rgba(0, 229, 255, 0.05); padding: 10px; border-radius: 8px; border: 1px solid rgba(0, 229, 255, 0.2); }
+        .g-tag i { color: var(--primary); margin-right: 8px; font-size: 0.8rem; }
 
-        .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; }
+        .order-btn { display: block; width: 100%; padding: 14px; background: var(--primary); color: #000; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; font-size: 0.8rem; }
+        .order-btn:hover { letter-spacing: 2px; box-shadow: var(--neon-glow); }
 
-        footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
-        .social-icons { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; margin: 20px 0; }
-        .social-icons a { color: #fff; transition: 0.3s; }
-        .social-icons a:hover { color: var(--primary); transform: scale(1.2); }
+        /* --- FOOTER --- */
+        footer { 
+            background: #000; padding: 60px 8%; border-top: 3px solid var(--primary); 
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; text-align: left;
+        }
+        .footer-left { flex: 1; min-width: 300px; }
+        .footer-right { flex: 0 0 150px; display: flex; justify-content: flex-end; }
+        
+        .footer-logo-circle {
+            width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary);
+            overflow: hidden; box-shadow: var(--neon-glow); background: #fff;
+        }
+        .footer-logo-circle img { width: 100%; height: 100%; object-fit: contain; }
+
+        .social-box { display: flex; gap: 15px; margin: 20px 0; }
+        .social-link { 
+            width: 45px; height: 45px; background: var(--glass); border: 1px solid var(--primary); 
+            display: flex; align-items: center; justify-content: center; border-radius: 50%; 
+            color: #fff; text-decoration: none; font-size: 1.2rem;
+        }
+        .social-link:hover { background: var(--primary); color: #000; box-shadow: var(--neon-glow); transform: translateY(-5px); }
+
+        .contact-mini { display: flex; gap: 20px; font-size: 0.8rem; opacity: 0.7; margin-top: 10px; }
+        .contact-mini a { color: var(--text); text-decoration: none; }
+        .contact-mini a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            header { height: auto; flex-direction: column; padding: 15px; }
+            .nav-links { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            footer { flex-direction: column; text-align: center; gap: 30px; }
+            .footer-right { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo-box">
-            <div class="logo-ring"><img src="1774980575568.png" alt="SPO"></div>
-            <h2 style="font-family:'Orbitron'; font-size:0.8rem;">SPO VERSE</h2>
+            <img src="verse.png" alt="SPO VERSE" class="logo-img">
+            <h2 class="brand-name">SPO SMART DIGITAL VERSE</h2>
         </a>
         <nav>
             <ul class="nav-links">
@@ -86,42 +145,75 @@
 
     <div class="service-container">
         <div class="seo-card">
-            <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--primary);"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">GMB Local Ranking</h2>
-            <p class="urdu">گوگل میپس پر ٹاپ رینکنگ</p>
+            <i class="fas fa-map-marked-alt"></i>
+            <h2>GMB Local Ranking</h2>
+            <div class="urdu urdu-desc">گوگل میپس پر آپ کے بزنس کی ٹاپ پوزیشن یقینی بنانا تاکہ کسٹمرز آپ تک آسانی سے پہنچ سکیں۔</div>
             <div class="stat-box">
                 <h4>Success Records:</h4>
                 <div class="stat-item"><i class="fas fa-chart-line"></i> Smart Printing Online - Rank #1</div>
                 <div class="stat-item"><i class="fas fa-chart-line"></i> Local Clinic GMB - 400% Growth</div>
-                <div class="stat-item"><i class="fas fa-chart-line"></i> Kanganpur Food Point - Top 3</div>
             </div>
             <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to Rank my Business on Google Maps (GMB)." class="order-btn">DOMINATE LOCAL</a>
         </div>
 
         <div class="seo-card">
-            <i class="fas fa-laptop-code" style="font-size: 3rem; color: var(--primary);"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">Technical SEO Audit</h2>
-            <p class="urdu">ویب سائٹ کی تکنیکی اصلاح</p>
+            <i class="fas fa-laptop-code"></i>
+            <h2>Technical SEO Audit</h2>
+            <div class="urdu urdu-desc">ویب سائٹ کی کوڈنگ اور اسٹرکچر کی ایسی اصلاح کہ گوگل کا سرچ انجن اسے فوراً رینک کرے۔</div>
             <div class="stat-box">
                 <h4>Core Focus:</h4>
                 <div class="stat-item"><i class="fas fa-bolt"></i> Core Web Vitals Optimization</div>
-                <div class="stat-item"><i class="fas fa-code"></i> Schema Markup Injection</div>
                 <div class="stat-item"><i class="fas fa-search"></i> XML Sitemap & Indexing Fix</div>
             </div>
             <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need a Technical SEO Audit for my Website." class="order-btn">FIX MY SEO</a>
         </div>
 
         <div class="seo-card">
-            <i class="fas fa-link" style="font-size: 3rem; color: var(--primary);"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">High DA Backlinks</h2>
-            <p class="urdu">اتھارٹی لنک بلڈنگ</p>
+            <i class="fas fa-pen-fancy"></i>
+            <h2>Content Marketing</h2>
+            <div class="urdu urdu-desc">ایسا جاندار مواد (Content) جو آپ کے کسٹمرز کا دل جیتے اور گوگل کے پہلے صفحے پر جگہ بنائے۔</div>
             <div class="stat-box">
                 <h4>Strategy:</h4>
+                <div class="stat-item"><i class="fas fa-keyboard"></i> SEO Optimized Blogs</div>
+                <div class="stat-item"><i class="fas fa-copy"></i> High-Conversion Ad Copy</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need Content Marketing & Writing Services." class="order-btn">WRITE & RANK</a>
+        </div>
+
+        <div class="seo-card">
+            <i class="fas fa-file-code"></i>
+            <h2>On-Page SEO</h2>
+            <div class="urdu urdu-desc">ویب سائٹ کے ہر پیج کی اندرونی سیٹنگز، میٹا ٹیگز اور کی ورڈز کی پروفیشنل ترتیب۔</div>
+            <div class="stat-box">
+                <h4>Optimization:</h4>
+                <div class="stat-item"><i class="fas fa-tags"></i> Meta Tags & Titles Fix</div>
+                <div class="stat-item"><i class="fas fa-link"></i> Internal Linking Strategy</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I want to optimize my Website On-Page SEO." class="order-btn">OPTIMIZE PAGES</a>
+        </div>
+
+        <div class="seo-card">
+            <i class="fas fa-link"></i>
+            <h2>High DA Backlinks</h2>
+            <div class="urdu urdu-desc">ہائی اتھارٹی ویب سائٹس سے بیک لنکس حاصل کر کے آپ کی ڈومین اتھارٹی میں اضافہ کرنا۔</div>
+            <div class="stat-box">
+                <h4>Quality:</h4>
                 <div class="stat-item"><i class="fas fa-user-shield"></i> Guest Posting (DA 50+)</div>
-                <div class="stat-item"><i class="fas fa-share-alt"></i> Niche Relevant Backlinks</div>
-                <div class="stat-item"><i class="fas fa-shield-alt"></i> Spam-Free Link Profile</div>
+                <div class="stat-item"><i class="fas fa-shield-alt"></i> 100% Spam-Free Strategy</div>
             </div>
             <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need High DA Backlinks for Ranking." class="order-btn">BUILD AUTHORITY</a>
+        </div>
+
+        <div class="seo-card">
+            <i class="fas fa-shopping-bag"></i>
+            <h2>E-Commerce SEO</h2>
+            <div class="urdu urdu-desc">آپ کے آن لائن اسٹور کی پروڈکٹس کو سرچ میں اوپر لانا تاکہ آپ کی سیلز میں ریکارڈ اضافہ ہو۔</div>
+            <div class="stat-box">
+                <h4>Results:</h4>
+                <div class="stat-item"><i class="fas fa-check"></i> Product Page Optimization</div>
+                <div class="stat-item"><i class="fas fa-check"></i> Competitor Price Tracking</div>
+            </div>
+            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need SEO for my E-Commerce Store." class="order-btn">BOOST SALES</a>
         </div>
 
         <div class="seo-card gmb-vault">
@@ -134,35 +226,36 @@
                 <div class="g-tag"><i class="fas fa-ad"></i> Local Services Ads</div>
                 <div class="g-tag"><i class="fas fa-mobile"></i> Call Tracking Setup</div>
                 <div class="g-tag"><i class="fas fa-sync"></i> Weekly GMB Updates</div>
-                <div class="g-tag"><i class="fas fa-user-friends"></i> Competitor Analysis</div>
-                <div class="g-tag"><i class="fas fa-chart-pie"></i> Insights Reporting</div>
             </div>
-            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want the Complete GMB Domination Package with all Special Features." class="order-btn" style="background:#fff;">GET COMPLETE GMB SETUP</a>
-        </div>
-
-        <div class="seo-card">
-            <i class="fas fa-shopping-bag" style="font-size: 3rem; color: var(--primary);"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">E-Commerce SEO</h2>
-            <p class="urdu">آن لائن سیلز میں اضافہ</p>
-            <div class="stat-box">
-                <h4>Completed:</h4>
-                <div class="stat-item"><i class="fas fa-check"></i> Product Page Optimization</div>
-                <div class="stat-item"><i class="fas fa-check"></i> Competitor Pricing SEO</div>
-                <div class="stat-item"><i class="fas fa-check"></i> Dynamic Category SEO</div>
-            </div>
-            <a href="https://wa.me/923034480404?text=Aslam o Alaikum SPO, I need SEO for my E-Commerce Store." class="order-btn">BOOST SALES</a>
+            <a href="https://wa.me/923034480404?text=Asslam o Alaikum SPO, I want the Complete GMB Domination Package." class="order-btn" style="background:#fff;">GET COMPLETE GMB SETUP</a>
         </div>
     </div>
 
     <footer>
-        <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px;">SPO SMART DIGITAL VERSE</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/sposmartprinting"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/asif_spo"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@asif_it_expert"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
+        <div class="footer-left">
+            <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px; font-weight:900;">SPO SMART DIGITAL VERSE</p>
+            <p style="opacity:0.6; font-size:0.8rem; margin: 10px 0;">آپ کی ہر ضرورت کا حل ایک ہی جگہ - Kanganpur & Kasur SEO Specialist</p>
+            
+            <div class="social-box">
+                <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:asif.aimarketing@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="http://www.SmartPrintingOnline.site" class="social-link"><i class="fas fa-globe"></i></a>
+            </div>
+
+            <div class="contact-mini">
+                <span><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</span>
+                <span><i class="fas fa-link"></i> <a href="http://www.SmartPrintingOnline.site">www.SmartPrintingOnline.site</a></span>
+            </div>
         </div>
-        <p style="opacity:0.5; font-size:0.8rem;">SEO Mastermind: Muhammad Asif Ali | Kanganpur & Kasur Specialist</p>
+
+        <div class="footer-right">
+            <div class="footer-logo-circle">
+                <img src="verse.png" alt="SPO VERSE">
+            </div>
+        </div>
     </footer>
 
 </body>
