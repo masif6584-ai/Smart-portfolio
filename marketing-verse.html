@@ -24,7 +24,7 @@
             border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
         }
         .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
-        .logo-ring { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; }
+        .logo-ring { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; border: none; }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
 
         .special-title {
@@ -50,21 +50,21 @@
         }
         .market-card:hover { border-color: var(--primary); transform: translateY(-10px); }
         
-        .card-detail-urdu { font-size: 0.9rem; color: #d1d1d1; margin: 15px 0; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; border-right: 3px solid var(--primary); }
+        .card-desc-en { font-size: 0.85rem; color: #bbb; margin-top: 10px; }
+        .card-desc-ur { font-size: 0.9rem; color: var(--primary); margin: 10px 0; border-right: 2px solid var(--accent); padding-right: 10px; }
 
-        .feature-list { background: rgba(188, 19, 254, 0.1); border-radius: 15px; padding: 15px; margin-bottom: 15px; }
+        .feature-list { background: rgba(188, 19, 254, 0.1); border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 3px solid var(--accent); }
         .feat-item { font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
         .feat-item i { color: var(--accent); }
 
-        /* BUSINESS REPORT BOX (Analytics) */
-        .analytics-vault { grid-column: 1 / -1; background: linear-gradient(145deg, #0a0a0a, #1a0025); border: 2px solid var(--primary); padding: 40px; border-radius: 30px; margin: 20px 0; }
-        .report-header { text-align: center; margin-bottom: 30px; }
-        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-        .stat-circle { border: 2px solid var(--primary); width: 140px; height: 140px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(188,19,254,0.3); }
-        .stat-circle h3 { color: var(--accent); font-family: 'Orbitron'; font-size: 1.4rem; }
+        /* RESTORED ANALYTICS VAULT */
+        .analytics-vault { grid-column: 1 / -1; background: #000; border: 2px solid var(--primary); padding: 40px; border-radius: 30px; text-align: center; margin: 20px 0; }
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+        .stat-circle { border: 2px solid var(--primary); width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 0 20px var(--primary); }
+        .stat-circle h3 { color: var(--accent); font-family: 'Orbitron'; }
         
-        .benefit-box { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .benefit-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 15px; font-size: 0.85rem; }
+        .vault-info { margin-top: 25px; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 15px; text-align: left; }
+        .vault-info-urdu { text-align: right; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); pt: 10px; }
 
         .order-btn { display: block; width: 100%; padding: 15px; background: var(--primary); color: #fff; text-align: center; text-decoration: none; font-weight: 900; border-radius: 12px; font-family: 'Orbitron'; margin-top: auto; border: none; font-size: 0.8rem; }
         
@@ -96,19 +96,18 @@
 
     <section class="hub-hero">
         <h1>Marketing <span style="color:var(--accent)">Engine</span></h1>
-        <p class="urdu" style="font-size:1.5rem;">کم خرچ میں زیادہ سیلز اور بزنس کی پہچان بنائیں</p>
+        <p class="urdu" style="font-size:1.5rem;">Grow Your Brand with Data-Driven Strategies</p>
     </section>
 
     <div class="service-container">
         <div class="market-card">
             <i class="fab fa-facebook-square" style="font-size: 3rem; color: #1877F2;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">Meta Ads Mastery</h2>
-            <div class="urdu card-detail-urdu">
-                فیس بک اور انسٹاگرام پر اشتہارات کے ذریعے ہم آپ کی پراڈکٹ ان لوگوں کو دکھاتے ہیں جو اسے خریدنا چاہتے ہیں۔ اس سے آپ کی سیلز تیزی سے بڑھتی ہے۔
-            </div>
+            <p class="card-desc-en">Drive sales and engagement through precision targeting on Facebook and Instagram.</p>
+            <p class="urdu card-desc-ur">فیس بک اور انسٹاگرام اشتہارات کے ذریعے اپنی سیلز میں اضافہ کریں اور صحیح گاہکوں تک پہنچیں۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> مخصوص کسٹمرز تک رسائی</div>
-                <div class="feat-item"><i class="fas fa-check"></i> کم بجٹ میں بہترین رزلٹ</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Audience Targeting</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Conversion Tracking</div>
             </div>
             <a href="https://wa.me/923034480404?text=I want Meta Ads Service" class="order-btn">SCALE MY BRAND</a>
         </div>
@@ -116,12 +115,11 @@
         <div class="market-card">
             <i class="fab fa-tiktok" style="font-size: 3rem; color: #fff;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">TikTok Viral Growth</h2>
-            <div class="urdu card-detail-urdu">
-                ٹک ٹاک پر وائرل ویڈیوز اور اشتہارات کے ذریعے ہم آپ کے برانڈ کو گھر گھر پہنچاتے ہیں۔ یہ نئے بزنس کو مشہور کرنے کا تیز ترین طریقہ ہے۔
-            </div>
+            <p class="card-desc-en">Dominate the short-form video market and make your brand go viral overnight.</p>
+            <p class="urdu card-desc-ur">ٹک ٹاک کی وائرل ویڈیوز اور اشتہارات کے ذریعے اپنے برانڈ کو نوجوان نسل میں مقبول بنائیں۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> برانڈ کی مشہوری</div>
-                <div class="feat-item"><i class="fas fa-check"></i> وائرل ویڈیو مارکیٹنگ</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Trending Content</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Brand Awareness</div>
             </div>
             <a href="https://wa.me/923034480404?text=I want TikTok Ads" class="order-btn">GO VIRAL</a>
         </div>
@@ -129,68 +127,65 @@
         <div class="market-card">
             <i class="fab fa-whatsapp" style="font-size: 3rem; color: #25D366;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">SPO WhatsApp CRM</h2>
-            <div class="urdu card-detail-urdu">
-                ہزاروں کسٹمرز کو ایک کلک پر میسج بھیجیں اور آٹومیٹک ریپلائی سسٹم (Chatbot) کے ذریعے اپنے بزنس کو 24 گھنٹے ایکٹیو رکھیں۔
-            </div>
+            <p class="card-desc-en">Automate your customer communication with intelligent chatbots and bulk messaging.</p>
+            <p class="urdu card-desc-ur">واٹس ایپ آٹومیشن اور بلک میسجنگ کے ذریعے اپنے گاہکوں سے 24 گھنٹے جڑے رہیں۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> آٹومیٹک میسجنگ</div>
-                <div class="feat-item"><i class="fas fa-check"></i> پرانے کسٹمرز سے رابطہ</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Smart Chatbots</div>
+                <div class="feat-item"><i class="fas fa-check"></i> 1-Click Marketing</div>
             </div>
             <a href="https://wa.me/923034480404?text=I need WhatsApp Automation" class="order-btn">START AUTOMATION</a>
         </div>
 
         <div class="market-card">
-            <i class="fas fa-star" style="font-size: 3rem; color: #FFD700;"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">Influencer Hub</h2>
-            <div class="urdu card-detail-urdu">
-                مشہور سوشل میڈیا سٹارز آپ کی پراڈکٹ کی تشہیر کریں گے، جس سے لوگوں کا آپ کے برانڈ پر اعتماد بڑھے گا اور سیلز میں اضافہ ہوگا۔
-            </div>
+            <i class="fas fa-tasks" style="font-size: 3rem; color: #FFD700;"></i>
+            <h2 style="margin-top:15px; font-family:'Orbitron';">Social Management</h2>
+            <p class="card-desc-en">Professional management of your social profiles with consistent posting and design.</p>
+            <p class="urdu card-desc-ur">آپ کے سوشل میڈیا اکاؤنٹس کی مکمل ہینڈلنگ، روزانہ پوسٹنگ اور پروفیشنل ڈیزائننگ۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> بھروسہ مند مارکیٹنگ</div>
-                <div class="feat-item"><i class="fas fa-check"></i> کسٹمرز کا اعتماد</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Daily Content Post</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Profile Optimization</div>
             </div>
-            <a href="https://wa.me/923034480404?text=I want Influencer Marketing" class="order-btn">CONNECT NOW</a>
+            <a href="https://wa.me/923034480404?text=I want Social Media Management" class="order-btn">MANAGE MY PROFILES</a>
         </div>
 
         <div class="analytics-vault">
-            <div class="report-header">
-                <h2 style="font-family:'Orbitron'; color:var(--primary);">Business Report & Results</h2>
-                <p class="urdu">ہم آپ کے پیسے کا مکمل حساب اور رزلٹ فراہم کرتے ہیں</p>
-            </div>
+            <h2 style="font-family:'Orbitron'; color:var(--primary);">Campaign Analytics & ROI</h2>
+            <p class="urdu" style="color:#ccc; font-size: 0.8rem;">Real-time Performance Monitoring | ریئل ٹائم مہم کی کارکردگی</p>
+            
             <div class="stats-grid">
-                <div class="stat-circle"><h3>10M+</h3><p>دیکھنے والے</p></div>
-                <div class="stat-circle"><h3>500k+</h3><p>گاہکوں کے فون</p></div>
-                <div class="stat-circle"><h3>15x</h3><p>زیادہ منافع</p></div>
+                <div class="stat-circle"><h3>1M+</h3><p>Impressions</p></div>
+                <div class="stat-circle"><h3>10k+</h3><p>New Leads</p></div>
+                <div class="stat-circle"><h3>8x</h3><p>Target ROI</p></div>
             </div>
-            <div class="benefit-box">
-                <div class="benefit-item urdu"><b>ہفتہ وار رپورٹ:</b> ہر ہفتے آپ کو کام کی تفصیل ای میل کی جائے گی۔</div>
-                <div class="benefit-item urdu"><b>شفافیت:</b> آپ خود دیکھ سکیں گے کہ کتنے لوگوں نے اشتہار دیکھا۔</div>
-                <div class="benefit-item urdu"><b>ٹارگٹ مارکیٹنگ:</b> فالتو لوگوں کو اشتہار نہیں دکھایا جاتا۔</div>
+
+            <div class="vault-info">
+                <p style="font-size:0.8rem; color:#fff;"><b>Campaign Insight:</b> We provide weekly transparent reports via Google Looker Studio, showing exactly where your budget is spent and how many customers were converted.</p>
+                <div class="vault-info-urdu urdu" style="font-size:0.85rem; color:#bbb;">
+                    <b>بزنس رپورٹ:</b> ہم ہر ہفتے آپ کو مکمل رپورٹ فراہم کرتے ہیں جس میں اشتہار کا خرچ، کلک کرنے والوں کی تعداد اور حاصل ہونے والے منافع کی تفصیل ہوتی ہے۔
+                </div>
             </div>
         </div>
 
         <div class="market-card">
             <i class="fab fa-google" style="font-size: 3rem; color: #4285F4;"></i>
             <h2 style="margin-top:15px; font-family:'Orbitron';">Google Ads (SEM)</h2>
-            <div class="urdu card-detail-urdu">
-                جب کوئی گوگل پر آپ کے کام سے متعلق سرچ کرے تو آپ کا نام سب سے اوپر آئے گا۔ یوٹیوب ویڈیوز کے درمیان بھی اشتہار دکھائے جاتے ہیں۔
-            </div>
+            <p class="card-desc-en">Show up at the top of Google Search results when customers are looking for you.</p>
+            <p class="urdu card-desc-ur">گوگل سرچ اور یوٹیوب پر اپنی جگہ بنائیں تاکہ گاہک آپ کو آسانی سے تلاش کر سکیں۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> گوگل سرچ رینکنگ</div>
-                <div class="feat-item"><i class="fas fa-check"></i> یوٹیوب اشتہارات</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Keyword Research</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Pay-Per-Click Ads</div>
             </div>
             <a href="https://wa.me/923034480404?text=I need Google Ads" class="order-btn" style="background:#4285F4;">GET ON GOOGLE</a>
         </div>
 
         <div class="market-card">
             <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #EA4335;"></i>
-            <h2 style="margin-top:15px; font-family:'Orbitron';">Google Maps Business</h2>
-            <div class="urdu card-detail-urdu">
-                اپنے شہر کے گاہکوں کو اپنی دکان یا آفس تک بلائیں۔ گوگل میپس پر ٹاپ پر آنے سے مقامی گاہک آپ تک آسانی سے پہنچ سکتے ہیں۔
-            </div>
+            <h2 style="margin-top:15px; font-family:'Orbitron';">Google Maps Growth</h2>
+            <p class="card-desc-en">Boost your local presence and attract customers directly to your physical shop.</p>
+            <p class="urdu card-desc-ur">گوگل میپس پر اپنی دکان کی رینکنگ بہتر کریں اور قریبی گاہکوں کو اپنی طرف متوجہ کریں۔</p>
             <div class="feature-list">
-                <div class="feat-item"><i class="fas fa-check"></i> لوکل گاہکوں کی رسائی</div>
-                <div class="feat-item"><i class="fas fa-check"></i> گوگل میپس رینکنگ</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Local Citations</div>
+                <div class="feat-item"><i class="fas fa-check"></i> Maps Optimization</div>
             </div>
             <a href="https://wa.me/923034480404?text=I want Google Maps SEO" class="order-btn" style="background:#EA4335;">GROW LOCALLY</a>
         </div>
@@ -201,12 +196,12 @@
         <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px; font-weight: 900;">SPO SMART DIGITAL VERSE</p>
         
         <div class="social-grid">
-            <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="soc-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/smartprinting.online" class="soc-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="soc-link"><i class="fab fa-tiktok"></i></a>
-            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="soc-link"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:asif.aimarketing@gmail.com" class="soc-link"><i class="fas fa-envelope"></i></a>
-            <a href="http://www.SmartPrintingOnline.site" class="soc-link"><i class="fas fa-globe"></i></a>
+            <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="soc-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/smartprinting.online" class="soc-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="soc-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="soc-link" title="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:asif.aimarketing@gmail.com" class="soc-link" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="http://www.SmartPrintingOnline.site" class="soc-link" title="Website"><i class="fas fa-globe"></i></a>
         </div>
 
         <p class="urdu" style="opacity:0.8; font-size:0.9rem; margin-bottom: 10px;">آپ کی ہر ضرورت کا حل ایک ہی جگہ - SPO Smart Digital Verse</p>
