@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPO SMART DIGITAL VERSE | Official Master Hub</title>
+    <title>SPO SMART DIGITAL VERSE | Master Hub 2026</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Nastaliq+Urdu&family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,91 +18,107 @@
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif; overflow-x: hidden; }
         .urdu { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.8; text-align: right; }
 
-        /* HEADER - PERFECT ROUND LOGO & FIXED NAV LINK */
+        /* 1. HEADER - PERFECT ROUND LOGO */
         header {
-            position: fixed; top: 0; width: 100%; height: 110px; z-index: 1000;
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
-            border-bottom: 4px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 4%;
+            position: fixed; top: 0; width: 100%; height: 115px; z-index: 1000;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(25px);
+            border-bottom: 5px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 4%;
         }
-        .header-content { display: flex; align-items: center; gap: 20px; width: 100%; flex-direction: row-reverse; }
+        .header-content { display: flex; align-items: center; gap: 25px; width: 100%; flex-direction: row-reverse; }
         
         .logo-box { 
-            width: 85px; height: 85px; border-radius: 50%; overflow: hidden; 
-            box-shadow: 0 0 25px var(--primary); border: 3px solid var(--primary);
+            width: 90px; height: 90px; border-radius: 50%; overflow: hidden; 
+            box-shadow: 0 0 30px var(--primary); border: 3px solid var(--primary);
             flex-shrink: 0; aspect-ratio: 1/1;
         }
         .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 
         .brand-name { 
-            font-family: 'Orbitron'; font-size: 2.2rem; color: #fff; 
-            text-shadow: 3px 3px 0px var(--primary), 6px 6px 12px rgba(0,0,0,0.9);
-            cursor: pointer; position: relative; animation: float3D 4s ease-in-out infinite;
+            font-family: 'Orbitron'; font-size: 2.3rem; color: #fff; 
+            text-shadow: 3px 3px 0px var(--primary), 6px 6px 15px rgba(0,0,0,1);
+            cursor: pointer; animation: float3D 4s ease-in-out infinite;
         }
-        @keyframes float3D { 0%, 100% { transform: translateY(0) rotateY(0deg); } 50% { transform: translateY(-15px) rotateY(10deg); } }
+        @keyframes float3D { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.02); } }
 
         nav { margin-right: auto; }
-        nav ul { display: flex; gap: 12px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 12px 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.75rem; border: 2px solid var(--primary); }
-        .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 25px var(--primary); transform: translateY(-5px); }
+        nav ul { display: flex; gap: 15px; list-style: none; }
+        .nav-btn { background: var(--glass); color: #fff; padding: 12px 20px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; border: 2px solid var(--primary); box-shadow: inset 0 0 15px rgba(37,211,102,0.1); }
+        .nav-btn:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); transform: translateY(-5px); }
 
-        /* THEME PANEL - 6 COLORS */
-        .theme-panel { position: fixed; left: 20px; top: 140px; z-index: 2000; display: flex; flex-direction: column; gap: 12px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 40px; border: 1px solid var(--primary); }
-        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; }
-        .rainbow-btn { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); animation: rotate 3s linear infinite; cursor: pointer; border: 2px solid #fff; }
+        /* 2. THEME PANEL - 6 COLORS */
+        .theme-panel { position: fixed; left: 20px; top: 150px; z-index: 2000; display: flex; flex-direction: column; gap: 15px; background: rgba(0,0,0,0.6); padding: 18px; border-radius: 50px; border: 2px solid var(--primary); }
+        .color-dot { width: 38px; height: 38px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; transition: 0.3s; }
+        .color-dot:hover { transform: scale(1.2); }
+        .rainbow-btn { width: 45px; height: 45px; border-radius: 50%; background: linear-gradient(45deg, red, orange, yellow, green, blue, purple); animation: rotate 3s linear infinite; cursor: pointer; border: 2px solid #fff; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
 
-        /* CLOCK SECTION */
-        .top-clock-area { padding-top: 180px; text-align: center; }
-        .clock-wrapper { position: relative; width: 360px; height: 360px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+        /* 3. CLOCK SECTION - FULL LOGO ADJUSTMENT */
+        .top-clock-area { padding-top: 200px; text-align: center; }
+        .clock-wrapper { position: relative; width: 380px; height: 380px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
         .clock-face { 
-            width: 250px; height: 250px; border: 12px solid var(--primary); border-radius: 50%; 
+            width: 260px; height: 260px; border: 15px solid var(--primary); border-radius: 50%; 
             background: url('verse.png') no-repeat center; background-size: cover;
-            position: relative; box-shadow: 0 0 60px var(--primary); background-color: #000;
+            position: relative; box-shadow: 0 0 70px var(--primary); background-color: #000;
         }
         .hand { position: absolute; bottom: 50%; left: 50%; transform-origin: bottom; background: var(--primary); transform: translateX(-50%); border-radius: 10px; }
-        .hour { width: 8px; height: 60px; z-index: 2; } .min { width: 6px; height: 90px; z-index: 2; } .sec { width: 2px; height: 110px; background: #ff0000; z-index: 3; }
+        .hour { width: 10px; height: 65px; z-index: 2; } .min { width: 7px; height: 95px; z-index: 2; } .sec { width: 3px; height: 115px; background: #ff0000; z-index: 3; }
         
-        .social-node { position: absolute; width: 70px; height: 70px; background: var(--bg); border: 4px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2rem; text-decoration: none; z-index: 10; }
-        .social-node:hover { background: var(--primary); color: #000; box-shadow: 0 0 40px var(--primary); transform: scale(1.2); }
+        .social-node { position: absolute; width: 75px; height: 75px; background: var(--bg); border: 5px solid var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.2rem; text-decoration: none; z-index: 10; box-shadow: 0 0 25px rgba(37,211,102,0.3); }
+        .social-node:hover { background: var(--primary); color: #000; box-shadow: 0 0 50px var(--primary); transform: scale(1.25); }
         .s-top { top: 0; } .s-right { right: 0; } .s-bottom { bottom: 0; } .s-left { left: 0; }
 
-        /* HERO CONTENT */
-        .hero-section { padding: 60px 5%; text-align: center; }
-        .hero-heading { color: var(--primary); font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 30px; text-shadow: 0 0 20px var(--primary); }
-        .hero-p { font-size: clamp(1.2rem, 3vw, 1.8rem); max-width: 1000px; margin: 0 auto; color: #e0e0e0; }
+        /* 4. HERO SECTION - HEAVY URDU */
+        .hero-section { padding: 80px 5%; text-align: center; }
+        .hero-heading { color: var(--primary); font-size: clamp(2.2rem, 7vw, 4rem); margin-bottom: 35px; text-shadow: 0 0 25px var(--primary); }
+        .hero-p { font-size: 1.8rem; max-width: 1100px; margin: 0 auto; color: #f0f0f0; line-height: 2.2; }
 
-        /* 4 SERVICE CARDS */
-        .services-container { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .card { background: var(--glass); border: 2px solid var(--primary); border-radius: 35px; padding: 35px; position: relative; }
-        .card h3 { color: var(--accent); margin-bottom: 25px; font-family: 'Orbitron'; text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 20px; font-size: 1.6rem; }
-        .lvl { display: block; background: rgba(0,0,0,0.6); padding: 18px; margin-bottom: 15px; border-radius: 20px; border-right: 8px solid var(--primary); text-decoration: none; color: #fff; transition: 0.4s; }
-        .lvl:hover { background: var(--primary); color: #000; transform: translateX(-10px); }
-        .lvl b { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--primary); display: block; }
+        /* 5. 4 COMPLETE SERVICE CARDS */
+        .services-container { padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
+        .card { background: var(--glass); border: 3px solid var(--primary); border-radius: 40px; padding: 40px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .card h3 { color: var(--accent); margin-bottom: 30px; font-family: 'Orbitron'; text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 25px; font-size: 1.8rem; }
+        
+        .lvl { display: block; background: rgba(0,0,0,0.7); padding: 22px; margin-bottom: 18px; border-radius: 25px; border-right: 10px solid var(--primary); text-decoration: none; color: #fff; transition: 0.4s; }
+        .lvl:hover { background: var(--primary); color: #000; transform: translateX(-15px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .lvl b { font-family: 'Orbitron'; font-size: 1rem; color: var(--primary); display: block; margin-bottom: 8px; }
+        .lvl:hover b { color: #000; }
 
-        /* MEGA LOCAL HUB */
-        .local-hub-mega { background: var(--glass); border: 5px dashed var(--primary); margin: 80px 5%; padding: 60px 5%; border-radius: 60px; }
-        .hub-title { text-align: center; color: var(--accent); font-size: 2.8rem; margin-bottom: 20px; }
-        .hub-cat { color: var(--primary); border-right: 6px solid var(--primary); padding-right: 20px; margin: 40px 0 25px; font-size: 1.8rem; display: inline-block; }
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .hub-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 25px; display: flex; align-items: center; gap: 20px; text-decoration: none; color: #fff; }
-        .hub-box:hover { background: var(--primary); color: #000; transform: scale(1.05); }
-        .hub-box i { font-size: 2.2rem; color: var(--primary); }
+        /* 6. MEGA LOCAL HUB KANGANPUR - FULL LIST */
+        .local-hub-mega { background: var(--glass); border: 6px dashed var(--primary); margin: 100px 5%; padding: 70px 6%; border-radius: 70px; }
+        .hub-title { text-align: center; color: var(--accent); font-size: 3.2rem; margin-bottom: 25px; text-shadow: 0 0 20px var(--accent); }
+        .hub-subtitle { text-align: center; margin-bottom: 60px; color: #fff; font-size: 1.8rem; }
+        
+        .hub-category-title { color: var(--primary); border-right: 8px solid var(--primary); padding-right: 25px; margin: 50px 0 30px; font-size: 2.2rem; background: rgba(37,211,102,0.08); display: inline-block; padding-left: 40px; border-radius: 0 20px 20px 0; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .hub-item-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 30px; display: flex; align-items: center; gap: 25px; text-decoration: none; color: #fff; font-size: 1.4rem; transition: 0.4s; }
+        .hub-item-box:hover { background: var(--primary); color: #000; transform: translateY(-10px) scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .hub-item-box i { font-size: 2.5rem; color: var(--primary); }
+        .hub-item-box:hover i { color: #000; }
 
-        /* FOOTER */
-        footer { background: #000; padding: 100px 5% 50px; border-top: 8px solid var(--primary); text-align: center; }
-        .f-logo { width: 130px; height: 130px; border-radius: 50%; border: 5px solid var(--primary); box-shadow: 0 0 35px var(--primary); margin-bottom: 30px; object-fit: cover; }
-        .f-brand { font-family: 'Orbitron'; font-size: 2.8rem; color: var(--primary); margin-bottom: 30px; }
-        .f-socials { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; }
-        .f-link { font-size: 3rem; color: var(--primary); transition: 0.4s; }
-        .f-link:hover { transform: translateY(-15px); color: #fff; }
+        /* 7. FOOTER - MEGA VERSION */
+        footer { background: #000; padding: 120px 5% 60px; border-top: 10px solid var(--primary); text-align: center; }
+        .f-logo { width: 150px; height: 150px; border-radius: 50%; border: 6px solid var(--primary); box-shadow: 0 0 40px var(--primary); margin-bottom: 35px; object-fit: cover; }
+        .f-brand { font-family: 'Orbitron'; font-size: 3.5rem; color: var(--primary); text-shadow: 0 0 25px var(--primary); margin-bottom: 40px; }
+        
+        .f-socials-row { display: flex; justify-content: center; gap: 50px; margin-bottom: 60px; }
+        .f-social-btn { font-size: 3.5rem; color: var(--primary); transition: 0.5s; text-decoration: none; }
+        .f-social-btn:hover { transform: translateY(-20px) scale(1.3); color: #fff; filter: drop-shadow(0 0 20px var(--primary)); }
+        
+        .f-contact-info { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; color: #fff; margin-bottom: 60px; font-size: 1.3rem; }
+        .f-contact-info a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 20px; transition: 0.3s; }
+        .f-contact-info a:hover { color: var(--primary); transform: scale(1.1); }
+        .f-contact-info i { color: var(--primary); font-size: 2rem; }
 
-        .wa-float { position: fixed; bottom: 40px; left: 40px; width: 90px; height: 90px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 0 40px #25D366; z-index: 5000; animation: wa-bounce 2s infinite; text-decoration: none; }
-        @keyframes wa-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+        .f-copyright { opacity: 0.7; border-top: 2px solid var(--glass); padding-top: 50px; font-size: 1.2rem; line-height: 2.8; }
 
-        @media (max-width: 900px) {
-            header { height: auto; flex-direction: column; padding: 25px; }
-            .header-content { flex-direction: column; text-align: center; }
-            nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+        /* WHATSAPP FLOAT - MEGA */
+        .wa-float { position: fixed; bottom: 50px; left: 50px; width: 100px; height: 100px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 60px; box-shadow: 0 0 50px #25D366; z-index: 5000; animation: bounce 2s infinite; text-decoration: none; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+
+        @media (max-width: 1000px) {
+            header { height: auto; flex-direction: column; padding: 30px; }
+            .header-content { flex-direction: column; }
+            nav ul { flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+            .brand-name { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -111,7 +127,7 @@
     <a href="https://wa.me/923034480404" class="wa-float"><i class="fab fa-whatsapp"></i></a>
 
     <div class="theme-panel">
-        <div class="rainbow-btn" onclick="toggleRainbow()"></div>
+        <div class="rainbow-btn" onclick="toggleRainbow()" title="Rainbow Mode"></div>
         <div class="color-dot" style="background: #25D366;" onclick="setTheme('#25D366')"></div>
         <div class="color-dot" style="background: #00e5ff;" onclick="setTheme('#00e5ff')"></div>
         <div class="color-dot" style="background: #ff00ff;" onclick="setTheme('#ff00ff')"></div>
@@ -152,65 +168,88 @@
     </section>
 
     <section class="hero-section urdu">
-        <h1 class="hero-heading">ہم آپ کے کاروبار کو برانڈ بناتے ہیں!</h1>
-        <p class="hero-p">جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔</p>
+        <h1 class="hero-heading">ہم آپ کے کاروبار کو صرف آن لائن نہیں لاتے، ہم اسے برانڈ بناتے ہیں!</h1>
+        <p class="hero-p">جدید ڈیجیٹل ٹیکنالوجی، اسٹریٹجک مارکیٹنگ اور پروفیشنل ڈیزائن کے ذریعے آپ کے بزنس کو ایک نئی پہچان دیتے ہیں۔ چاہے آپ ایک چھوٹا کاروبار ہوں یا ایک بڑا برانڈ، ہم آپ کو آن لائن دنیا میں نمایاں کرنے کے لیے مکمل حل فراہم کرتے ہیں۔</p>
     </section>
 
     <div class="services-container urdu">
         <div class="card">
             <h3>Web Development</h3>
-            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>پورٹ فولیو ویب سائٹ</a>
-            <a href="https://wa.me/923034480404?text=Standard Web" class="lvl"><b>STANDARD</b>بزنس ویب سائٹ</a>
-            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>ای کامرس اسٹور</a>
+            <a href="https://wa.me/923034480404?text=Basic Web" class="lvl"><b>BASIC</b>بزنس پورٹ فولیو ویب سائٹ (Static)</a>
+            <a href="https://wa.me/923034480404?text=Standard Web" class="lvl"><b>STANDARD</b>پروفیشنل بزنس ویب سائٹ (Dynamic)</a>
+            <a href="https://wa.me/923034480404?text=Pro Web" class="lvl"><b>PRO</b>ای کامرس آن لائن اسٹور (Full Store)</a>
         </div>
         <div class="card">
             <h3>SEO & Ranking</h3>
-            <a href="https://wa.me/923034480404?text=Local SEO" class="lvl"><b>LOCAL</b>گوگل بزنس سیٹ اپ</a>
-            <a href="https://wa.me/923034480404?text=OnPage SEO" class="lvl"><b>STANDARD</b>آن پیج ایس ای او</a>
-            <a href="https://wa.me/923034480404?text=Monthly SEO" class="lvl"><b>PRO</b>ماہانہ رینکنگ پلان</a>
+            <a href="https://wa.me/923034480404?text=Local SEO" class="lvl"><b>LOCAL</b>گوگل بزنس پروفائل اور لوکل رینکنگ</a>
+            <a href="https://wa.me/923034480404?text=Standard SEO" class="lvl"><b>STANDARD</b>آن پیج اور ٹیکنیکل ایس ای او آپٹیمائزیشن</a>
+            <a href="https://wa.me/923034480404?text=Pro SEO" class="lvl"><b>PRO</b>مکمل ماہانہ رینکنگ اور بیک لنکس سروس</a>
         </div>
         <div class="card">
             <h3>Digital Marketing</h3>
-            <a href="https://wa.me/923034480404?text=Social Growth" class="lvl"><b>GROWTH</b>سوشل میڈیا گروتھ</a>
-            <a href="https://wa.me/923034480404?text=FB Ads" class="lvl"><b>ADS</b>فیس بک اور انسٹا ایڈز</a>
-            <a href="https://wa.me/923034480404?text=360 Plan" class="lvl"><b>PRO</b>مکمل مارکیٹنگ سلوشن</a>
+            <a href="https://wa.me/923034480404?text=Social Growth" class="lvl"><b>GROWTH</b>سوشل میڈیا پیج مینجمنٹ اور پوسٹ ڈیزائن</a>
+            <a href="https://wa.me/923034480404?text=Paid Ads" class="lvl"><b>ADS</b>فیس بک، انسٹاگرام اور گوگل ایڈز کیمپین</a>
+            <a href="https://wa.me/923034480404?text=Full Marketing" class="lvl"><b>PRO</b>کمپلیٹ ڈیجیٹل مارکیٹنگ اور برانڈنگ پلان</a>
         </div>
         <div class="card">
-            <h3>Branding</h3>
-            <a href="https://wa.me/923034480404?text=Logo Design" class="lvl"><b>LOGO</b>لوگو ڈیزائننگ</a>
-            <a href="https://wa.me/923034480404?text=Identity Kit" class="lvl"><b>IDENTITY</b>بزنس کارڈز وغیرہ</a>
-            <a href="https://wa.me/923034480404?text=Video Ads" class="lvl"><b>VIDEO</b>برانڈ پرومو ویڈیوز</a>
+            <h3>Branding & Design</h3>
+            <a href="https://wa.me/923034480404?text=Logo Design" class="lvl"><b>LOGO</b>پروفیشنل لوگو اور برانڈ آئیڈینٹٹی ڈیزائن</a>
+            <a href="https://wa.me/923034480404?text=Stationery Design" class="lvl"><b>IDENTITY</b>بزنس کارڈ، لیٹر ہیڈ اور بروشر ڈیزائن</a>
+            <a href="https://wa.me/923034480404?text=Video Ads" class="lvl"><b>VIDEO</b>پروڈکٹ پرومو اور برانڈ ویڈیو ایڈورٹائزنگ</a>
         </div>
     </div>
 
     <section class="local-hub-mega urdu">
         <h2 class="hub-title">🏪 اسمارٹ پرنٹنگ اینڈ آن لائن سروسز</h2>
-        <h3 class="hub-cat">🖨️ پرنٹنگ سروسز</h3>
+        <p class="hub-subtitle">🪟 ون ونڈو سلوشنز — آپ کی ہر ضرورت کا ایک ہی جگہ حل!</p>
+
+        <h3 class="hub-category-title">🖨️ پرنٹنگ اور ڈاکومنٹ سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Printing" class="hub-box"><i class="fas fa-print"></i> کلر اور بلیک پرنٹنگ</a>
-            <a href="https://wa.me/923034480404?text=Photos" class="hub-box"><i class="fas fa-camera"></i> پاسپورٹ سائز فوٹوز</a>
-            <a href="https://wa.me/923034480404?text=Scan" class="hub-box"><i class="fas fa-file-pdf"></i> ڈاکومنٹ اسکیننگ</a>
+            <a href="https://wa.me/923034480404?text=Color Printing" class="hub-item-box"><i class="fas fa-print"></i> کلر اور بلیک اینڈ وائٹ پرنٹنگ</a>
+            <a href="https://wa.me/923034480404?text=Passport Photos" class="hub-item-box"><i class="fas fa-camera"></i> فوری پاسپورٹ سائز فوٹوز سروس</a>
+            <a href="https://wa.me/923034480404?text=Scanning" class="hub-item-box"><i class="fas fa-file-pdf"></i> ہائی کوالٹی ڈاکومنٹ اسکیننگ</a>
+            <a href="https://wa.me/923034480404?text=Binding" class="hub-item-box"><i class="fas fa-book-reader"></i> پروفیشنل بائنڈنگ اور لیمینیشن</a>
+            <a href="https://wa.me/923034480404?text=Photocopy" class="hub-item-box"><i class="fas fa-copy"></i> تیز ترین اور صاف فوٹو کاپی سروس</a>
         </div>
-        <h3 class="hub-cat">🌐 آن لائن سروسز</h3>
+
+        <h3 class="hub-category-title">🌐 آن لائن اور گورنمنٹ سروسز</h3>
         <div class="hub-grid">
-            <a href="https://wa.me/923034480404?text=Job Apply" class="hub-box"><i class="fas fa-user-graduate"></i> آن لائن جاب اپلائی</a>
-            <a href="https://wa.me/923034480404?text=FBR Tax" class="hub-box"><i class="fas fa-file-invoice-dollar"></i> ٹیکس فائلنگ / FBR</a>
-            <a href="https://wa.me/923034480404?text=NADRA" class="hub-box"><i class="fas fa-id-card"></i> نادرا و پاسپورٹ مدد</a>
+            <a href="https://wa.me/923034480404?text=Online Job Apply" class="hub-item-box"><i class="fas fa-user-graduate"></i> تمام سرکاری و پرائیویٹ جاب اپلائی</a>
+            <a href="https://wa.me/923034480404?text=Job Updates" class="hub-item-box"><i class="fas fa-bell"></i> روزانہ نئی نوکریوں کی مکمل معلومات</a>
+            <a href="https://wa.me/923034480404?text=NADRA Help" class="hub-item-box"><i class="fas fa-id-card"></i> نادرا شناختی کارڈ اور فارم بی رہنمائی</a>
+            <a href="https://wa.me/923034480404?text=FBR Tax" class="hub-item-box"><i class="fas fa-file-invoice-dollar"></i> ایف بی آر ٹیکس فائلنگ اور NTN رجسٹریشن</a>
+            <a href="https://wa.me/923034480404?text=Domicile" class="hub-item-box"><i class="fas fa-certificate"></i> ڈومیسائل اور دیگر سرکاری سرٹیفیکیٹس</a>
+        </div>
+
+        <h3 class="hub-category-title">💻 پروفیشنل ڈیجیٹل سروسز</h3>
+        <div class="hub-grid">
+            <a href="https://wa.me/923034480404?text=CV Design" class="hub-item-box"><i class="fas fa-file-alt"></i> پروفیشنل سی وی اور ریزیومے بنوانا</a>
+            <a href="https://wa.me/923034480404?text=Web Development" class="hub-item-box"><i class="fas fa-globe"></i> بزنس اور پرسنل ویب سائٹ ڈیویلپمنٹ</a>
+            <a href="https://wa.me/923034480404?text=Digital Marketing" class="hub-item-box"><i class="fas fa-chart-line"></i> فیس بک ایڈز اور سوشل میڈیا پروموشن</a>
+            <a href="https://wa.me/923034480404?text=SEO Help" class="hub-item-box"><i class="fas fa-search-plus"></i> آن لائن بزنس سلوشنز اور ایس ای او</a>
         </div>
     </section>
 
     <footer>
         <img src="verse.png" alt="SPO" class="f-logo">
         <div class="f-brand">SPO SMART DIGITAL VERSE</div>
-        <div class="f-socials">
-            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="f-link"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/smartprinting.online" target="_blank" class="f-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="f-link"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404" target="_blank" class="f-link"><i class="fab fa-whatsapp"></i></a>
+        
+        <div class="f-socials-row">
+            <a href="https://facebook.com/share/1EqvcWcyu1/" target="_blank" class="f-social-btn"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/smartprinting.online" target="_blank" class="f-social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@smartprintdigitalpk" target="_blank" class="f-social-btn"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923034480404" target="_blank" class="f-social-btn"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div class="f-copy urdu">
-            📍 پتہ: پرانا پکا بازار، کنگن پور | فون: 0303-4480404<br>
-            © 2026 Developed By <b>Muhammad Asif Ali</b>
+
+        <div class="f-contact-info urdu">
+            <a href="tel:03034480404"><i class="fas fa-phone"></i> 0303-4480404</a>
+            <a href="mailto:asif.aimarketing@gmail.com"><i class="fas fa-envelope"></i> asif.aimarketing@gmail.com</a>
+            <a href="http://www.smartprintingonline.site" target="_blank"><i class="fas fa-globe"></i> www.smartprintingonline.site</a>
+        </div>
+
+        <div class="f-copyright urdu">
+            📍 پتہ: پرانا پکا بازار، کنگن پور، ضلع قصور | ✨ ہم آپ کے کام کو آسان بناتے ہیں!<br>
+            © 2026 Developed By <b>Muhammad Asif Ali</b> | SEO & Full-Stack Web Developer | Digital Marketer
         </div>
     </footer>
 
