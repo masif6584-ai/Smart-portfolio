@@ -12,81 +12,126 @@
         :root {
             --bg: #010409; --primary: #ffbd07; --accent: #fff; --text: #fff;
             --glass: rgba(255, 255, 255, 0.03);
+            --neon-shadow: 0 0 10px #ffbd07, 0 0 20px #ffbd07;
         }
 
-        * { margin:0; padding:0; box-sizing:border-box; transition: 0.3s; }
+        * { margin:0; padding:0; box-sizing:border-box; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         body { background: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+        .urdu { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; line-height: 2; }
 
         header {
             position: fixed; top: 0; width: 100%; height: 90px; z-index: 1000;
-            background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
-            border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--primary); display: flex; align-items: center; justify-content: space-between; padding: 0 3%;
         }
-        .logo-box { display: flex; align-items: center; gap: 15px; text-decoration: none; color: inherit; }
-        .logo-ring { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; }
+        
+        /* Unique Glowing Header Style */
+        .glowing-brand {
+            font-family: 'Orbitron';
+            font-size: 0.9rem;
+            color: var(--primary);
+            text-shadow: var(--neon-shadow);
+            animation: pulse 2s infinite alternate;
+            letter-spacing: 1px;
+        }
+        @keyframes pulse {
+            from { opacity: 0.8; text-shadow: 0 0 5px #ffbd07; }
+            to { opacity: 1; text-shadow: 0 0 20px #ffbd07, 0 0 30px #ff9e00; }
+        }
+
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-ring { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--primary); overflow: hidden; box-shadow: var(--neon-shadow); }
         .logo-ring img { width: 100%; height: 100%; object-fit: cover; }
 
-        .nav-links { display: flex; gap: 10px; list-style: none; }
-        .nav-btn { background: var(--glass); color: #fff; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.6rem; border: 1px solid var(--primary); }
-        .nav-btn:hover, .nav-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); }
+        .nav-links { display: flex; gap: 8px; list-style: none; }
+        .nav-btn { background: var(--glass); color: #fff; padding: 8px 10px; border-radius: 8px; text-decoration: none; font-family: 'Orbitron'; font-size: 0.55rem; border: 1px solid rgba(255,189,7,0.3); }
+        .nav-btn:hover, .nav-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 15px var(--primary); border-color: #fff; }
 
-        .hub-hero { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at top, rgba(255, 189, 7, 0.1), transparent); }
-        .hub-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); }
+        .hub-hero { padding: 150px 5% 50px; text-align: center; background: radial-gradient(circle at top, rgba(255, 189, 7, 0.15), transparent); }
+        .hub-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--primary); margin-bottom: 20px; }
 
-        /* PROJECT GRID */
+        /* PORTFOLIO GRID */
         .portfolio-grid { 
-            padding: 50px 8%; 
+            padding: 50px 5%; 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 25px; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 30px; 
         }
 
         .project-card {
-            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
-            overflow: hidden; position: relative; cursor: pointer;
+            background: linear-gradient(145deg, #0d1117, #161b22);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px; overflow: hidden; position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
-        .project-card:hover { border-color: var(--primary); transform: scale(1.02); }
+        .project-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 35px rgba(255, 189, 7, 0.1);
+        }
         
-        .project-img { width: 100%; height: 200px; background: #161b22; position: relative; }
-        .project-img i { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0.2; }
+        .project-img { height: 180px; background: #010409; display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid var(--primary); }
+        .project-img i { font-size: 4rem; color: var(--primary); opacity: 0.5; }
+        .project-img::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, #161b22, transparent); }
 
-        .project-info { padding: 20px; }
-        .project-info h3 { font-family: 'Orbitron'; font-size: 1rem; color: var(--primary); margin-bottom: 10px; }
-        .project-info p { font-size: 0.8rem; opacity: 0.7; margin-bottom: 15px; }
+        .project-info { padding: 25px; }
+        .project-info h3 { font-family: 'Orbitron'; font-size: 1.1rem; color: var(--primary); margin-bottom: 15px; }
+        .project-info p { font-size: 0.85rem; line-height: 1.6; opacity: 0.8; margin-bottom: 15px; }
+        .project-info .urdu { font-size: 0.95rem; color: #ccc; margin-bottom: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; }
 
-        .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-        .tag { font-size: 0.65rem; background: rgba(255, 189, 7, 0.1); color: var(--primary); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255, 189, 7, 0.3); }
+        .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { font-size: 0.6rem; background: rgba(255, 189, 7, 0.1); color: var(--primary); padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(255, 189, 7, 0.2); }
 
         .view-btn { 
             display: block; width: 100%; text-align: center; padding: 12px; 
-            background: transparent; border: 1px solid var(--primary); 
+            background: rgba(255,189,7,0.05); border: 1px solid var(--primary); 
             color: var(--primary); text-decoration: none; font-weight: bold; 
-            border-radius: 10px; font-size: 0.8rem;
+            border-radius: 12px; font-size: 0.8rem; font-family: 'Orbitron';
         }
-        .view-btn:hover { background: var(--primary); color: #000; }
+        .view-btn:hover { background: var(--primary); color: #000; transform: scale(1.05); }
 
-        /* WHATSAPP CTA BOX */
-        .cta-box { margin: 50px 8%; padding: 40px; background: linear-gradient(45deg, #25D366, #128C7E); border-radius: 30px; text-align: center; color: #fff; }
-        .cta-box h2 { font-family: 'Orbitron'; margin-bottom: 15px; }
+        /* 3D SOCIAL FOOTER */
+        footer { background: #000; padding: 80px 5% 40px; border-top: 4px solid var(--primary); text-align: center; position: relative; }
+        
+        .social-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 15px; max-width: 1000px; margin: 40px auto; 
+        }
 
-        footer { background: #000; padding: 60px 5%; border-top: 3px solid var(--primary); text-align: center; }
-        .social-icons { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; margin: 20px 0; }
-        .social-icons a { color: #fff; }
+        .social-card {
+            background: #161b22; padding: 20px; border-radius: 15px;
+            text-decoration: none; color: #fff; border: 1px solid #30363d;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            transition: 0.5s; position: relative; overflow: hidden;
+        }
+        .social-card i { font-size: 2rem; }
+        .social-card span { font-size: 0.7rem; font-family: 'Orbitron'; }
+
+        /* Specific Social Colors & Hover */
+        .sc-fb:hover { background: #1877f2; transform: translateY(-10px) rotateY(10deg); box-shadow: 0 10px 20px rgba(24,119,242,0.4); }
+        .sc-ig:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); transform: translateY(-10px) rotateY(-10deg); }
+        .sc-tk:hover { background: #000; border-color: #ff0050; box-shadow: 3px 3px 0 #ff0050, -3px -3px 0 #00f2ea; }
+        .sc-wa:hover { background: #25d366; transform: translateY(-10px); box-shadow: 0 10px 20px rgba(37,211,102,0.4); }
+        .sc-web:hover { background: var(--primary); color: #000; transform: scale(1.1); }
+        .sc-mail:hover { background: #ea4335; transform: translateY(-10px); }
+
+        .cta-box { margin: 50px 5%; padding: 60px 20px; background: linear-gradient(45deg, #128C7E, #075E54); border-radius: 40px; text-align: center; border: 2px solid var(--primary); }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo-box">
-            <div class="logo-ring"><img src="1774980575568.png" alt="SPO"></div>
-            <h2 style="font-family:'Orbitron'; font-size:0.8rem;">SPO VERSE</h2>
+            <div class="logo-ring"><img src="verse.png" alt="SPO LOGO"></div>
+            <div class="glowing-brand">SPO SMART DIGITAL VERSE</div>
         </a>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-btn">HOME</a></li>
                 <li><a href="web-hub.html" class="nav-btn">WEB HUB</a></li>
-                <li><a href="seo-mastery.html" class="nav-btn">SEO MASTERY</a></li>
+                <li><a href="seo-mastery.html" class="nav-btn">SEO</a></li>
                 <li><a href="marketing-verse.html" class="nav-btn">MARKETING</a></li>
                 <li><a href="portfolio-hub.html" class="nav-btn active">PROJECTS</a></li>
             </ul>
@@ -95,64 +140,89 @@
 
     <section class="hub-hero">
         <h1>Master Project <span style="color:var(--accent)">Hub</span></h1>
-        <p class="urdu" style="font-size:1.5rem;">ہمارے شاہکار پراجیکٹس اور ڈیجیٹل کامیابیوں کا مجموعہ</p>
+        <p class="urdu" style="font-size:1.8rem;">آپ کے خوابوں کی ڈیجیٹل تعبیر - ہمارے 17 شاہکار پراجیکٹس</p>
     </section>
 
     <div class="portfolio-grid" id="projectGrid">
         </div>
 
     <div class="cta-box">
-        <h2>Ready to Start Your Project?</h2>
-        <p class="urdu">کیا آپ اپنے کاروبار کو اگلی سطح پر لے جانے کے لیے تیار ہیں؟</p>
-        <a href="https://wa.me/923034480404?text=Assalam o Alaikum SPO, I have seen your Master Portfolio and I want to discuss my project." 
-           style="display:inline-block; margin-top:20px; padding:15px 40px; background:#fff; color:#128C7E; text-decoration:none; border-radius:50px; font-weight:900; font-family:'Orbitron';">
-           LET'S COLLABORATE
+        <h2 style="font-family:'Orbitron'; font-size:2rem; margin-bottom:10px;">Build Your Legacy</h2>
+        <p class="urdu">اپنے برانڈ کو ڈیجیٹل دنیا میں سب سے آگے لانے کے لیے آج ہی رابطہ کریں</p>
+        <a href="https://wa.me/923034480404" 
+           style="display:inline-block; margin-top:30px; padding:18px 50px; background:var(--primary); color:#000; text-decoration:none; border-radius:50px; font-weight:900; font-family:'Orbitron'; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+           START CONVERSATION
         </a>
     </div>
 
     <footer>
-        <p style="font-family:'Orbitron'; color:var(--primary); letter-spacing:3px;">SPO SMART DIGITAL VERSE</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/sposmartprinting"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/asif_spo"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@asif_it_expert"><i class="fab fa-tiktok"></i></a>
-            <a href="https://wa.me/923034480404"><i class="fab fa-whatsapp"></i></a>
+        <h3 style="font-family:'Orbitron'; color:var(--primary); letter-spacing:5px;">CONNECT WITH SPO VERSE</h3>
+        
+        <div class="social-container">
+            <a href="https://www.facebook.com/share/1EqvcWcyu1/" class="social-card sc-fb" target="_blank">
+                <i class="fab fa-facebook-f"></i><span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/smartprinting.online?igsh=MXVjdXMwc2t5bDUzdQ==" class="social-card sc-ig" target="_blank">
+                <i class="fab fa-instagram"></i><span>Instagram</span>
+            </a>
+            <a href="https://www.tiktok.com/@smartprintdigitalpk" class="social-card sc-tk" target="_blank">
+                <i class="fab fa-tiktok"></i><span>TikTok</span>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbCxVz4545ux49Xa1t1E" class="social-card sc-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i><span>WA Channel</span>
+            </a>
+            <a href="http://www.smartprintingonline.site" class="social-card sc-web" target="_blank">
+                <i class="fas fa-globe"></i><span>Website</span>
+            </a>
+            <a href="mailto:asif.aimarketing@gmail.com" class="social-card sc-mail">
+                <i class="fas fa-envelope"></i><span>Email Us</span>
+            </a>
         </div>
-        <p style="opacity:0.5; font-size:0.8rem;">Master Portfolio Managed by Muhammad Asif Ali</p>
+
+        <p style="opacity:0.6; font-size:0.85rem; margin-top:40px;">&copy; 2026 SPO Smart Digital Verse | Lead by Muhammad Asif Ali</p>
+        <p style="color:var(--primary); font-size:0.7rem; margin-top:10px; font-family:'Orbitron';">PURANA PAKA BAZAR KANGANPUR, KASUR</p>
     </footer>
 
     <script>
-        const projects = [
-            { title: "Smart Printing Online", desc: "Official Business Site with SEO Domination.", tags: ["Web", "SEO", "GMB"], icon: "fa-print" },
-            { title: "Kanganpur Mart", desc: "A Multi-vendor E-commerce platform for local sellers.", tags: ["E-com", "API"], icon: "fa-shopping-cart" },
-            { title: "Real Estate Portal", desc: "Property listing and lead gen system for Kasur region.", tags: ["Dynamic", "Maps"], icon: "fa-building" },
-            { title: "LMS Education Portal", desc: "Complete School Management System with Quiz.", tags: ["PHP", "Database"], icon: "fa-graduation-cap" },
-            { title: "Auto-SEO Dashboard", desc: "Internal tool for tracking GMB Rankings.", tags: ["Python", "SEO"], icon: "fa-chart-line" },
-            { title: "3D Artist Portfolio", desc: "Ultra-high performance glassmorphism site.", tags: ["ThreeJS", "CSS"], icon: "fa-palette" },
-            // You can easily add more up to 17
+        const masterProjects = [
+            { t: "Next-Gen E-Commerce", d: "Scalable store with real-time inventory tracking.", u: "مقامی دکانداروں کے لیے مکمل ای کامرس سٹور جہاں وہ اپنی پراڈکٹس آن لائن بیچ سکتے ہیں۔", tg: ["React", "Firebase"], ic: "fa-shopping-bag" },
+            { t: "SEO Dominator Pro", d: "Local ranking engine for GMB and map results.", u: "گوگل میپ پر اپنے بزنس کو پہلے نمبر پر لانے کے لیے خاص ایس ای او سسٹم۔", tg: ["SEO", "GMB"], ic: "fa-map-marker-alt" },
+            { t: "SPO OS Interface", d: "Virtual operating system built with web tech.", u: "ایک منفرد ویب سائٹ جو بالکل کمپیوٹر ونڈوز کی طرح کام کرتی ہے۔", tg: ["UI/UX", "JS"], ic: "fa-desktop" },
+            { t: "Property Verse Kasur", d: "Real estate portal with 3D map integrations.", u: "ضلع قصور کے پراپرٹی ڈیلرز کے لیے جدید ترین لسٹنگ اور سیل پورٹل۔", tg: ["Real Estate", "PHP"], ic: "fa-home" },
+            { t: "Educational LMS", d: "Online school management with exam modules.", u: "سکولوں اور اکیڈمیز کے لیے آن لائن فیس اور رزلٹ مینیجمنٹ سسٹم۔", tg: ["LMS", "SQL"], ic: "fa-user-graduate" },
+            { t: "Auto-Marketing Bot", d: "Social media automation for local businesses.", u: "فیس بک اور واٹس ایپ پر خودکار طریقے سے مارکیٹنگ کرنے والا سسٹم۔", tg: ["Python", "AI"], ic: "fa-robot" },
+            { t: "Brand Identity Hub", d: "Complete digital branding from logo to web.", u: "لوگو ڈیزائننگ سے لے کر ویب سائٹ تک، برانڈ کی مکمل ڈیجیٹل پہچان۔", tg: ["Design", "Branding"], ic: "fa-pen-nib" },
+            { t: "Dynamic Portfolio 3D", d: "High-end 3D portfolio for creative artists.", u: "فنکاروں کے لیے تھری ڈی ایفیکٹس کے ساتھ ایک متاثر کن پورٹ فولیو۔", tg: ["Three.js", "CSS"], ic: "fa-cubes" },
+            { t: "Customer Loyalty App", d: "Point-based system for retail shops in Kanganpur.", u: "شاپنگ پر کسٹمرز کو پوائنٹس اور ڈسکاؤنٹ دینے والا جدید سافٹ ویئر۔", tg: ["App", "Nodes"], ic: "fa-gift" },
+            { t: "FBR & Tax Portal", d: "Assistance system for online tax filing.", u: "ٹیکس ریٹرن اور این ٹی این رجسٹریشن کے لیے ڈیجیٹل ہیلپ ڈیسک۔", tg: ["Legal", "FinTech"], ic: "fa-file-invoice-dollar" },
+            { t: "Printing Cloud Service", d: "Online printing order management system.", u: "آن لائن پرنٹنگ آرڈرز وصول کرنے اور ٹریک کرنے کا کلاؤڈ سسٹم۔", tg: ["Print", "Cloud"], ic: "fa-print" },
+            { t: "Event Booking Engine", d: "Marriage hall and catering booking site.", u: "شادی ہالز اور کیٹرنگ کی آن لائن بکنگ کے لیے ویب سلوشن۔", tg: ["Booking", "Calendar"], ic: "fa-calendar-check" },
+            { t: "Hospital Management", d: "Patient records and doctor appointment system.", u: "ہسپتالوں کے لیے مریضوں کا ریکارڈ اور اپائنٹمنٹ مینیجمنٹ سسٹم۔", tg: ["Health", "Data"], ic: "fa-hospital" },
+            { t: "Glassmorphism UI Kit", d: "Futuristic web components library.", u: "ویب ڈویلپرز کے لیے جدید ترین ڈیزائن والے بٹنز اور کارڈز کا مجموعہ۔", tg: ["Tailwind", "UI"], ic: "fa-layer-group" },
+            { t: "WhatsApp API Bridge", d: "Connect web forms directly to WA.", u: "ویب سائٹ پر آنے والے کسٹمرز کا ڈیٹا براہ راست واٹس ایپ پر حاصل کریں۔", tg: ["API", "Automate"], ic: "fa-comments" },
+            { t: "NADRA Assistance Hub", d: "Directory and guide for identity services.", u: "شناختی کارڈ اور دیگر سرکاری دستاویزات کی رہنمائی کا ویب پورٹل۔", tg: ["Govt", "Guide"], ic: "fa-id-card" },
+            { t: "SPO Smart Digital Verse", d: "The ultimate flagship agency website.", u: "ایس پی او ڈیجیٹل ورس کی اپنی فلیگ شپ ویب سائٹ جو ہماری تمام خدمات کا نچوڑ ہے۔", tg: ["Master", "SPO"], ic: "fa-star" }
         ];
 
         const grid = document.getElementById('projectGrid');
-
-        // Generating 17 cards as requested
-        for (let i = 0; i < 17; i++) {
-            const p = projects[i % projects.length]; // Repeating example projects for demo
+        masterProjects.forEach((p, index) => {
             grid.innerHTML += `
                 <div class="project-card">
                     <div class="project-img">
-                        <i class="fas ${p.icon}"></i>
+                        <i class="fas ${p.ic}"></i>
                     </div>
                     <div class="project-info">
-                        <h3>${i + 1}. ${p.title}</h3>
-                        <p>${p.desc}</p>
+                        <h3>${index + 1}. ${p.t}</h3>
+                        <p>${p.d}</p>
+                        <div class="urdu">${p.u}</div>
                         <div class="tag-row">
-                            ${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            ${p.tg.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                        <a href="https://wa.me/923034480404?text=Assalam o Alaikum SPO, I want details about Project ${i+1}: ${p.title}" class="view-btn">VIEW DETAILS / INQUIRY</a>
+                        <a href="https://wa.me/923034480404?text=Assalam o Alaikum SPO, I am interested in Project ${index+1}: ${p.t}" class="view-btn">CONSULT NOW</a>
                     </div>
                 </div>
             `;
-        }
+        });
     </script>
 </body>
 </html>
